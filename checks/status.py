@@ -79,6 +79,42 @@ def main():
         if re.search(r"no bracket claim is registered", text, re.I) and bracket_claims:
             failures.append(f"{rel}: says no bracket claim is registered, {bracket_claims} are")
 
+    # Per-chapter claim counts in CONTEXT.md 6's register.
+    #
+    # Added after three of five had drifted unnoticed: ch. 12 said 18 against 17,
+    # ch. 21 said 38 against 41, ch. 32 said 15 against 17. Every one of them was
+    # correct when it was typed. This is the same failure the audit rule in
+    # CONTEXT.md 4 describes — a summary restates a fact, the fact moves, and the
+    # summary is the last place anyone re-reads — and it survived a checker
+    # written specifically to catch it, because that checker only knew about
+    # three numbers. Anything asserted must be computed.
+    per_chapter = {}
+    tsv_m = os.path.join(HERE, "checks", "matches.tsv")
+    if os.path.exists(tsv_m):
+        with open(tsv_m) as f:
+            for line in f:
+                if line.lstrip().startswith("#"):
+                    continue
+                parts = line.rstrip("\n").split("\t")
+                if len(parts) >= 5 and parts[0].strip():
+                    per_chapter[parts[0].strip()] = per_chapter.get(parts[0].strip(), 0) + 1
+
+    ctx = os.path.join(HERE, "CONTEXT.md")
+    if os.path.exists(ctx) and per_chapter:
+        with open(ctx, encoding="utf-8") as f:
+            for m in re.finditer(
+                r"^\|\s*(\d+)\s*\|[^|]*\|\s*☑\s*(\d+)\s+claims", f.read(), re.M
+            ):
+                ch, claimed = m.group(1).lstrip("0") or "0", int(m.group(2))
+                actual = per_chapter.get(ch)
+                if actual is None:
+                    failures.append(f"CONTEXT.md: ch {ch} says {claimed} claims, none registered")
+                elif actual != claimed:
+                    failures.append(
+                        f"CONTEXT.md: ch {ch} says {claimed} claims, {actual} in matches.tsv"
+                    )
+        print(f"  computed: claim counts for {len(per_chapter)} chapters checked against CONTEXT.md")
+
     for f_ in failures:
         print(f"  FAIL: {f_}")
     return 1 if failures else 0

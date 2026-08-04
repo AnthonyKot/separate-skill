@@ -18,7 +18,7 @@ your bracket.
 
 ## Status
 
-**Four chapters of thirty-two are written, and all four are pilots.** They were drafted and reviewed
+**Five chapters of thirty-two are written, and all five are pilots.** They were drafted and reviewed
 before the remaining chapters are commissioned, each testing a different way this book could fail.
 `checks/status.py` verifies that sentence against the files on disk, because it went stale here once
 already.
@@ -37,6 +37,7 @@ already.
 | 12 | Do general principles survive item specificity? | One hold, not two — a second belongs to a neighbouring chapter |
 | 21 | Does professional evidence transfer? | Yes, with a transfer block; the case shows a stall, not a loss |
 | 32 | Does a seat chapter produce different advice? | **The premise was wrong.** Nothing inverts; what changes is what is scarce, visible and presumed |
+| 30 | Is that variation indexed by seat, or by something else? | **Neither, as posed.** The test's own premise — that the offlane's product is invisible — is contradicted by the record. What separates the two seats is how long each stays visible |
 
 ## The premise
 

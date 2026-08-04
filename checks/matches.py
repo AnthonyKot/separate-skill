@@ -63,6 +63,23 @@ def hero_names():
         return json.load(f)
 
 
+def hero_npc_names():
+    """id -> internal name, from the committed map in data/hero-npc-names.json.
+
+    Needed because the internal name is NOT derivable from the localized one for
+    19 of 127 heroes: Magnus is magnataur, Clockwerk is rattletrap, Windranger is
+    windrunner, Zeus is zuus. The first version of hero_death_time built the
+    internal name by lowercasing the localized one, which silently restricted that
+    check to the 108 heroes where the guess happens to be right — and ch. 32's
+    Crystal Maiden was one of them, so the bug shipped green. It raises rather
+    than passing, but a checker that cannot see 15% of the game's heroes is a
+    checker that decides which cases the book is allowed to use.
+    """
+    path = os.path.join(HERE, "data", "hero-npc-names.json")
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def player(d, name):
     for p in d["players"]:
         if (p.get("name") or p.get("personaname") or "") == name:
@@ -202,15 +219,17 @@ def resolve(d, check, arg):
         # "<Hero>:<n>" — the nth death, 1-based, from every player's kill log.
         name, _, nth = arg.partition(":")
         heroes = hero_names()
-        hid = None
-        for k, v in heroes.items():
-            if v == name:
-                hid = k
+        hid = next((k for k, v in heroes.items() if v == name), None)
+        if hid is None:
+            raise LookupError(f"unknown hero {name!r}")
+        npc = hero_npc_names().get(hid)
+        if npc is None:
+            raise LookupError(f"no internal name recorded for {name!r}")
         times = sorted(
             k["time"]
             for pl in d["players"]
             for k in (pl.get("kills_log") or [])
-            if k["key"] == "npc_dota_hero_" + name.lower().replace(" ", "_").replace("'", "")
+            if k["key"] == npc
         )
         i = int(nth)
         if not 1 <= i <= len(times):
@@ -262,6 +281,48 @@ def resolve(d, check, arg):
                     raise LookupError(f"{name} has {len(series)} minutes, no {m}")
                 return series[m]
         raise LookupError(f"no {name!r} in this match")
+
+    if check == "team_gold_rank":
+        # "<Hero>:<minute>" — that hero's rank by gold within their OWN five, 1 =
+        # richest. Added for ch. 30, whose argument is that the offlane's advantage
+        # is real, recorded, and recorded in a place that stops describing it.
+        #
+        # It exists as a check type rather than as five registered gold figures and
+        # a sentence, because "he was the richest player on his team" is the claim
+        # the chapter actually makes, and a claim assembled by the author from five
+        # numbers is an editorial reading that no checker can recompute. The rule in
+        # CONTEXT.md 10 is that the machinery grows to fit the argument.
+        name, _, minute = arg.partition(":")
+        p_ = _hero(name)
+        m = int(minute)
+        side = p_["player_slot"] < 128
+        mine = [
+            q for q in d["players"] if (q["player_slot"] < 128) == side
+        ]
+        for q in mine:
+            if m >= len(q.get("gold_t") or []):
+                raise LookupError(f"minute {m} is past the end of a gold series")
+        mine.sort(key=lambda q: -q["gold_t"][m])
+        return mine.index(p_) + 1
+
+    if check == "hero_series_gap_at":
+        # "<HeroA>:<HeroB>:<gold|xp|lh>:<minute>" — A minus B, signed.
+        #
+        # The gap is registered rather than derived in prose for one reason: the
+        # sign changes during ch. 30's case, and a chapter whose argument turns on
+        # a sign change must not compute that sign by hand. Two registered values
+        # and a subtraction in the author's head is exactly how ch. 21 published
+        # "three deaths" against its own claim of four.
+        a, b, series_name, minute = arg.split(":", 3)
+        key = {"gold": "gold_t", "xp": "xp_t", "lh": "lh_t"}[series_name]
+        m = int(minute)
+        out = []
+        for name in (a, b):
+            series = _hero(name).get(key) or []
+            if m >= len(series):
+                raise LookupError(f"{name} has {len(series)} minutes, no {m}")
+            out.append(series[m])
+        return out[0] - out[1]
 
     if check == "teamfight_start":
         fights = d.get("teamfights") or []

@@ -99,3 +99,66 @@
 32	8928118730	hero_death_time	Crystal Maiden:8	2139
 32	8928118730	objective_time	building_kill:npc_dota_badguys_tower2_mid	2221
 32	8928118730	objective_time	building_kill:npc_dota_badguys_tower2_bot	2243
+
+# ch 30 — Position Three. Team Syntax vs Ilbirs Esports, Asgard Championship,
+# match 8926599506, patch 7.41e. Both offlanes are in this match, which is why it
+# was chosen: two players in one seat, one game, rows that order the opposite way
+# to the result. Generated from the snapshot, never typed.
+30	8926599506	duration		2594
+30	8926599506	winner		radiant
+30	8926599506	count	teamfights	7
+30	8926599506	gold_adv_at	10	718
+30	8926599506	gold_adv_at	14	-2161
+30	8926599506	hero_series_at	Magnus:gold:10	4477
+30	8926599506	hero_series_at	Magnus:lh:10	47
+30	8926599506	hero_series_at	Spectre:gold:10	2736
+30	8926599506	hero_series_at	Spectre:lh:10	34
+30	8926599506	hero_series_gap_at	Magnus:Spectre:gold:10	1741
+30	8926599506	hero_series_gap_at	Magnus:Spectre:lh:10	13
+30	8926599506	hero_series_gap_at	Magnus:Spectre:gold:14	393
+30	8926599506	hero_series_gap_at	Magnus:Spectre:gold:16	-66
+30	8926599506	hero_series_gap_at	Magnus:Spectre:gold:20	-1256
+30	8926599506	hero_series_gap_at	Magnus:Spectre:gold:42	-8357
+30	8926599506	team_gold_rank	Magnus:6	1
+30	8926599506	team_gold_rank	Magnus:10	1
+30	8926599506	team_gold_rank	Magnus:14	1
+30	8926599506	team_gold_rank	Magnus:15	2
+30	8926599506	team_gold_rank	Magnus:16	3
+30	8926599506	team_gold_rank	Magnus:42	4
+30	8926599506	hero_stat	Magnus:total_gold	18287
+30	8926599506	hero_stat	Magnus:last_hits	213
+30	8926599506	hero_stat	Magnus:deaths	10
+30	8926599506	hero_stat	Magnus:kills	7
+30	8926599506	hero_stat	Magnus:tower_damage	1227
+30	8926599506	hero_stat	Spectre:total_gold	28577
+30	8926599506	hero_stat	Spectre:last_hits	427
+30	8926599506	hero_stat	Lifestealer:total_gold	32900
+30	8926599506	hero_stat	Lifestealer:last_hits	500
+30	8926599506	hero_stat	Lifestealer:deaths	2
+30	8926599506	hero_stat	Lifestealer:tower_damage	10690
+30	8926599506	hero_series_gap_at	Largo:Lifestealer:gold:10	197
+30	8926599506	hero_series_gap_at	Largo:Lifestealer:lh:10	12
+30	8926599506	hero_stat	Largo:total_gold	24470
+30	8926599506	hero_stat	Largo:last_hits	409
+30	8926599506	hero_stat	Largo:deaths	5
+30	8926599506	objective_time	building_kill:npc_dota_badguys_tower1_bot	954
+30	8926599506	objective_time	building_kill:npc_dota_badguys_tower1_top	976
+30	8926599506	teamfight_start	4	987
+30	8926599506	hero_death_time	Magnus:1	272
+30	8926599506	hero_death_time	Magnus:10	2558
+30	8926599506	hero_series_at	Magnus:gold:14	5793
+30	8926599506	hero_series_at	Magnus:lh:14	67
+30	8926599506	hero_series_at	Spectre:gold:14	5400
+30	8926599506	hero_series_at	Spectre:lh:14	53
+30	8926599506	hero_series_gap_at	Magnus:Spectre:lh:14	14
+30	8926599506	hero_death_time	Magnus:2	649
+30	8926599506	hero_death_time	Magnus:3	857
+30	8926599506	hero_purchase_time	Magnus:blink	740
+30	8926599506	hero_purchase_time	Magnus:black_king_bar	1476
+
+# ch 32, registered late. These two appear in chapter 32's hold state block and
+# were never registered — checks/coverage.py had been reporting them since it was
+# written, and the report was correct. Added while drafting ch. 30. An advisory
+# check whose output is read and not acted on is a gating check nobody turned on.
+32	8928118730	hero_series_at	Crystal Maiden:gold:35	10100
+32	8928118730	gold_adv_at	35	11572

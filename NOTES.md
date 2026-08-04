@@ -460,3 +460,66 @@ rules is a summary of documents that are already authoritative and mechanically 
 audit rule exists because summaries are where decisions go stale. The prompt's only job is to name
 the task and the two things a fresh session cannot infer: which brief applies, and that the
 comparison must not be read first.
+
+### 8h. The result — reported against the criteria as written
+
+Drafted 2026-08-04. Ch. 32 was not opened until the draft was finished, per §8e.
+
+**The rule returns COLLAPSE PART VII.** The two conditions are conjunctive and only the first is met.
+
+**Axes — 2 of 3 differ materially. Condition met.**
+
+| Axis | Ch. 32 | Ch. 30 | Differs? |
+|---|---|---|---|
+| What is scarce | Gold that is not really yours, spent on things that expire; your body; vision on a fixed clock | **Not** gold — this seat has a core's claim on it. What is scarce is the window in which the advantage is still yours | **Yes**, and it contradicts ch. 32's first row outright. Both nevertheless turn on something expiring, which is a shared motif |
+| What is visible | Almost nothing the seat produces | A direct, checkable measurement early — then nothing, with no marker for the transition | **Yes**, and in the opposite direction for the first quarter of the game. The strongest differentiator |
+| Which presumption | An isolated death is not presumed avoidable, because the exchange is unrecorded | A falling rank is not presumed a failure and not presumed fine — it is the expected shape, so it carries no information | **No.** Different mechanism, same instruction: do not read your own bad-looking number as a verdict. This is §8d's third outcome on this axis |
+
+**`Next game` actions — 2 of 5 have no analogue. Condition NOT met; the threshold was 3.**
+
+| # | Ch. 30 action | Analogue in ch. 32? |
+|---|---|---|
+| 1 | At minute ten read two numbers — your gold and your lane opponent's — and write the gap down | **None.** Ch. 32's list contains no quantitative reading at all |
+| 2 | Name what the gap is for, in a sentence without the word *gold* | Yes — ch. 32 #1, "say what it is for, not 'vision'". Same operation, different noun |
+| 3 | Set the stopping condition out loud before you go | Yes, and worse: a stopping condition is **required of every hold in the book** (`CONTEXT.md §3`). An action the template mandates universally cannot be evidence that two seats differ |
+| 4 | After minute twenty stop reading your net worth rank; read the enemy safe-lane hero's row instead | **None in the list**, though it is the same family as ch. 32 #5 ("do not review this seat from the scoreboard alone"). Counted as distinct because it names a time threshold and a substitute number; the weakest of the two |
+| 5 | Write one line describing something you did that appears nowhere in your row | Yes — this is ch. 32's central claim restated as an instruction |
+
+Not fudged: #3 was the deciding item and the strict reading was taken. Ch. 30's #4 and #5 are also close to each other, which is a weakness in the draft rather than in the test.
+
+### 8i. The criteria were partly the wrong criteria, and this is the more useful finding
+
+Reported rather than re-cut, per §8's own instruction.
+
+**§8b's premise about the offlane is false.** The whole design rested on this sentence: *"The offlane
+is the only seat that shares position five's problem — its product is space and pressure, which the
+record cannot see."* The record does not agree. It holds a direct, continuous, checkable measurement
+of the offlane against a single named opponent — the gap that ran +1,741 at minute ten and −8,357 by
+minute forty-two. Position three is not an invisible seat. It is a **seat whose visibility expires**,
+which is a third category neither §8a nor §8b anticipated.
+
+That damages the test in a specific way worth stating. §8b reasoned: *if ch. 30 comes out unlike
+ch. 32 despite sharing the invisibility, the axis is genuinely seat.* The antecedent never held, so
+the inference is unavailable in both directions. Ch. 30 differs from ch. 32 **most** on visibility —
+which under §8a's own suspicion is evidence for the visibility axis, not the seat axis, even though
+the two chapters read nothing alike.
+
+So the honest summary is three sentences:
+
+1. **By the pre-registered rule, Part VII collapses.**
+2. The rule's discriminating power was compromised by a factual assumption about the offlane that the
+   record contradicts, and that assumption was made in this file before any evidence was consulted.
+3. The variable that actually separates these two chapters is **how long the seat stays visible** —
+   not seat, and not visibility, but the duration of it.
+
+**What is not being done here.** Ch. 30 is not being rewritten into a collapsed structure and ch. 32
+is not being trimmed, because §7a records Part VII's sizing as the author's call and a three-category
+result is not the two-category result the rule was built to adjudicate. The pilot's job was to
+produce the evidence and the verdict; both are above.
+
+**The obvious next question, if one is wanted:** position one or two, which §8b dismissed as weak
+tests on the assumption that visible and well-resourced travel together. Under the duration finding
+that dismissal no longer holds — a carry is the seat whose visibility *never* expires, which is now
+the interesting contrast rather than the trivial one. That would be a third pilot, and it should be
+pre-registered the same way, with the premise checked against the record **before** the criteria are
+fixed. That is the process failure this round actually exposed.

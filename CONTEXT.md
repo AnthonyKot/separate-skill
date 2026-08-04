@@ -542,7 +542,7 @@ evidence and must not be invented.**
 | # | Title | Status |
 |---|---|---|
 | 11 | Gold in the Bank Is Not Gold | ☐ |
-| 12 | Every Item Is a Forecast | ☑ 18 claims · match 8928916055 · **pilot** · one hold, and why |
+| 12 | Every Item Is a Forecast | ☑ 17 claims · match 8928916055 · **pilot** · one hold, and why |
 | 13 | Buying for Them | ☐ · neutral items and Madstone belong here, as dated examples |
 | 14 | Reading the Scoreboard | ☐ |
 | 15 | Enough Farm | ☐ closes Part III |
@@ -565,7 +565,7 @@ for a thirty-third chapter, and it should be made then rather than assumed now.
 ### Part V — Can you convert advantage into a win?
 | # | Title | Status |
 |---|---|---|
-| 21 | The Lead That Melts | ☑ 38 claims · match 8929124210 · **pilot** · revisions owed, see `NOTES.md` §1 |
+| 21 | The Lead That Melts | ☑ 41 claims · match 8929124210 · **pilot** · revisions owed, see `NOTES.md` §1 |
 | 22 | High Ground Is a Different Game | ☐ · buyback belongs here, as part of high-ground state |
 | 23 | The Objective Window | ☐ · Roshan and Tormentor are dated examples, not the subject |
 | 24 | Ending | ☐ closes Part V |
@@ -595,9 +595,9 @@ reduces noise while learning, never as a theory of how MMR is won.
 |---|---|---|
 | 28 | Position One | ☐ |
 | 29 | Position Two | ☐ |
-| 30 | Position Three | ☐ |
+| 30 | Position Three | ☑ 51 claims · match 8926599506 · **pilot** · see `NOTES.md` §8h–8i |
 | 31 | Position Four | ☐ |
-| 32 | Position Five | ☑ 15 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
+| 32 | Position Five | ☑ 17 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
 
 **Part VII chapters are full chapters, not appendices.** Each carries the complete template — its own
 situation, its own replay-verifiable case, its own figures, its own `Next game` and `After the game`
@@ -785,6 +785,51 @@ Written before ch. 32 was drafted.
   the scoreboard. Chapter 18 (*Vision Is a Timing*) may return for a different inference and must
   draw its own.
 
+### 8926599506 — Team Syntax vs Ilbirs Esports, Asgard Championship
+
+Written before ch. 30 was drafted. Chosen because it contains **both** offlanes, which is what makes
+it a case rather than an anecdote: two players in the same seat, in the same game, both ahead of
+their lane opponent at minute ten, finishing with rows that order the opposite way to the result.
+
+- **Patch.** 7.41e — played 2026-08-02, three days after the patch shipped. **Source mode.**
+  Professional broadcast. **Identity.** Heroes only in the prose, as in ch. 01, 12 and 32. The
+  argument is about what a seat's record can show, and needs no one's name to make it.
+- **Facts.** 43:14, Radiant won. Radiant's offlane hero held **more gold than anyone else on his own
+  team from minute 6 through minute 14**, while his team was **2,161 gold behind overall at minute
+  14**. Against the enemy safe-lane carry he was **+1,741 gold and +13 last hits at minute 10**,
+  **+393 at 14**, **−66 at 16**, **−1,256 at 20** and **−8,357 at 42**. He finished **fourth of five
+  on his own team**: 18,287 net worth, 213 last hits, 7/10/6, 1,227 tower damage. The carry he had
+  been ahead of finished on 28,577 and 427 last hits. His own team's carry finished on 32,900 with
+  **two deaths in 43 minutes** and 10,690 tower damage — the highest in the game. The opposing
+  offlane hero was **+197 gold and +12 last hits** on *his* lane opponent at minute 10 and finished
+  with 24,470, 409 last hits and five deaths — the better-looking row, on the losing side.
+- **Permitted.** That the offlane's advantage over its lane opponent is recorded, is largest early,
+  and reverses sign inside the same game. That an offlane row cannot be ranked against another
+  offlane row to establish which player did the seat's job.
+- **Observation vs inference.** Every figure is observed, including the team-relative rank, which is
+  recomputed rather than read off a scoreboard. That the seat's advantage was *spent* on anything is
+  **inference**, and where it went is not in the record at all. That the winning team's carry reached
+  500 last hits and two deaths *because* of anything the offlane did is **not** supported and must
+  not be written.
+- **Confounders.** The draft on both sides; two Roshans, at 26:06 and 37:42; a mid lane that finished
+  on 34,500 and thirteen kills, which is a larger difference than anything in the offlane; and
+  professional coordination throughout. The parser's lane assignment is itself a judgement — it
+  reports a role, and roles in a professional game are fluid after the laning stage.
+- **Prohibited.** **Never that either offlaner played well or badly.** Never that the ten deaths were
+  justified because the team won — that is the outcome reasoning banned in ch. 01 and in the
+  free-death definition, and it is the exact form it would take here. Never that the offlane created
+  the space the carry farmed in: the record contains no positions, no lane pressure and no
+  counterfactual, and the whole chapter depends on saying so. Never a prevalence claim about
+  Archon–Legend offlanes; `publicMatches` carries no per-hero data whatsoever.
+- **Transfer.** The reading procedure — which two numbers describe the seat, when they stop
+  describing it, and what the row does not report. Not the timings, not the item build, and not the
+  death count. A professional offlaner dying ten times has four teammates who can use what that buys;
+  the reader has four strangers, and that difference is the chapter's boundary block.
+- **Spent.** Ch. 30 takes the rank-over-time series, the sign change against the lane opponent, and
+  the two-offlane comparison, for the inference that this seat's product is recorded early and
+  against the wrong opponent. Ch. 07 (*The Lane Is Not the Game*) and ch. 11 (*Gold in the Bank Is
+  Not Gold*) may return for different inferences and must draw their own.
+
 ## 8. What got caught
 
 The table of errors the process caught, kept because the sequence teaches more than any single fix.
@@ -905,7 +950,9 @@ and the numbering records which.
    machinery grows to fit the argument, not the reverse. Ch. 32 needed four new types to see wards.
 5. **Draft**, five moves, one hold (§3). The hold must offer a way to pass using only what it shows.
 6. **Link it** in `docs/index.html` and mark the register row in §6.
-7. **`./verify.sh`** — nine checks. Expect `register.py` to catch something; it usually does.
+7. **`./verify.sh`** — the whole suite; the count is printed rather than stated here, because a
+   number typed into a runbook is the thing §4's audit rule is about. Expect `register.py` to catch
+   something; it usually does. Expect `status.py` to catch the chapter count, every time.
 8. **Commit and push**, then confirm the page is live and CI is green. Pages deploys take about a
    minute, and a 404 immediately after pushing means the deploy is still running, not that anything
    is wrong.
