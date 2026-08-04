@@ -74,20 +74,20 @@ def main():
                 return 1
             rows.append((n, parts[0], parts[1], parts[2]))
 
-    blobs, checked, failures = {}, 0, []
+    blobs, checked, failures, unreachable = {}, 0, [], []
     for n, chapter, version, claim in rows:
         if only and chapter != only:
             continue
         if version not in blobs:
             try:
                 d = notes(version)
-            except Exception as e:  # network, not the book's fault
-                print(f"  SKIP: patch {version} unreachable ({e})")
+            except Exception as e:
                 blobs[version] = None
+                unreachable.append(f"patch {version} unreachable ({e})")
             else:
                 if not d.get("success", True) or not d.get("patch_number"):
-                    print(f"  SKIP: patch {version} returned no notes")
                     blobs[version] = None
+                    unreachable.append(f"patch {version} returned no notes")
                 else:
                     blobs[version] = normalise(json.dumps(d))
         blob = blobs[version]
@@ -100,7 +100,18 @@ def main():
     print(f"  {checked} patch claims checked across {len([b for b in blobs.values() if b])} patches")
     for f_ in failures:
         print(f"  FAIL: {f_}")
-    return 1 if failures else 0
+
+    # An unreachable source is not a pass. The first version of this file printed
+    # SKIP here and returned 0, so a DNS failure produced a green build carrying
+    # the same message as a verified one — which is precisely the failure this
+    # book warns readers about: a check that cannot see its source reporting
+    # success anyway. Caught on external review, not by the check itself.
+    for u in unreachable:
+        print(f"  UNRESOLVED: {u}")
+    if unreachable:
+        print("  Claims against unreachable patches were NOT checked and are not passing.")
+
+    return 1 if failures or unreachable else 0
 
 
 if __name__ == "__main__":
