@@ -4,7 +4,7 @@
 <!-- rules: CALIBRATION_MARK=2 HOLD_PASSABLE=2 NEXT_GAME_LIVE=1 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>03 · What Counts as One Fight — Winning Is a Separate Skill</title>
-<meta name="description" content="Before you can trace the sequence that removed your escape, you have to establish that it was one sequence. Six deaths, fifty-two seconds, one label — and two engagements most of the map apart.">
+<meta name="description" content="Before you can trace the sequence that removed your escape, you have to establish that it was one sequence. Six deaths, fifty-two seconds, one label — and two clusters of deaths sixty-odd cells apart.">
 <script>try{var t=localStorage.getItem("separate-skill-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <link rel="stylesheet" href="../static/style.css">
 <script defer src="../static/theme.js"></script>
@@ -83,8 +83,9 @@
         <li><strong>Which of these six deaths belong to the same engagement?</strong> Draw the lines.
           It is legitimate to answer <em>all of them</em>, and it is legitimate to split them — if you
           split, say where and say why.</li>
-        <li><strong>For the last hero to die at 19:30 — what removed their escape?</strong> Answer
-          from the list.</li>
+        <li><strong>From this list, what — if anything — can you establish about what removed the
+          escape of the last hero to die at 19:30?</strong> <em>Nothing, from this record</em> is a
+          valid and possibly correct answer; if you give it, say what you would need.</li>
         <li><strong>What single further fact would most change your answer?</strong></li>
       </ol>
 
@@ -93,9 +94,16 @@
         <strong>fifteen-second gap</strong> between the fourth and the last two. Whether gaps like
         those mean anything is exactly what you are being asked.</p>
 
-      <p><em>These are one engagement and here is why the pauses do not trouble me</em> is a passing
-        answer. So is a split at either gap, or at both. What does not pass is a sequence with no
-        joins stated, because an unstated join is the thing this chapter is about.</p>
+      <p><em>These are one engagement and here is why the pauses do not trouble me</em> is admissible.
+        So is a split at either gap, or at both. What is not admissible is a sequence with no joins
+        stated, because an unstated join is the thing this chapter is about.</p>
+
+      <p><strong>Two marks, as everywhere in this book, and they are separate here for a reason.</strong>
+        The <strong>process mark</strong> is whether you stated a boundary and the evidence you were
+        using for it. The <strong>calibration review</strong> is whether the further evidence supported
+        that boundary, weakened it, or left it unresolved. You can state a boundary well and have
+        picked the wrong one, and the next section is going to produce exactly that result for one of
+        the two available splits.</p>
     </div>
 
     <h2>What happened next</h2>
@@ -123,7 +131,16 @@
         is <strong>69.6</strong> cells.</p>
 
       <p>For comparison, chapter 04's fight — seven deaths in forty-seven seconds — had a spread of
-        <strong>20.6</strong>. That one was a pile. This one is two events that share a label.</p>
+        <strong>20.6</strong>: one tight cluster. This window holds <strong>two spatially distinct
+        clusters of deaths</strong>.</p>
+
+      <p class="note"><strong>And that is all it holds.</strong> Two clusters of deaths are not two
+        engagements, and this chapter is not going to say they are. They could be one fight that
+        crossed the map, a pursuit, two fronts of one commitment, two unrelated skirmishes, or one
+        decision followed by another. The record has no movement in it, so it cannot distinguish any
+        of those — a limit stated here rather than three paragraphs later, because an earlier version
+        of this page called them "two events that share a label" and that was a claim the evidence
+        does not carry.</p>
 
       <p class="note"><strong>Where the split comes from, stated so you can argue with it.</strong> The
         grouping uses a 30-cell threshold, and that number is this book's choice rather than the
@@ -132,11 +149,32 @@
         either group is 26. A case where the answer moved with the threshold would not be usable, and
         this chapter would have said so.</p>
 
-      <p>So the eleven-second pause was not a pause. It was the record moving from one place on the
-        map to another, with no marker, under one heading.</p>
+      <p>So the eleven-second pause is where the positions change. And now the part that matters more
+        than the split, because it is the opposite of what the timings appeared to say.</p>
 
-      <p>If you split at that gap, you were right — and you were right from the timings alone, which
-        is the point. The gap was doing work before you had any coordinates to confirm it.</p>
+      <div class="timeline">
+        <table>
+          <thead><tr><th>Between</th><th>Gap</th><th>Distance</th></tr></thead>
+          <tbody>
+            <tr><td>Puck → Techies</td><td>1s</td><td>1.0</td></tr>
+            <tr><td>Techies → Mirana</td><td>11s</td><td><strong>68.2</strong></td></tr>
+            <tr><td>Mirana → Earth Spirit</td><td>10s</td><td>26.1</td></tr>
+            <tr><td>Earth Spirit → Clinkz</td><td><strong>15s</strong></td><td>6.3</td></tr>
+            <tr><td>Clinkz → Undying</td><td>0s</td><td>2.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>The longest gap in the sequence is fifteen seconds, and it falls inside one of the
+        clusters.</strong> The place where the positions actually change is the eleven-second gap —
+        the second-longest. A reader who split at the biggest pause, which is the obvious heuristic
+        and the one this chapter nearly taught, would have split in the wrong place.</p>
+
+      <p>So the honest lesson is narrower than <em>trust the gaps</em>, and more useful:
+        <strong>a pause is a place to look, not a boundary.</strong> The eleven seconds gave you a
+        candidate. The coordinates are what made it worth something — and they are also what
+        demoted the fifteen. Timing tells you where to check. It cannot segment the sequence by
+        itself.</p>
     </div>
 
     <h2>The reasoning</h2>
@@ -144,8 +182,10 @@
     <p><strong>Observed.</strong> The window and its label; six deaths with times; six positions; the
       distances between them; the parser's own death count of four against the log's six.</p>
 
-    <p><strong>Supported inference.</strong> That this window contains at least two engagements, in two
-      places, separated by eleven seconds and by most of the map's width.</p>
+    <p><strong>Supported inference.</strong> That this window contains <strong>at least two spatially
+      distinct clusters of deaths</strong>, separated by eleven seconds and by 63 to 69 cells, when the
+      widest gap inside either cluster is 26. Nothing more: not two engagements, not two decisions,
+      not two fights.</p>
 
     <p><strong>Hypothesis.</strong> That anything in the first group caused anything in the second.
       Attractive — a support dies, the team responds, the response fails — and <strong>entirely
@@ -157,8 +197,21 @@
       story would have to live in.</p>
 
     <blockquote><strong>Before you can trace what removed your escape, you have to establish that it
-      was one thing that removed it.</strong> A window is a label. An engagement is an event. The
-      genre routinely treats the first as the second, and so does memory.</blockquote>
+      was one thing that removed it.</strong> A window is a label. Whether it contains one event is a
+      question, and the genre routinely answers it by assumption — as does memory.</blockquote>
+
+    <p>And note that <em>events</em> and <em>decisions</em> are not the same count, which is where this
+      could go wrong in the other direction. One engagement can contain four fresh commitments. Two
+      engagements can both follow from a single decision taken before either. A player can cross the
+      map and never decide anything. So the order is four steps and only the last is about pricing:</p>
+
+    <ol>
+      <li><strong>Segment the observable sequence</strong> — what is in the window, when, and where.</li>
+      <li><strong>Locate the candidate joins</strong> — the pauses and the position changes.</li>
+      <li><strong>At each join, ask whether you recommitted</strong>, or arrived without deciding.</li>
+      <li><strong>Price each commitment separately.</strong> That is
+        <a href="04-leaving-is-a-skill.html">chapter 04</a>'s job, and it needs this one done first.</li>
+    </ol>
 
     <p>Which is why this chapter is shorter on prescription than its neighbours, and why it sits where
       it does. <a href="02-what-the-map-already-said.html">Chapter 02</a> asks what you could have
@@ -182,8 +235,15 @@
         comparative — this fight against that one, this group against that group — and a reader who
         turns 63 cells into a number of metres has left what the record supports.</p>
       <p>And you do not have coordinates in your own review. What you have is a replay you can scrub,
-        which is better: you can watch the eleven seconds instead of reasoning about them. The
+        which is <em>better</em>: you can watch the eleven seconds instead of reasoning about them. The
         procedure below is built for that, not for this.</p>
+      <p><strong>Which raises the obvious question about this chapter's own case, and the answer is
+        unflattering.</strong> Forty seconds of tape would probably settle whether those two clusters
+        were one engagement — did anyone cross the map, was there a break in contact, did the second
+        group begin as a response. This book has not watched it. Its sourcing standard declares
+        direct observation as a class of evidence and has never once used it: there is no client here
+        and no way to open a replay file. So this chapter stops where the structured record stops,
+        and the reader with a replay open can get further than the book can.</p>
     </div>
 
     <div class="owed">
@@ -203,13 +263,15 @@
           and when you died. Two numbers, said out loud during the respawn timer.</li>
         <li>Say where you were at each. Not coordinates — a landmark. <em>Their tier two</em>,
           <em>our triangle</em>, <em>the river outside Roshan</em>.</li>
-        <li>If those two places are far apart, you have already learned something: what you are about
-          to call "the fight" moved, and the part that killed you may not be the part that started
-          it.</li>
+        <li>If those two places are far apart, you have learned that <strong>the sequence changed
+          location</strong> — not that "the fight moved", which already assumes it was one fight. The
+          next question is whether the engagement moved, ended and restarted, or became something
+          else.</li>
         <li>Once a game, before you explain a loss to yourself, ask <strong>how many separate things
           am I explaining?</strong> If the answer is one, say what makes it one.</li>
-        <li>Do not count the enemy's deaths as part of your event unless you saw them happen. They may
-          belong to a different fight entirely, and the scoreboard will not tell you.</li>
+        <li>Do not automatically fold in every death that was near yours in time. The kill feed tells
+          you one happened, not where; in the replay you can check whether it belonged to the same
+          local sequence, and often it did not.</li>
       </ol>
     </div>
 
@@ -224,10 +286,11 @@
       <p><strong>The observable decision:</strong> the moment you committed to the second place —
         which is a different decision from the one you made at the first, and the one you probably
         never reviewed.</p>
-      <p><strong>1 · The process mark, set before you look.</strong> You can state where the fight
-        began, where you died, and whether you decided to move between them or arrived there without
-        deciding. Pass if you can name a decision at the join. Fail if the honest answer is that you
-        were carried.</p>
+      <p><strong>1 · The process mark, set before you look.</strong> You can state where the sequence
+        began, where you died, and — the observable part — <strong>the action that committed you to
+        the second place</strong>: a teleport, a rotation, a spell, crossing a piece of terrain,
+        continuing a chase. Pass if you can name that action. If you cannot reconstruct whether it was
+        deliberate, mark insufficient evidence; a replay shows movement and cannot show a decision.</p>
       <p><strong>2 · The calibration review, which the process mark cannot do.</strong> Given what was
         visible when you committed to the second place: was that a fight worth joining on its own
         terms? Not <em>should I have helped</em> — whether the second engagement, priced by itself,
@@ -242,9 +305,10 @@ Priced?:   no. I moved because we were losing, not because of what I could add
         poor calibration — you decided at the join and decided badly; no process, meaning there was no
         decision at the join at all; or not enough evidence. Whether the fight was lost goes on its own
         line and never moves the grade.</p>
-      <p>Ten of these and you will have a count of how often you made a fresh decision at the join
-        against how often you were carried into the second half of somebody else's fight. That count
-        is not available anywhere else, and no scoreboard has a column for it.</p>
+      <p>Ten of these gives you a count within the ten you chose — and you will have chosen the
+        memorable and the ambiguous ones, so it is not your rate at anything. It is a starting sample
+        about how often you can find a committing action at all, which is not available anywhere else
+        and which no scoreboard has a column for.</p>
     </div>
 
     <div class="replay">match 8928851109 · 47:02 · the parser's third teamfight, 18:38–19:30<br>

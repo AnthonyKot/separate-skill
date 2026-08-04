@@ -394,12 +394,25 @@ Four classes, ordered by distance from the game itself.
 |---|---|---|
 | **1. Official record** | Valve's patch datafeed at `dota2.com/datafeed/patchnotes`, dated and versioned; official rules and announcements | Quotable directly, registered, **gating** |
 | **2. Machine-derived match record** | Parsed match JSON from OpenDota — events, logs, per-minute series, `picks_bans`; bracket-stratified public match data | Registered and checkable, but **derived** data, not the replay itself |
-| **3. Direct observation** | The replay, or a VOD correctly bound to a match | What a careful viewer can see. Describe it as observation, never as measurement |
+| **3. Direct observation** | The replay, or a VOD correctly bound to a match | What a careful viewer can see. Describe it as observation, never as measurement. **Declared but never used — see below** |
 | **4. Interpretive** | Caster commentary, named analysis, a player's recollection, bracket consensus | **Never a number.** Proposes; never establishes |
 
 Class 2 deserves its qualifier. OpenDota's JSON is excellent evidence and it is not the game — it is
 Valve's replay put through somebody else's parser. Calling it primary would flatten a real
 distinction the book can afford to keep.
+
+**Class 3 has never been used, in any chapter, and the table above implied otherwise for eight
+chapters.** Every `.replay` block in this book tells the *reader* to watch something; not one figure or
+observation in it came from anybody here watching a replay. There is no Dota client and no `.dem`
+viewer in the environment the book is written in, so class 3 is a capability the method claims and
+does not have.
+
+That is worth stating plainly rather than leaving as an absence, because it has a consequence the
+chapters feel. **Every question the record cannot answer stops there** — ch. 03 can establish two
+clusters of deaths and can never establish whether they were one engagement, and forty seconds of tape
+would probably settle it in a minute. Reviewers reasonably read that limit as a choice. It is not; it
+is the tooling. Where a chapter's argument would be settled by observation, it now says so and the
+gap is recorded as owed, rather than the chapter reasoning around it.
 
 ### Evidence from the reader's own bracket
 
@@ -990,9 +1003,16 @@ Written before ch. 03 was drafted. Team names as reported by the record.
   **two groups 63 to 69 cells apart** in the parser's grid — Puck and Techies within **1.0** cell of
   each other at one end of the map, the other four within **26** cells at the other. The overall
   spread is **69.6** cells. The fight's own `deaths` field reads **4** against the kill log's six.
-- **Permitted.** That a window the parser labels one teamfight can contain engagements in two places,
-  separated in this case by eleven seconds and by most of the map. That a reader reviewing "the fight
-  we lost" is working from a label, not from an established event.
+- **Permitted.** That a window the parser labels one teamfight can contain **two spatially distinct
+  clusters of deaths**, here separated by eleven seconds and by 63 to 69 cells when the widest gap
+  inside either cluster is 26. That a reader reviewing "the fight we lost" is working from a label
+  rather than an established event.
+- **Not permitted, and the first draft of ch. 03 broke this.** That the window contains two
+  *engagements*, two *fights*, or two *decisions*. Clusters of deaths are not any of those: the two
+  groups could be one fight that crossed the map, a pursuit, two fronts of one commitment, two
+  unrelated skirmishes, or one decision followed by another, and with no movement in the record
+  nothing distinguishes them. The draft said "two events that share a label", which is the same
+  overclaim ch. 04 made one chapter earlier in a different costume.
 - **Observation vs inference.** Times, positions and the grouping are observed; the 30-cell threshold
   used to group them is **this book's choice**, stated in the chapter, and the gap here is wide enough
   that any threshold between about 30 and 60 gives the same two groups. That the two groups are

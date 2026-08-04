@@ -1017,3 +1017,69 @@ or a low `teamfight_participation` on a losing side are the places to look. It i
 stops Part I teaching the second stuck population to keep doing what is already losing them games —
 see §6's two-population table, which remains a **hypothesis with no bracket evidence** and must not be
 presented as more.
+
+## 15. Ch. 03 on review — the same overclaim as ch. 04, one chapter later
+
+### 15a. Two clusters are not two engagements
+
+The draft said *"This one is two events that share a label"* and registered as supported inference
+that the window holds *"at least two engagements"*. The record holds **two spatially distinct clusters
+of deaths**. It does not hold movement, so the clusters could equally be one fight that crossed the
+map, a pursuit, two fronts of one commitment, two unrelated skirmishes, or one decision followed by
+another — and the chapter said so itself, three paragraphs after the claim.
+
+**This is ch. 04's failure repeated one chapter later.** Ch. 04 said three exits failed while its own
+reasoning said a blink is an entry tool; ch. 03 said two engagements while its own reasoning said the
+record has no movement. Same shape, same distance from claim to contradiction, same failure of §4's
+headline rule — and neither was catchable by any checker, because every figure underneath both was
+registered and correct.
+
+Worth stating as an expectation rather than a coincidence: **when a chapter's compression names a
+kind of thing the record cannot see — an intention, an event, an engagement — it is almost certainly
+wrong, and the fix is always to name the trace instead.** Deaths, positions, clusters, timestamps.
+
+### 15b. The timing lesson was backwards, and the correction is better
+
+The draft said a reader splitting at the eleven-second gap was *"right from the timings alone"*. The
+gaps are 1, **11**, 10, **15**, 0. **The longest gap is fifteen seconds and it falls inside a
+cluster.** The boundary is at the second-longest. A reader applying the obvious heuristic — split at
+the biggest pause — splits in the wrong place, and the chapter came within one sentence of teaching
+that.
+
+Replaced with the true and more useful version: **a pause is a place to look, not a boundary.** Timing
+tells you where to check; only the positions segmented the sequence, and they also demoted the
+fifteen.
+
+### 15c. Also applied
+
+- **The hold no longer asks the impossible.** *"What removed their escape? Answer from the list"* was
+  ch. 01's original pattern returning: a task the evidence cannot support, revealed afterwards as
+  impossible. Now *"what, if anything, can you establish"*, with *nothing, from this record* stated as
+  valid and possibly correct. **`HOLD_PASSABLE` v2 is declared on this chapter** — the first case
+  where a chapter declared compliance and did not comply, which is exactly the limit `checks/rules.py`
+  documents in its own header.
+- **Process and calibration split inside the hold**, so a well-stated boundary that turns out wrong is
+  distinguishable from a badly stated one.
+- **"Most of the map's width" removed.** The grid is not game units and the chapter converts nothing,
+  so the only supportable statement is comparative: 63–69 cells between clusters, 26 within.
+- **Events are not decisions.** Added the four-step order — segment, locate joins, ask whether you
+  recommitted at each, then price. Only the last is ch. 04's job.
+- **`Next game` and the review loop** tightened: *the sequence changed location* rather than *the
+  fight moved*; the process mark now names an **observable committing action** rather than asking
+  whether a decision was conscious; the ten-case count is a sample of ten cases the reader chose, not
+  a rate.
+
+### 15d. The bigger finding: class 3 has never been used
+
+The review said the refusal to watch the replay "feels self-imposed". It is not a refusal — there is
+no Dota client and no `.dem` viewer here — but checking that produced something worse.
+
+**`CONTEXT.md §5` declares four classes of source and this book has used three.** Every `.replay`
+block in every chapter instructs the *reader* to watch something; **not one figure or observation in
+eight chapters came from anybody here watching a replay.** The sourcing table has claimed a capability
+the project does not have since before chapter 01.
+
+Now stated in `§5`, in `about.html`, and in ch. 03 itself, with the consequence named: questions the
+structured record cannot answer simply stop, and **a reader with a replay open can get further than
+this book can.** That is an uncomfortable sentence for a book about checking things, which is the
+argument for putting it on the method page rather than in a note.
