@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · The Death You Didn't Notice — Winning Is a Separate Skill</title>
+<meta name="description" content="Classifying a death: necessary risk, execution failure, or free risk. Why the scoreboard cannot tell you which, demonstrated on a professional match where half the deaths happened outside any fight.">
+<script>try{var t=localStorage.getItem("separate-skill-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../static/style.css">
+<script defer src="../static/theme.js"></script>
+
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Separate<span>Skill</span></a>
+    <nav class="site-nav">
+      <a href="../index.html">Contents</a>
+      <a href="../about.html">Method</a>
+      <button class="theme-toggle" type="button">☾ Dark</button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <p class="kicker">Part I · Chapter 01 · Can you distinguish free deaths from necessary risk?</p>
+    <h1>The Death You Didn't Notice</h1>
+
+    <div class="situation">
+      <p>The game ends. You finished 3/9/12. Somebody types that you fed, and you close the client
+        with the vague sense that they are right and the specific sense that you do not know which
+        nine deaths they mean.</p>
+      <p>So you do the responsible thing. You open your match history, look at the number nine, and
+        resolve to die less. You have now performed the entire ritual of self-improvement available
+        to you, and you have learned nothing at all.</p>
+    </div>
+
+    <h2>What actually happened</h2>
+
+    <p>Not to you. To ten professionals, in a game with every event recorded.</p>
+
+    <div class="case">
+      <p class="case-head"><span class="who">Team resilience vs PlayTime</span> · The Games of the
+        Future 2026 · match 8928953683 · patch 7.41e</p>
+
+      <p>Forty-nine minutes and thirty-three seconds. <strong>Fifty-nine hero deaths.</strong> The
+        scoreboard at the end contained, among others, these two lines:</p>
+
+      <div class="figures">
+        <div><span class="k">Bane</span><span class="v">0 / 12</span></div>
+        <div><span class="k">Storm Spirit</span><span class="v">18 / 1</span></div>
+        <div><span class="k">Hero deaths, total</span><span class="v">59</span></div>
+        <div><span class="k">Match length</span><span class="v">49:33</span></div>
+      </div>
+
+      <p>Twelve deaths and no kills. One death and eighteen kills. If death count measured anything
+        on its own, those two lines would be the whole story of the game, and you would already know
+        which of the two played well.</p>
+
+      <p>Here is the figure that makes the scoreboard useless rather than merely crude. Of those
+        fifty-nine deaths, <strong>thirty happened outside every window the parser recognises as a
+        teamfight.</strong> Slightly more than half of all the dying in a professional game happened
+        when there was, by that measure, no fight going on.</p>
+    </div>
+
+    <div class="hold">
+      <p>Stop here and commit before reading on</p>
+
+      <p>Below are three deaths from that match. Everything shown is in the record. Nothing else about
+        them is in the record — that is not a summary, it is the complete contents.</p>
+
+      <div class="state">A   8:15   Nature's Prophet killed Mirana        no teamfight window
+                                    no building fell within 45s
+
+B  14:24   Earth Spirit killed Mirana            no teamfight window
+                                    a building fell within 45s
+
+C  20:36   Earth Spirit killed Storm Spirit      no teamfight window
+                                    no building fell within 45s
+                                    (this hero died once in 49 minutes)
+      </div>
+
+      <p>Commit to four things in writing, before reading on:</p>
+
+      <ol>
+        <li><strong>Classify each of the three.</strong> Necessary risk, execution failure, or free
+          risk?</li>
+        <li><strong>The acceptable cost</strong> you would attach to each if it were your death — what
+          would have had to be gained for it to be worth it?</li>
+        <li><strong>The stopping condition</strong>: what would you have needed to see, in the moments
+          before, to turn around?</li>
+        <li><strong>The missing information.</strong> Of everything you cannot see here, which single
+          thing would change your classification most?</li>
+      </ol>
+
+      <p>Take the fourth one seriously. It is the answer.</p>
+    </div>
+
+    <h2>What happened next</h2>
+
+    <div class="reveal">
+      <p><strong>You cannot classify any of the three, and neither can I.</strong> Not from that. The
+        record contains no positions, no vision state, no cooldowns, no health, no idea what anyone
+        was looking at or trying to do. I checked, because I intended to write this chapter the other
+        way round: there is no death log with coordinates, no <code>x</code>, no <code>y</code>. There
+        is a time, a victim and a killer.</p>
+
+      <p>Which means the honest reading of every line above is: <em>a hero died, and something you
+        cannot see decided whether that was correct.</em></p>
+
+      <p>Death <strong>C</strong> is the one worth sitting with. It is the only death that hero
+        suffered in forty-nine minutes, so on the scoreboard it is a rounding error. It is also,
+        for exactly that reason, the most likely of the three to have been a serious mistake — a
+        player who dies once has not been taking risks that get punished, so the one time they were
+        caught, something unusual happened. Or it was a considered trade at a moment that needed one.
+        The record will not say. The scoreboard, which reports it as a 1, is not even asking.</p>
+    </div>
+
+    <h2>The reasoning</h2>
+
+    <p>Being strict about the evidence, because this chapter is about what a number does not contain:</p>
+
+    <p><strong>Observed.</strong> Fifty-nine hero deaths; the time, victim and killer of each; the
+      scoreboard lines; the match length.</p>
+
+    <p><strong>Supported inference.</strong> Death totals do not distinguish between kinds of death,
+      because the record that produces them contains nothing about circumstance.</p>
+
+    <p><strong>Hypothesis.</strong> That the thirty deaths outside fight windows are, on average,
+      more avoidable than the twenty-nine inside them. Plausible — nobody is trading in a coordinated
+      exchange when no exchange is happening — and <em>unestablished</em>. Note also whose definition
+      is doing the work: "teamfight" is the parser's judgement, not the game's, and a death at the
+      edge of a window is a classification artefact.</p>
+
+    <p><strong>Unknowable.</strong> Whether any individual death in this match was correct. What
+      anyone intended, saw, or had available.</p>
+
+    <p>So here is the framework the rest of Part I runs on. Every death you take belongs to one of
+      three classes, and they need completely different repairs.</p>
+
+    <table>
+      <thead><tr><th>Class</th><th>What happened</th><th>What fixes it</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Necessary risk</strong></td><td>You accepted the risk, a plausible exchange was available, and you took it</td><td>Nothing. This is the cost of playing</td></tr>
+        <tr><td><strong>Execution failure</strong></td><td>The decision was sound; the hands, the timing or the click were not</td><td>Practice, not analysis. This book will not help</td></tr>
+        <tr><td><strong>Free risk</strong></td><td>You accepted substantial risk with no plausible exchange available</td><td>Chapters 02, 03 and 04</td></tr>
+      </tbody>
+    </table>
+
+    <p>The definition that separates the third from the first is deliberately awkward, and the
+      awkwardness is the point:</p>
+
+    <blockquote>A death is <strong>free</strong> when, given what was reasonably knowable at the time,
+      you accepted substantial death risk without a plausible exchange — in objectives, information,
+      resources, space, time, or another player's survival.</blockquote>
+
+    <p><em>Given what was reasonably knowable at the time.</em> Not given what happened. A support who
+      dies buying six seconds for a core has made a correct decision whether or not the core converted
+      those six seconds; a player who walks into the dark and survives because nobody happened to be
+      there has made a bad one. The exchange has to have been <strong>available</strong>, not
+      successful.</p>
+
+    <p>This is the distinction the scoreboard cannot represent and the reason the number nine told you
+      nothing. Twelve deaths on a position-five hero may be twelve correct purchases of space. One
+      death on a mid may be the game. Neither figure is evidence about anything until you know what
+      was available at the moment the risk was taken — and the only place that information exists is
+      the replay.</p>
+
+    <p>Which is the uncomfortable conclusion of the first chapter of a book about decisions:
+      <strong>you cannot do this from the scoreboard, and there is no shortcut that lets you skip
+      watching yourself die.</strong> What the rest of Part I does is make that watching efficient.
+      Chapter 02 is the information that was on your screen before it happened. Chapter 03 is the
+      thirty seconds that removed your exit. Chapter 04 is the moment leaving was still free, and what
+      it would have cost. Chapter 05 is the deaths you should have taken and did not, because a
+      chapter this pleased with itself about avoidable deaths will otherwise teach you to avoid all of
+      them, which loses games in a quieter way.</p>
+
+    <div class="boundary">
+      <p><strong>Where this stops applying.</strong> The three classes are not equally useful to
+        everyone. If your deaths are mostly execution failures — you decided correctly and the hands
+        did not follow — then classifying them will be an entertaining way to avoid the practice that
+        would actually help, and this book is not your first book. The exclusion is stated at the
+        front for that reason.</p>
+      <p>The framework also assumes you can reconstruct what was knowable. In a game you barely
+        remember, played four days ago, you cannot, and a classification made from memory is fiction.
+        Classify from the replay or do not classify.</p>
+    </div>
+
+    <div class="owed">
+      <p><strong>What is owed here.</strong> An inversion — a case where classifying deaths carefully
+        made a player <em>worse</em>. The plausible shape: a player who becomes so attentive to
+        avoidable deaths that they stop taking necessary risks, which chapter 05 exists to prevent but
+        which no case in this book yet demonstrates.</p>
+      <p>Also owed: any evidence at all about how often each class occurs at Archon–Legend. This
+        chapter establishes that the classes exist and that the scoreboard cannot apply them. It says
+        nothing about which class is most common in your games, and no bracket sample in this book is
+        registered yet.</p>
+    </div>
+
+    <div class="inversion">
+      <p><strong>What transfers, and what does not.</strong> This is a professional match used to
+        demonstrate a limitation of a data source. That is an unusually safe use of one — the argument
+        would survive if the players were far worse, because the missing fields are missing for
+        everybody.</p>
+      <p><em>Transfers:</em> the three classes; the ex-ante test; the fact that a death count is not a
+        measurement of anything on its own; that roughly half the deaths in a game can happen with no
+        fight in progress.</p>
+      <p><em>Does not transfer:</em> any judgement about these ten players, which is why none of them
+        is named and why only heroes appear above. A scoreboard line of 0 and 12 is not an accusation,
+        here or in your own game. It is a prompt to go and look.</p>
+    </div>
+
+    <h2>Next game</h2>
+
+    <div class="nextgame">
+      <ol>
+        <li>After the game, write down the number of times you died. Then close the scoreboard. That
+          number is the last useful thing it will give you.</li>
+        <li>Open the replay and find three of your deaths. Not all of them — three.</li>
+        <li>For each, write the class before you write the excuse: necessary risk, execution failure,
+          or free risk.</li>
+        <li>For any you call free, write the exchange that <em>was</em> available and that you did not
+          take. If you cannot name one, it was not free — it was something else, and you have just
+          learned something.</li>
+        <li>Do this for one game a week. Not every game. One.</li>
+      </ol>
+    </div>
+
+    <h2>After the game</h2>
+
+    <div class="aftergame">
+      <p><strong>Open your last loss and pick your second death.</strong> Not the first, which you
+        will rationalise, and not the last, which you already remember.</p>
+      <p><strong>The observable decision:</strong> the moment you committed to the position you died
+        in — the click that put you there, not the one that killed you.</p>
+      <p><strong>The pass mark, set before you look:</strong> you can state, in one sentence, the
+        exchange that was available at that moment, and whether you took it. Pass if you can name it,
+        whether or not you got it. Fail if the honest sentence is <em>I was not thinking about an
+        exchange.</em></p>
+      <p>Note what is not being graded. Not whether you died — you are reviewing a death, so you did.
+        Not whether the exchange came off, which depended on four other people. Only whether there
+        was one, and whether you knew it at the time.</p>
+      <p>One replay, one death, one sentence. Three to six games a week does not give you enough
+        repetitions to learn this by volume, so this is where the repetitions come from.</p>
+    </div>
+
+    <div class="replay">match 8928953683 · 49:33 · 59 hero deaths, 30 outside any teamfight window<br>
+      the three deaths above: 8:15 · 14:24 · 20:36 — and the record will not tell you about any of them</div>
+
+    <p class="note">Chapter 01 is a pilot, testing whether the diagnostic method avoids hindsight.
+      Judge it on that: the hold asks you to classify three deaths, and the answer is that you cannot,
+      which is either the most honest thing in the book or a trick played on a reader who was willing
+      to think. <a href="../index.html">Back to contents</a>.</p>
+  </div>
+</main>
+</html>

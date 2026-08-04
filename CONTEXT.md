@@ -401,7 +401,7 @@ jobs are defined by the seat rather than by the topic.
 ### Part I — Can you distinguish free deaths from necessary risk?
 | # | Title | Status |
 |---|---|---|
-| 01 | The Death You Didn't Notice | ☐ |
+| 01 | The Death You Didn't Notice | ☑ 9 claims · match 8928953683 · **pilot** |
 | 02 | What the Map Already Said | ☐ |
 | 03 | The Thirty Seconds Before | ☐ |
 | 04 | Leaving Is a Skill | ☐ |
@@ -596,6 +596,38 @@ external review. The next chapter writes its ledger first.
   A later chapter may return **only for a different inference** — 22 for why the defender's exchange
   rate improves, 23 for objective windows, 24 for sequencing the ending — and each must draw its own
   conclusion rather than retell this one.
+
+### 8928953683 — Team resilience vs PlayTime, The Games of the Future 2026
+
+Written **before** ch. 01 was drafted, which is the policy and which the previous entry failed.
+
+- **Patch.** 7.41e. **Source mode.** Professional broadcast. **Identity.** Named in the record and
+  permitted, but **the chapter names heroes only, never players.** Nothing in ch. 01's argument needs
+  a person's name, and the one thing the chapter must not become is a published judgement of a named
+  professional's twelve deaths. §4: nobody in this book is a genius, and nobody is an idiot either.
+- **Facts.** 49:33, Dire won. 59 hero deaths, of which 30 fall outside every teamfight window
+  OpenDota records. Scoreboard extremes: one hero finished 0 kills and 12 deaths, another 18 and 1.
+  Per-hero kill and death counts, the kill log with timestamps and victims, and the teamfight windows.
+- **Permitted.** That the death *count* on a scoreboard classifies nothing. That roughly half the
+  deaths in a professional game happen outside anything the parser recognises as a fight — so
+  "deaths" and "deaths in fights" are different quantities, and the scoreboard reports neither
+  usefully.
+- **Observation vs inference.** Timestamps, victims and killers are observed. The teamfight windows
+  are **the parser's**, not the game's: OpenDota decides what counts as a teamfight, and a death at
+  the edge of one is a classification artefact rather than a fact. Say so wherever the 30 is used.
+- **Confounders.** The parser's teamfight definition, as above. Role: a position-five hero dying
+  repeatedly may be buying space each time, and the record cannot distinguish that from carelessness
+  — which is the chapter's point rather than a gap in it.
+- **Prohibited.** **Never classify an individual death in this match.** The record has no positions,
+  no vision state, no cooldowns and no intent, so no death here can be called free, necessary or
+  misexecuted on this evidence — and a chapter that did so would be inventing the ex-ante information
+  its own definition requires. Never that the 0/12 hero played badly; never that the 18/1 hero played
+  well. Never a prevalence claim about any bracket.
+- **Transfer.** The classification framework and the demonstration that the scoreboard cannot apply
+  it. Not any judgement about these players.
+- **Spent.** Ch. 01 takes the deaths-outside-fights count and the two scoreboard extremes, to show
+  that the count is uninformative. A later chapter may return only for a different inference — ch. 02
+  and ch. 03 need *reconstruction* evidence this match cannot supply without replay observation.
 
 ## 8. What got caught
 

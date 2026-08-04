@@ -48,3 +48,15 @@
 21	8929124210	gold_adv_at	39	12380
 21	8929124210	xp_adv_at	39	989
 21	8929124210	xp_adv_at	40	4934
+#
+# ch 01 — The Death You Didn't Notice. Team resilience vs PlayTime.
+# The scoreboard extremes and the deaths-outside-fights count; see CONTEXT.md 7.
+1	8928953683	duration	-	2973
+1	8928953683	winner	-	dire
+1	8928953683	count	teamfights	8
+1	8928953683	hero_stat	Bane:deaths	12
+1	8928953683	hero_stat	Bane:kills	0
+1	8928953683	hero_stat	Storm Spirit:kills	18
+1	8928953683	hero_stat	Storm Spirit:deaths	1
+1	8928953683	kills_outside_teamfights	outside	30
+1	8928953683	kills_outside_teamfights	total	59

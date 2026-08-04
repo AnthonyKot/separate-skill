@@ -10,13 +10,19 @@ server moving. Contrast checks/claims.py, which reads documents on dota2.com.
 
 Claim types, one per row:
 
-    duration        -                       seconds
-    winner          -                       radiant | dire
-    gold_adv_at     <minute>                radiant gold advantage at that minute
-    xp_adv_at       <minute>                radiant xp advantage at that minute
-    objective_time  <type>:<key>            seconds into the game
-    purchase_time   <player>:<item>         seconds into the game
-    buyback_time    <player>                seconds into the game
+    duration        -                        seconds
+    winner          -                        radiant | dire
+    gold_adv_at     <minute>                 radiant gold advantage at that minute
+    xp_adv_at       <minute>                 radiant xp advantage at that minute
+    series_max      <gold|xp>                the maximum of that series
+    series_max_minute <gold|xp>              the minute the maximum occurs
+    objective_time  <type>:<key>[#N]         seconds; #N selects the Nth occurrence
+    purchase_time   <player>:<item>          seconds into the game
+    buyback_time    <player>                 seconds into the game
+    teamfight_start <index>                  seconds, 1-based
+    teamfight_deaths <index>:<radiant|dire>  hero deaths on that side in that fight
+    hero_stat       <Hero Name>:<field>      any scoreboard field, addressed by hero
+    kills_outside_teamfights <outside|total> hero deaths outside every fight window
     count           <buybacks|teamfights|objectives|picks_bans>
 
 A tolerance may be given in the optional sixth column, as an integer. It is
@@ -38,6 +44,13 @@ def load(match_id):
     if not os.path.exists(path):
         return None
     with open(path) as f:
+        return json.load(f)
+
+
+def hero_names():
+    """id -> localized name, from the committed map in data/heroes.json."""
+    path = os.path.join(HERE, "data", "heroes.json")
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -79,6 +92,34 @@ def resolve(d, check, arg):
                 if seen == nth:
                     return o.get("time")
         raise LookupError(f"no occurrence {nth} of objective {arg!r} (found {seen})")
+
+    if check == "hero_stat":
+        # "<Hero Name>:<field>" — e.g. "Bane:deaths". Heroes rather than players,
+        # deliberately: ch. 01 needs a scoreboard line and must not name the human
+        # attached to it. See the ledger for 8928953683 in CONTEXT.md 7.
+        name, _, field = arg.partition(":")
+        heroes = hero_names()
+        for p in d["players"]:
+            if heroes.get(str(p.get("hero_id"))) == name:
+                if field not in p:
+                    raise LookupError(f"{name} has no field {field!r}")
+                return p[field]
+        raise LookupError(f"no {name!r} in this match")
+
+    if check == "kills_outside_teamfights":
+        # How many hero deaths fall outside every window the parser calls a
+        # teamfight. The windows are OPENDOTA'S JUDGEMENT, not the game's, so any
+        # chapter citing this must say whose definition it is.
+        fights = [(t["start"], t["end"]) for t in d.get("teamfights") or []]
+        total = outside = 0
+        for p in d["players"]:
+            for k in p.get("kills_log") or []:
+                if not k["key"].startswith("npc_dota_hero_"):
+                    continue
+                total += 1
+                if not any(a <= k["time"] <= b for a, b in fights):
+                    outside += 1
+        return outside if arg == "outside" else total
 
     if check in ("series_max", "series_max_minute"):
         # Registering a value at a minute does not license the word "peak" — the
