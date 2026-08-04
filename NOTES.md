@@ -1225,6 +1225,24 @@ wanted per-second position the record lacks, ch. 05 was redesigned because its o
 exist in professional play, and ch. 02 existed only because a ledger entry turned out to be wrong.
 **That step is the highest-leverage part of the runbook and it is step 2.**
 
+### 17c-bis. A landmine already sitting in ch. 06, flagged not fixed
+
+`CONTEXT.md §6` contracts ch. 06 as *"distinguish gold from XP — two resources, different purchases,
+**one usually ignored**"*, and titles it **"Two Resources, and You Count One"**. Both bake in a
+**prevalence claim**: that players usually ignore one of the two.
+
+This book has no evidence for that and cannot get any from its sources — the bracket sample carries
+duration, rank tier and result and no per-hero data, which is a registered claim, and nothing anywhere
+records what a player attended to. It is the same unevidenced-claim family that produced ch. 03's
+*two engagements*, ch. 04's *three exits failed* and ch. 05's mirrored test, arriving this time in the
+specification rather than in the prose.
+
+**Deliberately not fixed here**, because rescoping before checking the evidence is the error the
+runbook's step 2 exists to prevent, and the right rewrite depends on what the record turns out to
+support. What is decidable now and should be treated as decided: **the prevalence wording cannot
+survive in any version.** *Usually ignored* and *you count one* are claims about readers, not about
+the game, and no check will ever back them.
+
 ### 17d. Standing risks, updated by Part I
 
 The four in §7c still hold. Three more earned their place:
