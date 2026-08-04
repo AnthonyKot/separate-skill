@@ -253,3 +253,15 @@
 # the seven movement-item uses by the three heroes who died, registered so the
 # prose count is recomputable rather than added up by hand.
 4	8927063876	teamfight_item_use	5:Doom:shivas_guard	1
+
+# ch 04, on review. The chapter claimed three exits were attempted and failed,
+# which the record cannot support — a blink is an entry tool as often as an exit.
+# These replace that claim with what the record does hold: where everyone died.
+4	8927063876	teamfight_death_spread	5	20.6
+4	8927063876	teamfight_death_dist_from_centre	5:Undying	3.3
+4	8927063876	teamfight_death_dist_from_centre	5:Doom	8.3
+4	8927063876	teamfight_death_dist_from_centre	5:Earthshaker	12.7
+4	8927063876	teamfight_death_dist_from_centre	5:Gyrocopter	8.3
+4	8927063876	teamfight_death_dist_from_centre	5:Tusk	2.9
+4	8927063876	teamfight_death_dist_from_centre	5:Shadow Fiend	5.4
+4	8927063876	teamfight_death_dist_from_centre	5:Earth Spirit	9.8

@@ -564,7 +564,7 @@ jobs are defined by the seat rather than by the topic.
 | 01 | The Death You Didn't Notice | ☑ 11 claims · match 8928953683 · **pilot** |
 | 02 | What the Map Already Said | ☑ 24 claims · match 8928953683 · reuses ch. 01's case for a different inference |
 | 03 | The Thirty Seconds Before | ☐ |
-| 04 | Leaving Is a Skill | ☑ 34 claims · match 8927063876 |
+| 04 | Leaving Is a Skill | ☑ 42 claims · match 8927063876 |
 | 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
 
 **The working definition of a free death, and the reason Part I is five chapters.**
@@ -946,10 +946,14 @@ Written before ch. 04 was drafted.
   reads **6**; the per-player entries sum to **7**, and the kill log inside the window also gives 7.
   The difference is Earth Spirit, who died at 50:36 — the exact end of the window. Both figures are
   registered. Choosing the convenient one silently is the failure this book exists to avoid.
-- **Permitted.** That an exit is an action with a price and a failure rate: it costs an item, a
-  cooldown and a position, and in this fight it was paid three times and failed three times. That
-  what staying earns is partly recorded — and that the largest earner in this fight is a player who
-  died in it.
+- **Permitted.** That mobility is not distance. All seven deaths carry positions and fall inside
+  **20.6 grid cells** of one another, and the hero who spent the most mobility — three actions — died
+  **3.3 cells** from the centre of the pile, nearer than five of the other six. That survival and
+  fight value are different measurements: Gyrocopter died and recorded the largest gold and
+  experience gains on the map.
+- **Not permitted from those same figures:** that staying produced the gains, that leaving would have
+  forfeited them, or that the death bought anything. The totals are an **upper bound** on what missing
+  the whole fight could cost, never the marginal cost of leaving at one second.
 - **Observation vs inference.** Every time, item use, delta and death is observed. That a scroll or a
   blink was used **in order to leave** is **inference and a weak one** — a scroll can bring a player
   in, a blink is an entry tool at least as often as an exit, and the record carries no destination.
@@ -959,8 +963,12 @@ Written before ch. 04 was drafted.
   Radiant barracks had already fallen at 46:56 and 47:06. A Radiant tier-two fell at 51:12, after the
   fight. Professional coordination throughout.
 - **Prohibited.** **Never that anyone should have left**, or left earlier — the record contains no
-  counterfactual and no position, and the whole chapter is that the price of leaving is unrecorded.
-  Never that the three who used movement items used them to escape; see *Observation vs inference*.
+  counterfactual, and the whole chapter is that the price of leaving is unrecorded. **Never that
+  anyone attempted to leave at all.** The first draft said three exits were attempted and failed,
+  "three of three", while its own reasoning section admitted a blink is an entry tool as often as an
+  escape. That is the headline rule of §4 breaking in the most expensive place — the chapter's
+  central claim — and it was caught on review rather than by any checker, because every figure under
+  it was correct.
   Never that Gyrocopter's death was worth it *because* of the gold — that grades by outcome, which
   ch. 01 bans. Never a prevalence claim about any bracket.
 - **Transfer.** The pricing procedure — naming what the exit costs and when it expires, before it is
@@ -1198,7 +1206,11 @@ and the numbering records which.
    the snapshot. If a figure you want has no check type, add one (`checks/matches.py`) — the
    machinery grows to fit the argument, not the reverse. Ch. 32 needed four new types to see wards.
 5. **Draft**, five moves, one hold (§3). The hold must offer a way to pass using only what it shows.
-6. **Link it** in `docs/index.html` and mark the register row in §6.
+6. **Link it** in `docs/index.html`, mark the register row in §6, and **re-read every forward
+   reference to this chapter that an earlier chapter already made.** A summary written before its
+   subject exists is the one case §4's audit rule cannot catch by construction — there is nothing yet
+   for it to be inconsistent with. Ch. 01 described ch. 04 as "the moment leaving was still free",
+   which is the exact opposite of what ch. 04 turned out to argue.
 7. **`./verify.sh`** — the whole suite; the count is printed rather than stated here, because a
    number typed into a runbook is the thing §4's audit rule is about. Expect `register.py` to catch
    something; it usually does. Expect `status.py` to catch the chapter count, every time.

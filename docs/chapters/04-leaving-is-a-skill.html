@@ -27,12 +27,11 @@
     <h1>Leaving Is a Skill</h1>
 
     <div class="situation">
-      <p>The fight is going wrong and you know it. There is a moment — you can usually feel it — when
-        the thought arrives: <em>I should get out of here.</em></p>
+      <p>The fight is going wrong and you know it. There is a moment when the thought arrives: <em>I should get out of here.</em></p>
       <p>And then you do not, and afterwards the lesson you draw is that you should have left sooner.
         That lesson is nearly useless, because it is not a decision. It is a wish. The decision has
-        three parts and none of them is <em>leave</em>: what your exit is, what it costs to use, and
-        the moment it stops being available.</p>
+        four parts and none of them is <em>leave</em>: the mechanism that removes you, what using it
+        costs, the event after which it is gone, and the earlier signal that says use it now.</p>
     </div>
 
     <h2>What actually happened</h2>
@@ -78,8 +77,9 @@
         </table>
       </div>
 
-      <p>Three heroes spent movement between them — <strong>seven</strong> separate uses — and all
-        three died anyway.</p>
+      <p>Between them those three spent <strong>seven</strong> mobility actions inside the fight, and
+        all three died. What those actions were <em>for</em> is not in the record — see below, because
+        it is the most important limit in this chapter.</p>
     </div>
 
     <div class="hold">
@@ -88,11 +88,17 @@
       <p>Wind back to <strong>49:49</strong>, the second the fight begins. You are Undying. Everything
         below is in the record at that moment.</p>
 
-      <div class="state">CLOCK      49:49. The game has been going fifty minutes
-YOU        a town portal scroll, and a blink you have not used yet
-THEM       an aegis, taken at 47:39 — somebody on the other side has a second life
-MAP        two of their barracks are already down; this is deep in their half
-FIGHT      it starts now, ten heroes, and you are in it
+      <div class="state">CLOCK       49:49, in a game that will run to 60:38
+YOU         a town portal scroll, and a blink you have not used yet
+THEM        an aegis, taken at 47:39 — somebody has a second life
+MAP         two of their barracks fell at 46:56 and 47:06; this is deep in their half
+FIGHT       it starts now. All ten heroes are alive and all ten are in it
+AFTERWARDS  seven of the ten will be dead in forty-seven seconds
+
+NOT IN THE RECORD, and you should notice that it is not:
+  your position, your health, your mana, your cooldowns
+  where any enemy is standing, what terrain is behind you
+  whether a teleport is realistic from where you are
 </div>
 
       <p>You are not being asked whether to fight. You are in one. Commit in writing:</p>
@@ -103,15 +109,33 @@ FIGHT      it starts now, ten heroes, and you are in it
         <li><strong>What does using it cost?</strong> The item and its cooldown are the small part.
           Name the rest: your share of the fight, the position, what your team is left holding.</li>
         <li><strong>When does it expire?</strong> The observable event after which that exit is no
-          longer available to you. This is the one people never write down.</li>
+          longer available to you. Without this written down, the plan is incomplete.</li>
         <li><strong>What is the trigger?</strong> The thing you will see that means: use it now.</li>
       </ol>
 
-      <p>Two answers pass that people assume do not. <em>My exit is that I have none, and I have
-        priced that before engaging</em> is a complete answer — plenty of heroes have no exit and the
-        knowledge is worth more than the wish. So is <em>I intend to spend my life here and here is
-        what it buys</em>, provided you name the purchase. What does not pass is an exit with no
-        expiry, because an exit you have not dated is a feeling.</p>
+      <p><strong>The honest answer may be that you cannot do this from what is above</strong> — and
+        that is the fifth admissible response, not a failure. The second panel lists what the record
+        withholds, and naming an exit without a position or a health bar is guesswork dressed as
+        method. If you take that route, say <em>which</em> missing item blocks you. Chapters
+        <a href="01-the-death-you-didnt-notice.html">01</a> and
+        <a href="02-what-the-map-already-said.html">02</a> spent themselves establishing that
+        discipline and this chapter does not get to suspend it.</p>
+
+      <p>Two more answers are admissible that people assume are not. <em>I have no exit, and I priced
+        that before engaging</em> is complete — many heroes have none, and knowing it beforehand is
+        worth more than wishing for one afterwards. Note that it does not mean <em>I must die
+        here</em>: it may mean the engagement was mispriced, or that the remaining decision is how to
+        lose less.</p>
+
+      <p>And <em>I intend to spend my life here, and here is what it buys</em> — but with a condition,
+        because otherwise it validates anything. <strong>Naming a purchase does not make the exchange
+        sound.</strong> The purchase has to have been plausibly available from what you knew at the
+        time, and <strong>zero deaths remains a valid maximum cost.</strong> A player can always
+        invent something a death allegedly bought; that is the ex-post error from chapter 01 wearing a
+        noble expression.</p>
+
+      <p>What does not pass is an exit with no expiry, because an exit you have not dated is a
+        feeling.</p>
     </div>
 
     <h2>What happened next</h2>
@@ -124,9 +148,39 @@ FIGHT      it starts now, ten heroes, and you are in it
         <strong>50:04</strong>, fifteen seconds in. Earthshaker used a blink and a force staff and died
         at <strong>50:21</strong>. Dark Seer used two blinks and a wind waker and lived.</p>
 
-      <p><strong>The exit was available, was paid for, and did not work.</strong> Three times. That is
-        the first half of this chapter and it is the half nobody says out loud: leaving is an action
-        with a failure rate, and a plan that treats it as a guaranteed escape hatch is not a plan.</p>
+      <p>Here is what the record will and will not support, and the difference is the chapter.</p>
+
+      <p><strong>It will not support "three exits failed."</strong> A town portal scroll can bring a
+        player into a fight. A blink is an entry tool at least as often as an escape. The file holds
+        no destination and no intention, so nothing above establishes that anybody tried to leave.</p>
+
+      <p><strong>What it does hold is where everybody stopped.</strong> All seven deaths are recorded
+        with map positions, and they fall inside <strong>20.6 cells</strong> of one another — a single
+        pile, in the parser's own grid. Then the figure this chapter turns on:</p>
+
+      <div class="timeline">
+        <table>
+          <thead><tr><th>Hero</th><th>Mobility actions used</th><th>Distance from the centre of the pile</th></tr></thead>
+          <tbody>
+            <tr><td>Tusk</td><td>—</td><td>2.9</td></tr>
+            <tr><td><strong>Undying</strong></td><td><strong>3</strong></td><td><strong>3.3</strong></td></tr>
+            <tr><td>Shadow Fiend</td><td>—</td><td>5.4</td></tr>
+            <tr><td>Doom</td><td>2</td><td>8.3</td></tr>
+            <tr><td>Gyrocopter</td><td>—</td><td>8.3</td></tr>
+            <tr><td>Earth Spirit</td><td>—</td><td>9.8</td></tr>
+            <tr><td>Earthshaker</td><td>2</td><td>12.7</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>The hero who spent the most mobility died nearer the centre of the pile than five of
+        the other six.</strong> That is not evidence that his exit failed, because it is not evidence
+        that he was leaving. It is something narrower and harder to argue with: <strong>spending
+        mobility did not, here, put anybody anywhere else.</strong></p>
+
+      <p>Which is the first half of this chapter. An item in your inventory is not an exit. Mobility
+        is a resource an exit <em>consumes</em>, and it can be consumed for four other purposes first
+        — and once it is gone it cannot be counted again at the moment you finally decide to go.</p>
 
       <p>Here is the second half, and it is the more uncomfortable one.</p>
 
@@ -137,13 +191,14 @@ FIGHT      it starts now, ten heroes, and you are in it
         <div><span class="k">Earthshaker</span><span class="v">−84 gold</span></div>
       </div>
 
-      <p><strong>Gyrocopter died in this fight.</strong> And Gyrocopter came out of it with more gold
-        and more experience than anyone else on the map — more than Dark Seer, who survived it
-        untouched enough to use three items and walk away.</p>
+      <p><strong>Gyrocopter died in this fight, and recorded its largest gains</strong> — more gold
+        and more experience than anyone on the map, including Dark Seer, who survived it.</p>
 
-      <p>So the question <em>should he have left?</em> has no answer here, and this book is not going
-        to invent one. What the fight shows is narrower and it is enough: <strong>staying had a
-        recorded value, and it was large, and it went to somebody who died.</strong></p>
+      <p>Read that carefully, because the tempting reading is not available. It does <strong>not</strong>
+        show that staying produced those gains, that leaving earlier would have forfeited them, or that
+        the death bought anything. Some of it may have been banked before any exit decision arose. What
+        it shows is one thing and it is enough: <strong>survival and value are two different
+        measurements, and in this fight they came apart completely.</strong></p>
     </div>
 
     <h2>The reasoning</h2>
@@ -163,14 +218,14 @@ FIGHT      it starts now, ten heroes, and you are in it
       The argument does not need it: it needs only that the items were spent and the deaths
       happened.</p>
 
-    <p><strong>Unknowable.</strong> Whether anybody should have left, or left earlier. What leaving
-      would have cost any of them. Whether Gyrocopter's death was worth its own gold — that is
-      outcome reasoning, banned in chapter 01, and it does not stop being banned because the number is
-      impressive.</p>
+    <p><strong>Unknowable.</strong> Whether anybody tried to leave, should have left, or should have
+      left earlier. What leaving would have cost any of them. Whether Gyrocopter's death was worth its
+      own gold — that is outcome reasoning, banned in chapter 01, and it does not stop being banned
+      because the number is impressive.</p>
 
-    <blockquote><strong>The record can price staying. It can never price leaving.</strong> One side of
-      the exit decision is in the file — gold, experience, a building, a body — and the other side is
-      a counterfactual that no replay in existence contains.</blockquote>
+    <blockquote><strong>The record can describe the path taken. It cannot price the path
+      forgone.</strong> One side of the exit decision leaves a trace — gold, experience, a position, a
+      body — and the other is a counterfactual that no replay in existence contains.</blockquote>
 
     <p>Which is why <em>I should have left sooner</em> feels like a lesson and teaches nothing. It
       compares what happened against an imagined alternative whose price you have never once
@@ -184,15 +239,25 @@ FIGHT      it starts now, ten heroes, and you are in it
       <thead><tr><th>Part</th><th>The question</th><th>Why it is the hard one</th></tr></thead>
       <tbody>
         <tr><td><strong>The exit</strong></td><td>What specifically removes you from here?</td>
-          <td>Easy, and the only part most players have. "Run" is not an answer at fifty minutes</td></tr>
+          <td>The easy part. "Run" is not a mechanism</td></tr>
         <tr><td><strong>The price</strong></td><td>What does using it cost beyond the item?</td>
-          <td>Your share of the fight. Here that share was up to 1,769 gold and 5,912 experience</td></tr>
+          <td>Your share of the fight. The 1,769 gold and 5,912 experience above is an <em>upper
+            bound</em> on what missing the whole fight could forfeit — never the marginal cost of
+            leaving at one particular second, which is the number you actually need and cannot
+            have</td></tr>
         <tr><td><strong>The expiry</strong></td><td>After what event is it no longer available?</td>
-          <td>Almost nobody writes this down, and it is the one that decides the outcome</td></tr>
+          <td>The part most often left implicit — and an implicit expiry cannot be checked against</td></tr>
         <tr><td><strong>The trigger</strong></td><td>What will you see that means <em>now</em>?</td>
-          <td>Without it you leave on feeling, which is to say too late or not at all</td></tr>
+          <td>Without it you leave on feeling, which is a decision made by whatever you happen to
+            notice</td></tr>
       </tbody>
     </table>
+
+    <p><strong>The trigger must come before the expiry, and if they are the same event the plan is
+      broken.</strong> <em>Leave when their initiator jumps me</em> names the moment the exit stops
+      existing and calls it the moment to use it. In the example below, the initiator blinking is the
+      expiry and the enemy carry turning toward you is the trigger — one is earlier than the other,
+      and that gap is the entire plan.</p>
 
     <p>Note what this chapter is <em>not</em> doing, because the neighbours own it.
       <strong>Chapter 03</strong> traces how an escape gets closed — the sequence, before this moment.
@@ -233,10 +298,9 @@ FIGHT      it starts now, ten heroes, and you are in it
         <li>With the exit, name its <strong>expiry</strong>: the thing after which you will not have
           it. Their stun, their initiator arriving, your mana going under, the cooldown you are about
           to spend on something else.</li>
-        <li>Name the <strong>trigger</strong> — one observable event that means use it now. One, not a
-          list. You will not check a list at fifty minutes.</li>
-        <li>When you use an exit and it fails, note that it failed. Not as a mistake — as a data
-          point. Exits have a failure rate and you are entitled to know yours.</li>
+        <li>Name the <strong>trigger</strong> — one observable event that means use it now. One, not a list: a list is not checkable mid-fight.</li>
+        <li>When you use an exit and still die, note it. Not as a mistake — as a data point about
+          whether your triggers fire early enough to leave you anything to use them on.</li>
         <li>Once a game, when you decide to stay, say what staying is buying. If you cannot name it in
           five words, that is the finding, and it is more useful than the fight.</li>
       </ol>
@@ -268,11 +332,12 @@ Trigger:   the moment their carry turns toward me
       <p>Four results, as everywhere: good process and good calibration; good process and poor
         calibration — the plan was followed and was not worth following; no process, so nothing to
         grade; or not enough evidence. Whether you survived goes on its own line and never moves the
-        grade — three heroes in this chapter's fight survived nothing despite doing everything, and
-        one gained more than anybody by dying.</p>
-      <p>Ten games of this and you will have something no guide can give you: <strong>your own exit
-        failure rate</strong>, and a sense of whether your triggers fire early enough to be worth
-        naming.</p>
+        grade — three heroes in this chapter's fight used every mobility action the record shows
+        them using and died inside the same pile as everyone else, and a fourth died while recording
+        the fight's largest gains.</p>
+      <p>Ten games of this and you will have something no guide can give you: a record of
+        <strong>how often your trigger fired at all</strong>, and whether it fired early enough to
+        leave anything to decide.</p>
     </div>
 
     <div class="replay">match 8927063876 · 60:38 · teamfight 5, 49:49–50:36<br>

@@ -879,3 +879,76 @@ window of 6:39–7:48, which is seventy. Negative-controlled by restoring ch. 32
 that number is registered anywhere for any reason — *nine* passes if any claim in the book has the
 value 9. It catches large counts reliably and small ones only sometimes. It is not a substitute for
 adding up twice.
+
+## 13. Ch. 04 on review — the central claim was wrong, and the record replaced it
+
+The most serious defect found in any chapter so far, because it was the chapter's **thesis** rather
+than a sentence in it.
+
+### 13a. "Three exits failed" was never supported
+
+The draft said *"The exit was available, was paid for, and did not work. Three times"*, and later
+*"three of three"*. Its own reasoning section, four paragraphs down, said a town portal scroll can
+bring a player in and a blink is an entry tool as often as an escape, and that the record holds no
+destination and no intention.
+
+Both cannot be true. The evidence supports only: **three heroes spent seven mobility actions inside
+the fight and all three died.** It does not support that an exit was attempted, that one was available
+at the relevant moment, that leaving failed, or a failure rate of any kind.
+
+This is §4's headline rule breaking in the most expensive available place. Every figure underneath the
+claim was registered and correct, so no checker could see it — the same shape as book 4's chapter
+where every claim verified and the causal arrow pointed backwards.
+
+### 13b. The record had a better answer than either repair on offer
+
+The review offered two fixes: check the replay tape, or retreat to "mobility was consumed". The tape
+is unavailable here — there is no client and no replay parser beyond the JSON. But the record holds
+something neither option used: **`deaths_pos` for every death in the fight.**
+
+- All seven deaths fall within **20.6 cells** of one another. One pile.
+- **Undying, who spent three mobility actions — the most of anyone — died 3.3 cells from the centre,
+  nearer than five of the other six.**
+
+So the honest replacement is stronger than the false claim it replaces: **spending mobility did not,
+here, put anybody anywhere else.** It says nothing about intention, needs nothing about intention, and
+makes the chapter's point better — *an item in your inventory is not an exit; mobility is a resource
+an exit consumes, and it can be consumed for four other purposes first.*
+
+Three new check types: `teamfight_death_pos`, `teamfight_death_spread`,
+`teamfight_death_dist_from_centre`.
+
+### 13c. Everything else applied
+
+- **"Staying had a recorded value"** → survival and value are different measurements and came apart.
+  The figures do not show that staying produced the gains, that leaving would have forfeited them, or
+  that the death bought anything. Some may have been banked before any exit decision existed.
+- **"The record can price staying, never leaving"** → *can describe the path taken, cannot price the
+  path forgone.* True whichever the player did.
+- **The price figure is an upper bound** on missing the whole fight, never the marginal cost of
+  leaving at one second — which is the number a reader actually needs and cannot have.
+- **The hold now lists what the record withholds** — position, health, mana, cooldowns, enemy
+  locations, terrain — and *"I cannot construct a realistic exit from this"* is the fifth admissible
+  answer. Ch. 01 and 02 spend themselves establishing that discipline; ch. 04 does not get to suspend
+  it for the convenience of its own exercise.
+- **The martyrdom answer no longer self-validates.** Naming a purchase does not make the exchange
+  sound: the purchase must have been plausibly available from what was known, and zero deaths remains
+  a valid maximum cost. Also stated: *no exit* does not mean *I must die here*.
+- **Trigger must precede expiry**, stated explicitly. If they are the same event the plan tells you to
+  leave at the moment leaving became impossible.
+- **The opening said three parts and the chapter taught four.** Fixed.
+- **Six frequency claims removed** — *usually feel it*, *never write it down*, *nobody says out loud*,
+  *most players*, *almost nobody*, and the promise that ten games yields a personal failure rate. The
+  chapter's own `.owed` block says the bracket sample holds no fight data.
+
+### 13d. The audit rule again, and the reviewer was half right
+
+The review said the retired framing *"the moment leaving was still free"* survived in **both** ch. 01
+and ch. 04. Checked: it is in **ch. 01 only**, at line 194 — a forward reference to ch. 04 written
+before ch. 04 existed, describing it with a phrase its entire argument contradicts. Ch. 04's own
+closing was already correct.
+
+Fixed, and *leaving was still free* added to `checks/retired.tsv`. **A summary written before the
+thing it summarises is the one case the audit rule cannot catch by construction**, because at the time
+of writing there is nothing yet to be inconsistent with. The only defence is to re-read forward
+references when the referenced chapter lands, and that is now what the runbook's step 6 means.

@@ -348,6 +348,58 @@ def resolve(d, check, arg):
         key = {"gold": "gold_delta", "xp": "xp_delta", "damage": "damage"}[field]
         return _tf_player(idx, name).get(key)
 
+    if check == "teamfight_death_pos":
+        # "<fight>:<Hero>" -> "x,y" in the parser's grid. Not game units, and the
+        # book quotes no conversion, so these are only ever used comparatively.
+        idx, _, name = arg.partition(":")
+        pos = _tf_player(idx, name).get("deaths_pos") or {}
+        for x, ys in pos.items():
+            for y in ys:
+                return f"{x},{y}"
+        raise LookupError(f"{name} has no recorded death position in fight {idx}")
+
+    if check == "teamfight_death_spread":
+        # "<fight>" -> the largest distance between any two deaths in that fight,
+        # in grid cells, rounded to one decimal. Ch. 04 needs it to say that
+        # nobody ended up anywhere else, which is the honest replacement for a
+        # claim about escape attempts that the record cannot support.
+        t = _tf(arg)
+        pts = [
+            (int(x), int(y))
+            for pl in t.get("players", [])
+            for x, ys in (pl.get("deaths_pos") or {}).items()
+            for y in ys
+        ]
+        if len(pts) < 2:
+            raise LookupError(f"fight {arg} has fewer than two recorded death positions")
+        best = max(
+            ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5 for a in pts for b in pts
+        )
+        return round(best, 1)
+
+    if check == "teamfight_death_dist_from_centre":
+        # "<fight>:<Hero>" -> how far that death was from the mean of all deaths
+        # in the fight, in grid cells, one decimal. The load-bearing figure in
+        # ch. 04: the hero who spent the most mobility died NEARER the centre of
+        # the pile than five of the other six.
+        idx, _, name = arg.partition(":")
+        t = _tf(idx)
+        pts = [
+            (int(x), int(y))
+            for pl in t.get("players", [])
+            for x, ys in (pl.get("deaths_pos") or {}).items()
+            for y in ys
+        ]
+        if not pts:
+            raise LookupError(f"fight {idx} has no recorded death positions")
+        cx = sum(p[0] for p in pts) / len(pts)
+        cy = sum(p[1] for p in pts) / len(pts)
+        mine = _tf_player(idx, name).get("deaths_pos") or {}
+        for x, ys in mine.items():
+            for y in ys:
+                return round((((int(x) - cx) ** 2 + (int(y) - cy) ** 2) ** 0.5), 1)
+        raise LookupError(f"{name} has no recorded death position in fight {idx}")
+
     if check == "teamfight_summary_deaths":
         # "<fight>" — the `deaths` field the parser puts on the fight itself.
         #
