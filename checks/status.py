@@ -79,6 +79,16 @@ def main():
         if re.search(r"no bracket claim is registered", text, re.I) and bracket_claims:
             failures.append(f"{rel}: says no bracket claim is registered, {bracket_claims} are")
 
+        # "<n> bracket claims are registered". Added when the count went from six
+        # to ten and README.md still said six — the same drift this file was
+        # written for, in the one number it already computed and did not compare.
+        for m in re.finditer(r"\b([A-Za-z]+|\d+)\s+bracket claims?\s+(?:are|is)\s+registered", text, re.I):
+            claimed = number(m.group(1))
+            if claimed is not None and claimed != bracket_claims:
+                failures.append(
+                    f"{rel}: says {m.group(1)!r} bracket claims registered, {bracket_claims} in data.tsv"
+                )
+
     # Per-chapter claim counts in CONTEXT.md 6's register.
     #
     # Added after three of five had drifted unnoticed: ch. 12 said 18 against 17,

@@ -18,3 +18,12 @@
 21	archon-legend-7.41e	pct_over_40min	49.58
 27	archon-legend-7.41e	radiant_win_pct	52.08
 27	archon-legend-7.41e	sample_span_hours	96.1
+
+# The sample's SCHEMA, registered as a claim. Chapters 12, 30 and 32 each say
+# this sample contains no item or per-hero data; that is an absence claim and
+# CONTEXT.md 8 requires absence to be checked like presence. row_shapes = 1 means
+# every row carries an identical field set, so the list above describes all 240.
+12	archon-legend-7.41e	row_fields	avg_rank_tier,duration,game_mode,lobby_type,match_id,radiant_win,start_time
+30	archon-legend-7.41e	row_fields	avg_rank_tier,duration,game_mode,lobby_type,match_id,radiant_win,start_time
+32	archon-legend-7.41e	row_fields	avg_rank_tier,duration,game_mode,lobby_type,match_id,radiant_win,start_time
+27	archon-legend-7.41e	row_shapes	1

@@ -1036,6 +1036,24 @@ every build, rather than a memory of having looked.
 The audit rule then found the same overclaim restated in **two ledgers and in ch. 30**, which had
 inherited the phrasing wholesale. All corrected; *contains no positions* is now retired terminology.
 
+**The absence rule, applied once and then not swept — caught the same day it was written.** Ch. 01's
+correction produced the rule that *an absence claim needs a registered check, exactly like a presence
+claim*. It was applied to ch. 01 and to nothing else. Three other chapters were making absence claims
+about the bracket sample — ch. 12's *no item histories*, ch. 30's *no per-hero data of any kind*,
+ch. 32's *no evidence about position five at Archon–Legend at all* — all true, none checked.
+
+They are now. An absence is only checkable as a statement about a **schema**, so the sample's exact
+field set is registered as a claim per chapter, plus `row_shapes = 1` proving all 240 rows carry the
+same fields. Enrich the sampler and those three sentences go red by name. Negative-controlled by
+adding a `hero_ids` field to one row, which failed all four.
+
+The pattern is now sufficiently established to state as a standing expectation rather than an
+anecdote: **this repository's characteristic failure is a rule correctly derived, correctly written
+down, and applied only to the instance that produced it.** It has happened with the retired premise,
+the bracket claim class, the pass mark, and now the absence rule. The countermeasure is not more
+resolve; it is that **deriving a rule and sweeping for its other instances are one task, and the task
+is not done when the rule is written.**
+
 ## 9. The pipeline
 
 Built for parallelism where the work is genuinely independent, and strictly serial where it is not.

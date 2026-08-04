@@ -106,10 +106,15 @@ patches. The first sample it produced reported a median game length of 18.6 minu
 same bracket reads 39.8. Both came from the same short program. The header of
 `tools/fetch-bracket.py` documents all four.
 
-Six bracket claims are registered from a corrected sample of 240 ranked Archon–Legend matches:
+Ten bracket claims are registered from a corrected sample of 240 ranked Archon–Legend matches:
 median game length 39.9 minutes, 49.6% running past forty. Every match in it was played after 7.41e
 shipped, which `checks/data.py` enforces — a sample containing games older than the patch it is
 labelled with fails the build.
+
+Four of the ten register the sample's **schema** rather than a figure, because three chapters make
+*absence* claims about it — no item data, no per-hero data of any kind. An absence is only checkable
+as a statement about a schema, so that is what is registered: enrich the sampler and those three
+sentences go red by name.
 
 ## Stack
 

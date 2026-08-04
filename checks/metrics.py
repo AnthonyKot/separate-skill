@@ -43,6 +43,19 @@ def compute(snapshot):
         out["min_rank_tier"] = min(tiers)
         out["max_rank_tier"] = max(tiers)
 
+    # The exact field set the rows carry, registered because three chapters make
+    # ABSENCE claims about this sample — "no item data", "no per-hero data of any
+    # kind", "no evidence about position five at Archon-Legend at all". CONTEXT.md 8
+    # now requires an absence claim to carry a registered check exactly like a
+    # presence claim, after ch. 01 asserted the match record held no positions on
+    # the strength of having looked in one place.
+    #
+    # An absence is only checkable as a statement about a schema, so that is what
+    # is registered: enrich the sampler and these rows go red, which is the moment
+    # those three sentences stop being true.
+    out["row_fields"] = ",".join(sorted({k for r in rows for k in r}))
+    out["row_shapes"] = len({frozenset(r) for r in rows})
+
     # The window the sample actually came from, computed from the rows rather than
     # from the fetch date. The seek in tools/fetch-bracket.py deliberately overshoots
     # backwards — landing early is safe, landing late reintroduces the length bias —

@@ -703,3 +703,25 @@ contain this* had been resting on somebody's memory of having looked.
 
 **Settle `§9f` first** — whether ch. 01's `Next game` being a review list is the template or a
 deviation — because 02 through 05 will otherwise inherit it by copying.
+
+### 10b. Nothing else outstanding — the sweep that found the last of it
+
+Ran a deliberate audit rather than declaring the work clean, and it found one more instance of the
+same pattern: the absence rule from `CONTEXT.md §8` had been applied to ch. 01 and to nothing else,
+while chapters 12, 30 and 32 all made unchecked absence claims about the bracket sample. Fixed by
+registering the sample's schema, four new claims, negative-controlled.
+
+`checks/status.py` also gained a bracket-claim count check, because the count moved from six to ten
+and README.md still said six — drift in the one number that file already computed and did not compare.
+
+**Open, and genuinely open rather than forgotten:**
+
+1. **`§9f` — ch. 01's `Next game` is a review list.** Blocks nothing mechanically, but chapters 02–05
+   will copy whatever ch. 01 does. **Recommendation: keep it, and write the reason into `§3`.** The
+   chapter's argument is that a death cannot be classified live; a live action list would contradict
+   the chapter. What §3 should say is that `Next game` may be review work *when the chapter's own
+   finding is that the decision cannot be judged in the moment* — which is a principled exception, not
+   a licence, and ch. 01 is currently the only chapter that earns it.
+2. **Part VII's sizing.** `§8h`, `§8i`. The author's call, deferred, blocks nothing until ch. 28.
+
+Everything else in this file is closed. Part I can start at ch. 02.
