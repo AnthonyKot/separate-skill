@@ -282,6 +282,39 @@ def resolve(d, check, arg):
                 return series[m]
         raise LookupError(f"no {name!r} in this match")
 
+    if check == "deaths_with_position":
+        # How many hero deaths carry map coordinates. Added when ch. 01 turned out
+        # to assert the record holds none, which is false: OpenDota records
+        # deaths_pos on teamfight players, so a death INSIDE a fight window has an
+        # x and a y and a death outside one does not.
+        #
+        # The chapter's argument survives the correction and improves — the deaths
+        # it examines are the ones the record cannot place — but the sweeping
+        # sentence was wrong and had been sitting on a published page.
+        return sum(
+            c
+            for t in (d.get("teamfights") or [])
+            for pl in t.get("players", [])
+            for ys in (pl.get("deaths_pos") or {}).values()
+            for c in ys.values()
+        )
+
+    if check == "wards_standing_at":
+        # "<obs|sen>:<seconds>" — how many of that ward type were standing at that
+        # moment, from the placement and removal logs. This is vision state
+        # reconstructed at an arbitrary timestamp, which ch. 01 also said the
+        # record does not contain. It does.
+        kind, _, when = arg.partition(":")
+        when = int(when)
+        standing = 0
+        for pl in d["players"]:
+            gone = {o.get("ehandle"): o["time"] for o in (pl.get(f"{kind}_left_log") or [])}
+            for o in pl.get(f"{kind}_log") or []:
+                end = gone.get(o.get("ehandle"))
+                if o["time"] <= when and (end is None or when <= end):
+                    standing += 1
+        return standing
+
     if check == "team_gold_rank":
         # "<Hero>:<minute>" — that hero's rank by gold within their OWN five, 1 =
         # richest. Added for ch. 30, whose argument is that the offlane's advantage

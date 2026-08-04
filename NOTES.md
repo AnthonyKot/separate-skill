@@ -654,3 +654,52 @@ Not a defect and not obviously right either. Every other chapter's `Next game` i
 whole argument is that a death cannot be classified live — but it is an undocumented deviation from
 §3's template, and it should be settled deliberately when Part I is drafted rather than inherited by
 chapters 02–05 because it was there.
+
+## 10. Part I is drafta ble, and the feasibility check found a live error
+
+Run 2026-08-04, before drafting ch. 02 — because `CONTEXT.md §7`'s ledger for 8928953683 says ch. 02
+and ch. 03 "need *reconstruction* evidence this match cannot supply", and chapters 02, 03 and 04 are
+all contracted on precisely that. Committing four chapters to an assumption about the evidence would
+have repeated ch. 30's process failure (§8i) inside a day.
+
+**The assumption was wrong in the good direction.** The parsed record carries substantially more
+reconstruction material than ch. 01 claimed:
+
+| Field | What it supports |
+|---|---|
+| `teamfights[].players[].deaths_pos` | Map coordinates for deaths inside fight windows — 30 of 59 in ch. 01's match, 25 in ch. 30's |
+| `obs_log` / `obs_left_log` with `x`, `y`, `z` | **Vision state reconstructed at any timestamp.** Directly ch. 02's contract |
+| `sen_log` / `sen_left_log` | The same for sentries — what was being denied, and when |
+| `lane_pos` | Position density per hero, whole-game rather than timestamped |
+| `runes_log`, `purchase_log` | Rune timings; TP scroll purchases, which bear on ch. 04's exit decision |
+| `damage_taken`, `killed_by`, `stuns`, `life_state` | Who did the damage, who landed the kill, seconds of disable |
+
+**What is still absent, and it is the important half.** No hero position over time, no health, no mana,
+no cooldown state, no camera, no intent. So a decision can be *situated* — where, with what vision,
+against whose damage — and still not be *reconstructed*. Ch. 02's contract is "reconstruct the
+information that was available before the decision", and the honest version of that is now
+**bounded**: vision is genuinely reconstructable, position is reconstructable only for deaths in
+fights, and everything about the player's own state is not.
+
+That bound is a chapter, not an obstacle. Ch. 02 can show a reader exactly which observer wards were
+standing when they walked somewhere — which is the single most useful reconstruction the record
+affords, and one no scoreboard has ever offered.
+
+**The check also found ch. 01 asserting the opposite, on the live site.** Corrected; see
+`CONTEXT.md §8`. Two new check types register the absences as claims, because *the record does not
+contain this* had been resting on somebody's memory of having looked.
+
+### 10a. Order for Part I, revised by the above
+
+1. **Ch. 02** — vision reconstruction is its evidence base and it is the strongest of the four.
+   Needs a case where a death follows a ward expiring or a sentry landing.
+2. **Ch. 04** — the exit decision; TP purchases and `purchase_log` timings give it something real.
+3. **Ch. 03** — the weakest evidence position of the four, since "the sequence that removed the
+   escape" wants per-second position the record does not hold. Draft it after 02 and 04 so its
+   boundaries are already fenced by what they established.
+4. **Ch. 05** — the anti-passivity chapter, and the one that needs a *different* kind of case: a
+   player who did not die and lost anyway. `life_state_dead`, low deaths with poor `lane_efficiency`,
+   or a low `teamfight_participation` on a losing side are the places to look.
+
+**Settle `§9f` first** — whether ch. 01's `Next game` being a review list is the template or a
+deviation — because 02 through 05 will otherwise inherit it by copying.

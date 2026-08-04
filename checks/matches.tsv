@@ -163,3 +163,9 @@
 32	8928118730	hero_series_at	Crystal Maiden:gold:35	10100
 32	8928118730	gold_adv_at	35	11572
 30	8926599506	hero_stat	Magnus:gold	1440
+
+# ch 01, registered on correction. The chapter said the record holds no
+# positions and no vision state. Both are false, and both were on the live page.
+1	8928953683	deaths_with_position		30
+1	8928953683	wards_standing_at	obs:864	3
+30	8926599506	deaths_with_position		25

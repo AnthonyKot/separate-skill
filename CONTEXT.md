@@ -549,7 +549,7 @@ jobs are defined by the seat rather than by the topic.
 ### Part I — Can you distinguish free deaths from necessary risk?
 | # | Title | Status |
 |---|---|---|
-| 01 | The Death You Didn't Notice | ☑ 9 claims · match 8928953683 · **pilot** |
+| 01 | The Death You Didn't Notice | ☑ 11 claims · match 8928953683 · **pilot** |
 | 02 | What the Map Already Said | ☐ |
 | 03 | The Thirty Seconds Before | ☐ |
 | 04 | Leaving Is a Skill | ☐ |
@@ -662,7 +662,7 @@ reduces noise while learning, never as a theory of how MMR is won.
 |---|---|---|
 | 28 | Position One | ☐ |
 | 29 | Position Two | ☐ |
-| 30 | Position Three | ☑ 52 claims · match 8926599506 · **pilot** · see `NOTES.md` §8h–8i |
+| 30 | Position Three | ☑ 53 claims · match 8926599506 · **pilot** · see `NOTES.md` §8h–8i |
 | 31 | Position Four | ☐ |
 | 32 | Position Five | ☑ 17 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
 
@@ -776,8 +776,9 @@ Written **before** ch. 01 was drafted, which is the policy and which the previou
 - **Confounders.** The parser's teamfight definition, as above. Role: a position-five hero dying
   repeatedly may be buying space each time, and the record cannot distinguish that from carelessness
   — which is the chapter's point rather than a gap in it.
-- **Prohibited.** **Never classify an individual death in this match.** The record has no positions,
-  no vision state, no cooldowns and no intent, so no death here can be called free, necessary or
+- **Prohibited.** **Never classify an individual death in this match.** For the deaths the chapter
+  examines — all outside teamfight windows — the record has no position, no vision state, no
+  cooldowns and no intent, so no death here can be called free, necessary or
   misexecuted on this evidence — and a chapter that did so would be inventing the ex-ante information
   its own definition requires. Never that the 0/12 hero played badly; never that the 18/1 hero played
   well. Never a prevalence claim about any bracket.
@@ -885,8 +886,7 @@ their lane opponent at minute ten, finishing with rows that order the opposite w
 - **Prohibited.** **Never that either offlaner played well or badly.** Never that the ten deaths were
   justified because the team won — that is the outcome reasoning banned in ch. 01 and in the
   free-death definition, and it is the exact form it would take here. Never that the offlane created
-  the space the carry farmed in: the record contains no positions, no lane pressure and no
-  counterfactual, and the whole chapter depends on saying so. Never a prevalence claim about
+  the space the carry farmed in: the record contains no lane pressure and no counterfactual, and the whole chapter depends on saying so. Never a prevalence claim about
   Archon–Legend offlanes; `publicMatches` carries no per-hero data whatsoever.
 - **Transfer.** The reading procedure — which two numbers describe the seat, when they stop
   describing it, and what the row does not report. Not the timings, not the item build, and not the
@@ -1005,6 +1005,36 @@ begun condemning another chapter's decision. **`checks/register.py` did exactly 
 by banning words the foundations do not ban.** A rule that enforces more than its case establishes
 trains the author to argue with the checker, and an author who argues with the checker stops reading
 it.
+
+**Ch. 01 asserted the record holds no positions and no vision state. Both are false, and both were
+live on a published page.** The sentence read: *"I checked before writing this... there is no death
+log with coordinates, no `x`, no `y`."* The check was real and it looked in one place — `kills_log`,
+which indeed carries only a time, a victim and a killer. **`teamfights[].players[].deaths_pos` carries
+map coordinates**, and `obs_log` with `obs_left_log` reconstructs exactly how many wards were standing
+at any moment. Thirty of that match's fifty-nine deaths have an x and a y; three observers were
+standing at 14:24.
+
+Two things make this worth a full entry rather than a correction line.
+
+**First, the shape of the error is the chapter's own argument.** Coordinates exist for deaths inside a
+teamfight window and not for deaths outside one — 29 inside against 30 outside, and thirty positions
+recorded, the two structures disagreeing by one, which is itself a demonstration that "teamfight" is
+the parser's judgement. The record sees the deaths that happened in fights and not the deaths that
+happened alone, and the second group is what ch. 01 is about. The corrected chapter is **stronger**
+than the overclaim it replaces. That is the usual direction: §4's headline rule exists because the
+most quotable form of a true observation is a stronger claim than the observation, and the repair is
+almost always more interesting than the thing repaired.
+
+**Second, "I checked" is not a citation.** The claim was written in the confident register this
+document reserves for reviewers who assert facts about the world — §8's *a reviewer stated a fact
+about the world, confidently, and was wrong* — and it was written here, by the author, about this
+repository's own data. The rule that catches it is one the book already has and did not apply to
+itself: **an absence claim needs a registered check, exactly like a presence claim.** `deaths_with_position`
+and `wards_standing_at` now exist so that "the record does not contain this" is a row that runs on
+every build, rather than a memory of having looked.
+
+The audit rule then found the same overclaim restated in **two ledgers and in ch. 30**, which had
+inherited the phrasing wholesale. All corrected; *contains no positions* is now retired terminology.
 
 ## 9. The pipeline
 
