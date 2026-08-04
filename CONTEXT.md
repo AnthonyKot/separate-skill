@@ -243,6 +243,14 @@ Three rules follow.
 - **Banned words — the guide register.** *Just*, *simply*, *obviously*, *of course*, *literally
   everyone knows*. Each one asserts that the thing being explained is easy, which is false, and is
   the exact tone the reader has already failed to learn from.
+
+  **The ban is on the token, not the sense, and `checks/register.py` enforces it.** *You have just
+  admitted* and *it simply was not fighting* both mean **merely** and assert nothing about
+  difficulty — and both shipped in ch. 12 anyway, because a rule needing judgement is a rule applied
+  when someone remembers. The rewrites were improvements in every case so far. Note what the checker
+  deliberately does **not** carry: *int* and *your team*, whose ban is contextual — "your team takes
+  a set of barracks" is neutral description — and a token match cannot see context. Those stay prose
+  rules for a reader.
 - **No hero players.** The point of a case is the decision. Nobody in this book is a genius.
 - **Name the failure mode inside the principle**, not in a footnote.
 

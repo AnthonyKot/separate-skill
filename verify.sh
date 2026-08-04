@@ -9,6 +9,7 @@
 #   * checks/data.py        bracket figures recomputed from their sample (GATING)
 #   * checks/privacy.py     no identifiers in public or bracket snapshots     (GATING)
 #   * checks/coverage.py    numbers in prose that match no claim            (ADVISORY)
+#   * checks/register.py    banned vocabulary in chapter prose             (GATING)
 #   * internal links        entirely inside this repository              (GATING)
 #
 # One check is advisory — coverage — because prose legitimately contains numbers
@@ -46,6 +47,9 @@ if [ "$only_links" = "0" ]; then
 
   echo "== figures in prose vs registered claims (advisory) =="
   python3 checks/coverage.py
+
+  echo "== banned vocabulary (gating) =="
+  python3 checks/register.py || fail=1
 fi
 
 echo "== count sync (computed, not typed) =="
