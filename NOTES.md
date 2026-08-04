@@ -268,3 +268,88 @@ Depends on `checks/data.tsv` having claims, which depends on the sampler.
 3. Two holds turning the chapter into a quiz. Decide honestly after drafting.
 4. Altitude error, worse here than elsewhere, because item builds are the single most-copied thing
    professionals produce.
+
+---
+
+## 7. The handover plan
+
+Written 2026-08-04, at the end of the session that built the machinery and the four pilots. For
+whoever picks this up — including a later version of the same session with no memory of it.
+
+**Read first:** `CONTEXT.md` for every settled decision, `CONTEXT.md §10` for how a chapter gets
+made, this file for what is not settled. The repository is authoritative; anything outside it
+(including agent memory) is a summary and drifts.
+
+### 7a. Two open decisions, with proposals
+
+Neither is settled. Both are the author's call, and both are recorded here rather than in
+`CONTEXT.md` for that reason.
+
+**Decision one — what the thesis claims.** `§1` promises the reader diagnosis stays a hypothesis
+"until target-bracket evidence supports it", and `§5` defines that as OpenDota bracket samples.
+Those records cannot show age, employment, games per week, or whether someone understood the game
+while losing, so the promise cannot be kept. Three different claims are tangled in it:
+
+| Claim | What it needs | Status |
+|---|---|---|
+| **Prevalence** — this is what keeps such players stuck | Population evidence | Unavailable, and not obviously available to anyone |
+| **Fit** — if this describes you, here is a method | A recognisable description | Already written, in §1's in/out test |
+| **Efficacy** — applying the method helps | A few readers | Cheap, and untested |
+
+*Proposed:* drop the prevalence claim, which the book does not need — the reader self-selects by
+recognising themselves — and rewrite the Thesis row as a **conditional**. Then test efficacy with
+three to five readers running one chapter's `After the game` loop on their own replays for a
+fortnight, reporting whether they could execute it. Not the 8–12 consented cohort: that instrument
+was specified to establish prevalence, which is the claim being dropped.
+
+*Also legitimate and free:* the author is in the target group. Running the loops on his own replays
+is real evidence about executability, provided it is declared as author self-testing and never as
+data about anyone else.
+
+*What settles it:* a decision about the Thesis row's wording, plus either three to five readers or
+an explicit statement that efficacy is untested.
+
+**Decision two — how many seat chapters.** Part VII was specified as five full chapters when its
+premise was inversion. The premise is now reweighting (§5b), so the sizing is genuinely reopened.
+
+*Proposed:* settle it the way the premise was settled — with one more pilot rather than an argument.
+**Draft ch. 30, Position Three**, which is the maximal test: the offlane shares position five's
+invisible-product problem while having a core's resource profile.
+
+- Distinct from ch. 32 → the seat axis is real; keep five chapters.
+- Overlapping ch. 32 → the real axis is *visible versus invisible product*, not seat; Part VII
+  collapses to about three chapters (cores, offlane, supports), or one chapter with a per-seat table.
+
+Either outcome settles four chapters' worth of structure for the price of one.
+
+### 7b. Suggested order of work
+
+1. **Ch. 30, Position Three** — settles Part VII's size before anything is written on the assumption
+   of five.
+2. **Ch. 02, 03, 04, 05** — completes Part I. This tests something no pilot did: **whether a whole
+   part hangs together**, and whether four chapters with adjacent contracts stay distinct in practice
+   rather than only on paper. Part I is also the most-read part of any book, and ch. 01 already exists
+   to open it.
+3. **Ch. 27 as a contract only** — the last untested template question, whether a season-level
+   chapter can work under a template built for moments inside a match. A page, not prose.
+4. Everything else, in spine order.
+
+### 7c. Standing risks, in the order they have actually bitten
+
+1. **Outcome-grading creeps back.** It has now appeared in three disguises — the free-death
+   definition, ch. 21's pass mark, ch. 12's calibration line — after being banned each time. Expect a
+   fourth.
+2. **The headline outruns the evidence** (`CONTEXT.md §4`). All four pilots did it.
+3. **A decision changes and a summary keeps the old version.** Two checkers now catch this inside the
+   repo; nothing catches it outside.
+4. **Reviewers are confidently wrong.** One asserted an API did not exist while it was returning 200
+   all session. Every factual claim goes back to a primary source.
+
+### 7d. What not to do
+
+- Do not draft the remaining chapters in bulk. Each pilot needed a substantial revision pass after
+  publication and each pass improved it; the rate has not fallen.
+- Do not register a figure that was typed rather than computed from a record.
+- Do not let a chapter explain a mechanism that belongs to a later chapter — check the contract list
+  in `CONTEXT.md §6` before drafting, not after.
+- Do not reuse ch. 01's reveal (§1e). The principle carries; the theatre does not.

@@ -910,6 +910,8 @@ and the numbering records which.
    minute, and a 404 immediately after pushing means the deploy is still running, not that anything
    is wrong.
 
+**What to write next, and the two decisions still open, are in `NOTES.md §7` — the handover plan.**
+
 **Then, and separately: review.** Run the panel (§9) or hand it to a human. Every serious defect in
 the four pilots was found this way and none by the checkers — the checkers caught figures, reviewers
 caught arguments. Budget for the revision; each pilot needed one substantial pass after publication,
