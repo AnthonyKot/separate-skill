@@ -578,7 +578,7 @@ jobs are defined by the seat rather than by the topic.
 | 02 | What the Map Already Said | ☑ 24 claims · match 8928953683 · reuses ch. 01's case for a different inference |
 | 03 | What Counts as One Fight | ☑ 21 claims · match 8928851109 · retitled before drafting |
 | 04 | Leaving Is a Skill | ☑ 42 claims · match 8927063876 |
-| 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
+| 05 | The Death You Should Have Taken | ☑ 20 claims · match 8929364604 · closes Part I · **the anti-passivity chapter** |
 
 **The working definition of a free death, and the reason Part I is five chapters.**
 
@@ -1030,6 +1030,42 @@ Written before ch. 03 was drafted. Team names as reported by the record.
 - **Spent.** Ch. 03 takes the two-cluster split and the sequence of six deaths, for the inference that
   a labelled window is not an established event. Ch. 20 (*The Fight You Declined*) may return for a
   different inference and must draw its own.
+
+### 8929364604 — 1win Essence II
+
+Written before ch. 05 was drafted. Chosen because both heroes it compares are on the **winning** side,
+which removes outcome reasoning from the chapter entirely rather than requiring it to be resisted.
+
+- **Patch.** 7.41e. **Source mode.** Professional broadcast. **Identity.** Heroes only.
+- **Facts.** 42:23, Radiant won. On that winning side: **Alchemist finished 4/3/15 with 187 seconds
+  spent dead**, net worth 33,525, level 25. **Undying finished 2/7/19 with 81 seconds spent dead**,
+  net worth 15,893, level 20. **Four fewer deaths, 106 more seconds dead** — 62.3 seconds per death
+  against 11.6. Undying's hero-credited deaths cluster early: 3:21, 6:14, 7:15, 8:24, 14:14, 18:02
+  and 26:44. Alchemist's are at 11:05 and 26:06.
+- **A third instrument disagreement, and the chapter uses it.** Alchemist's scoreboard reads **3**
+  deaths while the kill log credits a hero with **2**. Across the eight matches committed here the two
+  counts differ in four, by −1 to +3, because the kill log records only deaths credited to a hero and
+  the scoreboard counts every death. Ch. 01's fifty-nine is unaffected — both methods give 59 for that
+  match, checked.
+- **Permitted.** That a death count and the time those deaths cost are different quantities, and can
+  disagree sharply on the same team in the same game. That the scoreboard prices some of what a death
+  costs and none of what an avoided risk costs.
+- **Observation vs inference.** Counts, seconds and timings are observed. That the asymmetry follows
+  from *when* the deaths happened is a **supported inference** from the timings — Undying's six before
+  minute nineteen, Alchemist's two after minute eleven — and the chapter must not state a respawn
+  formula, which is a rule it has not looked up and may not assert from memory.
+- **Confounders.** Level and net worth differ enormously between the two, and both plausibly drive
+  respawn cost; the chapter says so. Seat differs. And 187 against 81 seconds is one pair in one game.
+- **Prohibited.** **Never that either player played badly or well.** They won, and grading either by
+  the result is the ex-post error ch. 01 bans. Never that Alchemist should have died less or Undying
+  more. **Never any claim about how common passive play is, at any bracket** — the two-population
+  split in §6 is an unevidenced hypothesis and this chapter is where the temptation to promote it will
+  be strongest. Never a respawn-time formula from memory.
+- **Transfer.** That the count is not the cost, and that the ledger has a missing side. Not the
+  seconds, the ratio, or anything about these two seats.
+- **Spent.** Ch. 05 takes the two rows, the two dead-time figures and the death timings, for the
+  inference that the scoreboard prices one side of a decision. Ch. 14 (*Reading the Scoreboard*) may
+  return for a different inference and must draw its own.
 
 ## 8. What got caught
 

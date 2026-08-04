@@ -18,7 +18,7 @@ your bracket.
 
 ## Status
 
-**Eight chapters of thirty-two are written; five of them are pilots.** The pilots were drafted and
+**Nine chapters of thirty-two are written; five of them are pilots. Part I is complete.** The pilots were drafted and
 reviewed before the remaining chapters were commissioned, each testing a different way this book could
 fail. Chapter 02 is the first ordinary chapter — the first written to the settled template rather than
 to test it.

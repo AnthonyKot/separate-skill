@@ -291,3 +291,27 @@
 3	8928851109	teamfight_death_pos	3:Clinkz	98,182
 3	8928851109	teamfight_death_pos	3:Undying	98,184
 3	8928851109	teamfight_death_spread	3	69.6
+
+# ch 05 — The Death You Should Have Taken. Match 8929364604, patch 7.41e. Both
+# heroes compared are on the WINNING side, which removes outcome reasoning from the
+# chapter rather than leaving it to be resisted.
+5	8929364604	duration		2543
+5	8929364604	winner		radiant
+5	8929364604	hero_stat	Alchemist:deaths	3
+5	8929364604	hero_stat	Alchemist:kills	4
+5	8929364604	hero_stat	Alchemist:assists	15
+5	8929364604	hero_stat	Alchemist:life_state_dead	187
+5	8929364604	hero_stat	Alchemist:total_gold	33525
+5	8929364604	hero_stat	Alchemist:level	25
+5	8929364604	hero_stat	Undying:deaths	7
+5	8929364604	hero_stat	Undying:kills	2
+5	8929364604	hero_stat	Undying:assists	19
+5	8929364604	hero_stat	Undying:life_state_dead	81
+5	8929364604	hero_stat	Undying:total_gold	15893
+5	8929364604	hero_stat	Undying:level	20
+5	8929364604	hero_death_time	Alchemist:1	665
+5	8929364604	hero_death_time	Alchemist:2	1566
+5	8929364604	hero_death_time	Undying:1	201
+5	8929364604	hero_death_time	Undying:6	1082
+5	8929364604	hero_death_time	Undying:7	1604
+5	8929364604	count	teamfights	7

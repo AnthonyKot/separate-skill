@@ -1083,3 +1083,66 @@ Now stated in `§5`, in `about.html`, and in ch. 03 itself, with the consequence
 structured record cannot answer simply stop, and **a reader with a replay open can get further than
 this book can.** That is an uncomfortable sentence for a book about checking things, which is the
 argument for putting it on the method page rather than in a note.
+
+## 16. Ch. 05 — Part I is complete
+
+### 16a. The archetype the chapter warns about is not visible in professional play
+
+Checked before drafting, and it changed the chapter. The obvious case would be a player who preserved
+their scoreboard by absence: few deaths, decent farm, absent from fights. **It does not exist in this
+sample.** Computing fight presence directly — any damage, any kill, any death inside each teamfight
+window — every low-death core on a losing side across eight committed matches was present in
+essentially every fight. One was 3 of 4, in a game that had only four.
+
+That is a finding worth keeping: **the failure mode ch. 05 exists to prevent is not a professional
+failure mode**, which is precisely why a book built on professional cases would never warn about it,
+and why this chapter had to find its evidence somewhere else.
+
+It also killed the tempting design. A chapter arguing "they did not die and they lost" would be
+outcome reasoning — the thing this book bans in four other places — and the record would not have
+supported it anyway.
+
+### 16b. What the record could support instead
+
+**The count is not the cost**, shown on the winning side so that blame is unavailable:
+
+| | Deaths | Seconds dead | Per death |
+|---|---|---|---|
+| Alchemist | 3 | **187** | 62.3 |
+| Undying | 7 | **81** | 11.6 |
+
+Same team, same game, both winners. **Four fewer deaths, 106 seconds longer dead.** The timings show
+where it comes from — six of Undying's seven before minute nineteen, Alchemist's two at 11:05 and
+26:06 — without the chapter asserting a respawn formula, which §5 forbids from memory.
+
+And a third instrument disagreement to go with ch. 03's and ch. 04's: **Alchemist's scoreboard reads
+3 deaths and the kill log credits a hero with 2.** Across the eight committed matches the two counts
+differ in four, by −1 to +3, because the kill log holds only hero-credited deaths. Ch. 01's
+fifty-nine was checked against both and is unaffected.
+
+### 16c. The argument that needed no evidence, and could not have had any
+
+The larger half is structural rather than empirical: **the scoreboard is a ledger with one side
+missing.** It prices some of what a death costs and none of what an avoided risk costs — no column,
+no log, no entry. The fight you did not join scores zero forever.
+
+That is a claim about the instrument, checkable by inspection, and it is the same claim ch. 01, 02,
+03 and 04 each made about a different instrument. The chapter ends with the table that lines all five
+up, which is the first time Part I has been visible as one argument rather than five.
+
+**The prevalence claim was avoided deliberately and the `.owed` block says so.** §6's two-population
+split is a hypothesis from a review pass that cited no usable data; there is not one sentence in the
+chapter of the form *most players do this*. Given that ch. 03 and ch. 04 both overclaimed in exactly
+this family, that was the thing to watch, and watching it is why the chapter argues from what the
+instrument cannot register rather than from what players supposedly do.
+
+### 16d. Part I as a whole
+
+01, 02, 03, 04, 05. **The first complete part**, and the first evidence that the chapters accumulate
+rather than restate: each one names an instrument and what it cannot register, and ch. 05's closing
+table is only legible because the other four exist.
+
+Two structural facts worth carrying into Part II. **Three of the five needed their contract or title
+changed once the evidence was checked** — ch. 03 retitled, ch. 05 redesigned away from its obvious
+case, ch. 02 made possible only by correcting a ledger. And **every chapter's most serious defect was
+found by a reader, never by the machinery**, which is now five for five.
