@@ -173,6 +173,24 @@ Kept so they are not re-proposed.
 
 ---
 
+## 5b. Part VII's premise was wrong, and pilot 32 is why
+
+**Settled 2026-08-04, now in `CONTEXT.md` §1 and §6.** Part VII was specified to find where general
+advice *inverts* for a seat. Ch. 32 tested three chapters against position five and found no
+inversions at all: ch. 01's free-death test is right for every seat and only its prior changes; a
+ward is not the opposite of ch. 12's forecast but its most visible instance, with the window printed
+on it; ch. 21's conversion is redistributed rather than reversed.
+
+The replacement question — **how does this seat change what is scarce, what is visible, and which
+presumption you start from?** — is truer and more interesting than hunting reversals.
+
+**Why this matters beyond Part VII:** had the original contract stood, chapters 28–31 would each
+have had to produce an inversion, and four chapters obliged to find something that does not exist
+would have manufactured it. That is book 4's counter-case failure exactly, and this time a pilot
+caught it instead of a reviewer at chapter four. **The pilots paid for themselves here.**
+
+---
+
 ## 6. Chapter 12 — the plan
 
 *The Item You Want and the Item That Wins.* Part III, contract: **buying for your own required

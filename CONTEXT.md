@@ -19,7 +19,7 @@ Settled at the outset. Not to be relitigated without a reason.
 | Reader | **The hardstuck adult**, defined by what they can and cannot do rather than by hours. **In:** a player who can execute their familiar heroes at bracket level, and who repeatedly chooses the wrong place, the wrong purchase, the wrong moment or the wrong objective. Typically Archon–Legend, thirty to forty-five, three to six games a week. **Out:** a player whose *intended* actions routinely fail — chronically poor CS at ten under free farm, camera and hotkey problems, micro they cannot perform. That reader needs a different intervention first, and the book must say so instead of flattering them. | The surveyed public English-language material rarely addresses either group precisely; it teaches beginners what exists and shows improvers professional play they cannot execute. Stating the exclusion is what makes the inclusion mean anything. |
 | Thesis | **Winning is a separate skill from playing.** For the reader defined above, the missing piece is a decision sequence rather than execution. | **This is the book's working hypothesis, not an established finding**, and it stays labelled as one until target-bracket evidence supports it. Note what cannot support it: match 8929124210 shows a professional team fail to convert, which is ch. 21's case and nothing more. A pro comeback cannot establish what usually keeps Archon–Legend adults stuck, and the first draft of this row cited it as though it could. |
 | Evidence | **Four sources, ranked by distance from the game, and no chapter is required to use all of them.** Parsed data establishes registered events. Replay observation supplies visible context. Commentary proposes hypotheses. **Nothing available supplies intention.** | §5. The first version of this row made caster commentary mandatory in every chapter, which would have required a *broadcast* in every chapter — quietly converting a book for Archon–Legend players into a book about professional Dota, with the actual reader appearing only in qualifications. Caught on meta-review. |
-| Structure | **General chapters first, role chapters last.** Parts I–VI are decisions all five positions face. Part VII is five full chapters, one per seat, each carrying its own case and its own actions *as well as* the inversions of earlier chapters for that seat. | A role-specific prescription is diagnostically premature until the general sequence is in place. Note the standing tension, which is real and must not be resolved by pretending: general advice is often *false until inverted by seat*, so Parts I–VI and Part VII each make the other honest. |
+| Structure | **General chapters first, role chapters last.** Parts I–VI are decisions all five positions face. Part VII is five full chapters, one per seat, each carrying its own case and its own actions *as well as* the seat's reweighting of the earlier chapters: **same decision standard, different resources, different evidence, different default assumptions.** | A role-specific prescription is diagnostically premature until the general sequence is in place. **The original framing — that seat chapters would find general advice to *invert* — was wrong, and ch. 32 disproved it before four more seat chapters were written.** Tested against chapters 01, 12 and 21, nothing inverted: the decision rules held and what changed was what is scarce, what the record can see, and which presumption to start from. That is a better question and a truer one, and it is what Part VII now asks. |
 | Register | **Funny, and exact.** The humour comes from naming the disaster the reader has personally lived, accurately enough that they wince. | §4. A book this reader finds boring does not get read, and the genre's alternative register — confident, numberless, faintly contemptuous — is the thing being replaced. |
 | Scope | **No coaching, nothing sold.** No VOD review service, no Discord, no rank guarantee. | Series rule. The book ends and that is all it does. |
 
@@ -253,6 +253,27 @@ Three rules follow.
   rules for a reader.
 - **No hero players.** The point of a case is the decision. Nobody in this book is a genius.
 - **Name the failure mode inside the principle**, not in a footnote.
+
+### The headline rule
+
+> **No headline sentence may claim more than its chapter's observed / inference / hypothesis /
+> unknowable section allows it to retain.**
+
+Every one of the four pilots broke this, in the same shape: the most memorable sentence outran the
+evidence, and a later caveat was sent to repair it. Ch. 01 instructed the reader to classify what
+could not be classified. Ch. 12 said *they were right* on the page after saying correctness was
+unknowable. Ch. 21 implied a stall had cost something in a game its own case says was won. Ch. 32
+called vision the seat's *product* and its contribution *usually complete before the fight*, on the
+evidence of one professional support.
+
+The mechanism is worth naming because it is not carelessness: **the most quotable form of a true
+observation is almost always a stronger claim than the observation.** Compression is where the
+overclaim gets in, and the compression is written last, after the careful section, by which point the
+care feels done.
+
+The rule is checkable by hand and by a reviewer, and the check is mechanical: take each bolded or
+otherwise headline sentence, and confirm that it survives being read next to the *unknowable* list in
+the same chapter. If it does not, the sentence is wrong, not the list.
 
 ### Provocations are not laws
 
@@ -550,12 +571,22 @@ reduces noise while learning, never as a theory of how MMR is won.
 | 29 | Position Two | ☐ |
 | 30 | Position Three | ☐ |
 | 31 | Position Four | ☐ |
-| 32 | Position Five | ☑ 15 claims · match 8928118730 · **pilot** |
+| 32 | Position Five | ☑ 15 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
 
 **Part VII chapters are full chapters, not appendices.** Each carries the complete template — its own
 situation, its own replay-verifiable case, its own figures, its own `Next game` and `After the game`
-blocks — *and* does the seat-specific job on top: **name the earlier chapters that invert for this
-seat, and say why.**
+blocks — *and* does the seat-specific job on top:
+
+> **How does this seat change what is scarce, what is visible, and which presumption you start from?**
+
+**That question replaced an earlier one — *which earlier chapters invert for this seat* — and the
+replacement is ch. 32's most useful finding.** Asked to produce inversions, ch. 32 tested three
+chapters and found none: ch. 01's free-death test is right for every seat and only its *prior*
+changes; a ward is not the opposite of ch. 12's forecast but an unusually visible instance of it,
+with the window printed on it; ch. 21's conversion is not reversed but redistributed. Chasing
+inversions for the remaining four seats would have meant manufacturing them, which is the counter-case
+failure of book 4 with a different label — and this time it was caught by a pilot rather than by a
+reviewer at chapter four.
 
 Both halves are required, and the second is what justifies the first. A chapter that restates general
 advice in role-flavoured language has failed. So has one that lists inversions without giving the
