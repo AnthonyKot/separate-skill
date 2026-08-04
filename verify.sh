@@ -8,9 +8,11 @@
 #   * checks/matches.py     registered events vs committed snapshots     (GATING)
 #   * checks/data.py        bracket figures recomputed from their sample (GATING)
 #   * checks/privacy.py     no identifiers in public or bracket snapshots     (GATING)
+#   * checks/coverage.py    numbers in prose that match no claim            (ADVISORY)
 #   * internal links        entirely inside this repository              (GATING)
 #
-# Nothing here is advisory yet, which is deliberate and slightly unusual for this
+# One check is advisory — coverage — because prose legitimately contains numbers
+# that are not claims. Everything else is gating, which is deliberate for this
 # series: every source above is either committed to this repository or is Valve's
 # structured JSON. Live drift against the current game is a SEPARATE, non-failing
 # run — see --drift — because a number moving is the game changing rather than the
@@ -41,6 +43,9 @@ if [ "$only_links" = "0" ]; then
 
   echo "== player identifiers in snapshots (gating) =="
   python3 checks/privacy.py || fail=1
+
+  echo "== figures in prose vs registered claims (advisory) =="
+  python3 checks/coverage.py
 fi
 
 echo "== count sync (computed, not typed) =="

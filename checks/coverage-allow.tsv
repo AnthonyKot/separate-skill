@@ -1,0 +1,7 @@
+# chapter	number	why it is not a registered claim
+#
+# Every exception needs a reason. An exception nobody had to justify is how a
+# check quietly stops working — see the header of checks/coverage.py.
+#
+*	2026	calendar year, in tournament and patch names
+21	7854	derived: 19106 - 11252, both operands registered and both printed in the chapter

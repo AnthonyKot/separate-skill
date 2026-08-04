@@ -77,7 +77,8 @@ Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
    missing and you have no idea where."* No throat-clearing, no history of the game.
 2. **What actually happened** — one named, dated, **replay-verifiable** match. Match ID stated. At
    least two hard figures from the record. This is the load-bearing move; if the case is thin the
-   chapter is thin.
+   chapter is thin. **The narration stops at a stated hold point** and does not resume until the
+   reader has committed — see below.
 3. **The reasoning** — the transferable principle, *with its boundaries stated in the same breath*.
    This move must keep four things visibly apart, because collapsing them is how a guide starts
    inventing: **observed fact** (it is in the record), **supported inference** (it follows from the
@@ -90,8 +91,44 @@ Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
    to install a habit by volume, so the reader has to get the repetitions from review instead. This
    is what makes the book's audience wedge structural rather than a line in the marketing.
 
+   **The pass mark grades the decision, never the outcome.** It reads: *before the attempt you named
+   an objective and a maximum acceptable cost; you pass if the attempt achieved the objective within
+   that cost, or if you disengaged when your stated stopping condition occurred.* A pass mark of the
+   form *you survived* is forbidden. Ch. 21 shipped with one — "you were alive at the end of it" —
+   which is the free-death error of §6 reappearing in the review loop one commit after it was
+   corrected in the definition, because survival is easy to score and decision quality is not. A
+   support who dies to force two buybacks may have played the sequence correctly, and a book that
+   marks them down has become the passive-KDA doctrine it exists to replace.
+
 Then the **boundary** block, optionally the **inversion**, then **the replay** (match ID, timestamps,
 what to watch for).
+
+### The hold — the difference between a case study and a decision
+
+Required in every chapter, inside move 2. The narration of the case stops at a chosen moment, the
+reader is given the state, and is asked to **commit before reading on**:
+
+1. **The objective** — what this attempt is meant to buy.
+2. **The acceptable cost** — stated as a quantity, not a feeling. *One support death, no cores.*
+3. **The stopping condition** — the observable event that means disengage.
+4. **The missing information** — what they would most want to know and do not.
+
+Then, and only then, what actually happened.
+
+**Why this is a required move rather than a flourish.** Without it a chapter reveals a sequence and
+interprets it, and the reader can agree or disagree but never has to choose. Agreement with a good
+interpretation is not the skill being taught; the skill is committing under uncertainty and being
+graded on the commitment. Ch. 21 was written without a hold, read well, and taught nothing the reader
+had to do — which is what the pilot was for.
+
+Two rules that keep the hold honest:
+
+- **The hold point must precede the outcome, and the state given must contain no hindsight.** List
+  what the record establishes at that moment and mark what a player would additionally have seen on
+  their own screen. If a fact is only knowable afterwards, it does not belong in the state.
+- **The reader's answer may be right and still lose, or wrong and still win.** Say so at the reveal.
+  A hold that grades by outcome is the ex-post error again, and this book has now made that error
+  twice in two different places.
 
 ### The honesty mechanism: the inversion
 
@@ -319,12 +356,19 @@ notices the repetition.
 | 18 | The **lifetime** of usable vision |
 | 19 | The **state change** a fight is meant to purchase |
 | 20 | The **cost of refusing** — declining is also a decision with a price |
-| 21 | Why numerical advantage **fails to become** map closure |
-| 22 | Why high ground **changes the risk model** |
-| 23 | Recognising **temporary permission** to take an objective |
-| 24 | Turning repeated permission into an **irreversible** ending |
+| 21 | **Detect** that accumulated advantage has stopped producing progress |
+| 22 | Why base defence **changes the exchange rate** — high ground, and buyback |
+| 23 | Decide **when conditions permit** an attempt |
+| 24 | **Execute and sequence** the final conversion |
 
-Two boundaries worth naming because they are the ones most likely to blur. **10** is not another
+**Part V's boundaries were redrawn after ch. 21 was drafted**, because the draft did all four jobs:
+it explained high-ground defence, used buyback as a central mechanism, argued for delaying to take
+Roshan, and prescribed how to make the final attempt. The register had already assigned buyback to
+22. A chapter that explains every mechanism it touches leaves the following three with nothing to do,
+and the first draft of a part is where that happens — so 21 now **detects** and hands the mechanisms
+forward, naming them in one sentence and pointing at the chapter that owns them.
+
+Two more boundaries worth naming because they are the ones most likely to blur. **10** is not another
 farming-pattern chapter; 08 and 09 have already covered where the money is and which of it is yours,
 so 10 is about arriving in time to matter. And **19 and 20** must not become the positive and
 negative forms of one maxim: 19 diagnoses *purpose*, 20 diagnoses the *cost of refusal*.

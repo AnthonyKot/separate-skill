@@ -278,3 +278,35 @@ ol.toc li a { color: var(--link); }
    making the page scroll sideways on a phone. */
 .timeline { overflow-x: auto; margin: 1.4rem 0; }
 .timeline table { font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
+
+/* The hold: the narration of the case stops, the reader commits, and only then
+   does the outcome appear. Styled as an interruption rather than an aside —
+   it is a required move, not a sidebar, and a reader who skims past it has
+   skipped the only part of the chapter that asks them to do something. */
+.hold {
+  border: 2px solid var(--accent);
+  background: var(--paper);
+  padding: 1.1rem 1.3rem;
+  margin: 2rem 0;
+}
+.hold > p:first-child {
+  font-family: var(--sans);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .7rem;
+}
+.hold ol { margin-bottom: 0; }
+.hold .state {
+  font-family: var(--mono);
+  font-size: .86rem;
+  background: var(--code-bg);
+  padding: .8rem 1rem;
+  margin: .9rem 0;
+  overflow-x: auto;
+}
+/* What the record shows after the commitment. Marked so a reader can see where
+   hindsight begins. */
+.reveal { border-left: 3px solid var(--ink-faint); padding-left: 1rem; margin: 1.8rem 0; }

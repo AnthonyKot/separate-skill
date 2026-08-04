@@ -16,10 +16,11 @@ an idea that turned out not to be one. Both are worth noticing. Date entries.
 
 ## 1. Revision backlog — chapter 21
 
-From external review, 2026-08-04. The five factual errors it found are **fixed**; these are the
-structural items, which are larger and not yet done.
+From external review, 2026-08-04. **All of it is now done** — the five factual errors, and the four
+structural items below. Kept rather than deleted because the reasoning is worth having when the same
+questions come up in the next chapter; the headings say what changed.
 
-### 1a. It is not yet a decision-forcing case (accepted, not done)
+### 1a. Not decision-forcing — DONE, and it changed the template
 
 The chapter reveals the whole sequence and then interprets it. The reader can agree or disagree but
 never has to *choose*. The proposed fix is to stop the narrative at **40:22**, immediately after both
@@ -33,11 +34,13 @@ tier-four towers fall, and give the reader the state they would need:
 Then ask for four commitments *before* revealing what happened: the intended objective, the acceptable
 cost, the condition that would make them disengage, and the missing information that matters most.
 
-**This probably changes the template for every chapter**, not just 21 — which is why it is here and
-not applied. If a decision-forcing hold is the right shape, `CONTEXT.md §3` gains a move and the
-other three pilots should be written with it from the start.
+**It did change the template.** `CONTEXT.md §3` now requires **the hold** in every chapter, with two
+rules that keep it honest: the state given must contain no hindsight, and the reveal must say that a
+right answer can still lose. Ch. 21 holds at 39:39 — mega creeps up, a fight just won three-for-two,
+aegis denied so nobody holds it, gold +12,380 against an experience lead of **+989**. The other three
+pilots are written with it from the start.
 
-### 1b. The pass mark is outcome-biased (accepted, not done)
+### 1b. Outcome-biased pass mark — DONE
 
 Current: *you were alive at the end of the attempt; dying inside their base is a fail.* That grades
 survival, not decision quality — and it is the same error the free-death definition was corrected for
@@ -51,10 +54,12 @@ condition occurred.
 > Objective: force the final two buybacks. Acceptable cost: one support death, no core deaths.
 > Stop if: the first core drops below half health before any defender dies.
 
-**Check every other chapter's `After the game` block against this when they are written.** The bias
-is attractive because survival is easy to score and decision quality is not.
+Now in `CONTEXT.md §3` as a rule with the ban stated: *a pass mark of the form "you survived" is
+forbidden.* Ch. 21's block now grades the commitment and says explicitly that dying is not
+automatically a fail and surviving is not automatically a pass. **Check every future chapter against
+this**; the bias is attractive because survival is easy to score and decision quality is not.
 
-### 1c. Three `Next game` rules overreach the case
+### 1c. Three `Next game` rules overreached — DONE
 
 - *"Count their buybacks"* — a reader can track buybacks they have **seen**, not who currently holds
   the gold. Reword to observed buybacks plus whether the cooldown has returned.
@@ -65,13 +70,13 @@ is attractive because survival is easy to score and decision quality is not.
   replay observation documenting it or drop the spatial claim. This is a class-2/class-3 confusion of
   exactly the kind `CONTEXT.md §5` exists to prevent, and it got past me.
 
-### 1d. Chapter 21 currently consumes 22–24 (accepted, not done)
+### 1d. Ch. 21 consumed 22–24 — DONE
 
 The most structural finding. Ch. 21 explains high-ground defensive advantage, buyback as a defensive
 mechanism, when to delay for Roshan, and how to make the final attempt — which are the jobs of 22, 23
 and 24. The register already assigns buyback to 22, and 21 uses it as a central explanatory device.
 
-Proposed boundaries, to be moved into `CONTEXT.md §6` once settled:
+Settled and moved into `CONTEXT.md §6`:
 
 | Chapter | Exclusive job |
 |---|---|
@@ -80,9 +85,9 @@ Proposed boundaries, to be moved into `CONTEXT.md §6` once settled:
 | 23 | Decide when conditions permit an attempt |
 | 24 | Execute and sequence the final conversion |
 
-Under this, ch. 21 ends on a diagnostic — *is my lead still growing, or has it stopped converting?* —
-and hands the mechanisms forward rather than explaining them. One sentence naming buyback and high
-ground, then: *why the final exchange becomes expensive is chapter 22.*
+Ch. 21 now ends on the diagnostic — *is my lead still growing, or has it stopped converting?* — and
+hands the mechanisms forward by name: high ground and buyback to 22, whether conditions permit an
+attempt to 23, sequencing the ending to 24.
 
 ---
 
@@ -110,10 +115,12 @@ Leads to chase. Nothing here is sourced yet.
   establish age, employment, games per week, or whether someone understood the game while losing.
   Either recruit a consented cohort or say plainly that the thesis is unfalsifiable here. **Unresolved
   since 2026-08-04.**
-- **Does the decision-forcing hold (1a) belong in the template?** Decide before pilot two.
-- **Chapter length.** No ceiling has been set. Ch. 21 came in at ~1,850 words. Book 4 used 2,000–3,000
-  and found the ceiling useful. Worth setting one before four chapters exist and set the norm by
-  accident.
+- **Chapter length.** No ceiling has been set. Ch. 21 is 2,386 words with the hold, up from ~1,850
+  without it — so the hold costs roughly 500 words, and a ceiling set now should account for it.
+  Book 4 used 2,000–3,000 and found the ceiling useful. Worth setting before four chapters exist and
+  fix the norm by accident.
+- **Is one hold per chapter right?** Ch. 21 has a single hold at 39:39. A chapter with two decision
+  points might teach more, or might turn into a quiz. Settle after pilot two rather than by drift.
 
 ---
 
@@ -122,11 +129,12 @@ Leads to chase. Nothing here is sourced yet.
 - **The bracket sampler's seek overshoots.** It extrapolates from a match-ID rate that is not linear
   (measured 17–27 ids/second at different distances). Replace with bisection. Until then
   `checks/data.tsv` is empty and no bracket claim exists.
-- **Nothing checks prose against the registry.** This is the gap that let ch. 21 say three deaths
-  while its own registered claim said four. `verify.sh` proves the registry matches the record; it
-  cannot prove the prose matches the registry, and `CONTEXT.md §5` already admits coverage is
-  editorial. A partial check is possible — extract every number from a chapter's HTML and warn on any
-  that appears in no registered row. It would be noisy, and it would have caught this.
+- ~~Nothing checks prose against the registry.~~ **Closed 2026-08-04.** `checks/coverage.py` extracts
+  every number from a chapter's HTML and reports any that matches no registered claim. Advisory, and
+  the only advisory check here, because prose legitimately contains years and derived figures — but
+  exceptions must be declared with a reason in `checks/coverage-allow.tsv`, since an exception nobody
+  justified is how a check stops working. It found a genuine miss on its first run: +4,934 sat in the
+  reveal unregistered.
 - **No local ASR fallback** (`ffmpeg`, `whisper` absent), so a VOD without captions is unusable.
 
 ---
