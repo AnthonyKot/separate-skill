@@ -1267,17 +1267,26 @@ stale summaries — all of which they now catch well. They have never once caugh
 
 ### 17e. The kickoff prompt
 
+The first prompt of the next session. Short on purpose: everything it would otherwise explain lives in
+the repository, is checked, and would drift if restated here. Its only job is to name the task and the
+three things a fresh session cannot infer — which document to read, that step 2 is the real work, and
+that ch. 06's own contract contains a claim that cannot survive.
+
 > Work in `~/book6` — *Winning Is a Separate Skill*.
 >
-> Read `CONTEXT.md` in full, then `NOTES.md §17`. Everything else in `NOTES.md` is a per-chapter log
-> and is reference rather than reading.
+> Read `CONTEXT.md` in full, then `NOTES.md §17`. The rest of `NOTES.md` is a per-chapter review log —
+> reference, not reading.
 >
-> **Task: draft chapter 06, Two Resources, and You Count One** — the first chapter of Part II.
+> **Task: draft chapter 06, the first chapter of Part II.**
 >
-> Follow `CONTEXT.md §10`, and treat **step 2 as the real work**: check what the record can actually
-> support *before* committing to the chapter's contract. Three of Part I's five chapters changed
-> title, design or premise at that step, and each change improved them. If the contract and the
-> evidence disagree, say so and rescope rather than writing to the contract.
+> Follow the runbook in `CONTEXT.md §10`, and treat **step 2 as the real work**: establish what the
+> record can actually support *before* committing to the chapter's contract. Three of Part I's five
+> chapters changed title, design or premise at that step and each change improved them. If contract
+> and evidence disagree, rescope and say so rather than writing to the contract.
+>
+> **Start by reading `NOTES.md §17c-bis`.** Ch. 06's contract and title both assert that players
+> usually ignore one of the two resources. That is a prevalence claim this book has no evidence for
+> and no way to get, and it needs settling before it shapes the chapter.
 >
 > Then publish it as §10 says: verify, commit, push, confirm the page is live and CI is green — and
-> re-run `verify.sh` after the last edit, not before it.
+> re-run `verify.sh` **after** the last edit, not before it.
