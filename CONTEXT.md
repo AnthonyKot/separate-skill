@@ -885,3 +885,32 @@ Two standing rules:
 Reviews run in parallel against a drafted chapter, each given the chapter and this file. Findings are
 triaged by the author; nothing is applied automatically. Book 4's record is the argument for keeping a
 human at the end: every one of its worst errors passed the mechanical checks.
+
+## 10. Drafting a chapter — the runbook
+
+The order below is not a suggestion. Two of these steps exist because skipping them cost something,
+and the numbering records which.
+
+1. **Pick the chapter and read its contract** (§6). One exclusive job. If the chapter you want to
+   write is doing a neighbour's job, stop and fix the register first.
+2. **Find a case.** `curl api.opendota.com/api/proMatches`, then check `version` is non-null —
+   `tools/fetch-match.py` refuses unparsed matches rather than committing an empty snapshot. Prefer
+   a match no chapter has spent (§7), and read the `Spent` field of any you reuse.
+3. **Write the ledger BEFORE drafting** (§7). Ch. 21 shipped without one and the omission was found
+   by a reviewer; the `Prohibited` field is the one that shapes the draft, and written afterwards it
+   only rationalises it. Ch. 01's ledger forbade classifying any individual death, which changed what
+   the chapter could be — that is the field working.
+4. **Register the claims from the record, never by hand.** Generate the rows with a script that reads
+   the snapshot. If a figure you want has no check type, add one (`checks/matches.py`) — the
+   machinery grows to fit the argument, not the reverse. Ch. 32 needed four new types to see wards.
+5. **Draft**, five moves, one hold (§3). The hold must offer a way to pass using only what it shows.
+6. **Link it** in `docs/index.html` and mark the register row in §6.
+7. **`./verify.sh`** — nine checks. Expect `register.py` to catch something; it usually does.
+8. **Commit and push**, then confirm the page is live and CI is green. Pages deploys take about a
+   minute, and a 404 immediately after pushing means the deploy is still running, not that anything
+   is wrong.
+
+**Then, and separately: review.** Run the panel (§9) or hand it to a human. Every serious defect in
+the four pilots was found this way and none by the checkers — the checkers caught figures, reviewers
+caught arguments. Budget for the revision; each pilot needed one substantial pass after publication,
+and each pass improved the chapter.
