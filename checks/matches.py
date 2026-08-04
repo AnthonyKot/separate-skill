@@ -65,11 +65,45 @@ def resolve(d, check, arg):
         return series[minute]
 
     if check == "objective_time":
+        # An optional #N selects the Nth occurrence, 1-based. Needed because a
+        # match has two tier-4 towers and the chapter cites both; without this the
+        # second one could not be registered, and an unregistered figure in the
+        # prose is exactly what the coverage rule in CONTEXT.md 5 cannot catch.
+        arg, _, nth = arg.partition("#")
+        nth = int(nth) if nth else 1
         kind, _, key = arg.partition(":")
+        seen = 0
         for o in d.get("objectives") or []:
             if o.get("type") == kind and (not key or o.get("key") == key):
-                return o.get("time")
-        raise LookupError(f"no objective {arg!r} in this match")
+                seen += 1
+                if seen == nth:
+                    return o.get("time")
+        raise LookupError(f"no occurrence {nth} of objective {arg!r} (found {seen})")
+
+    if check == "teamfight_start":
+        fights = d.get("teamfights") or []
+        i = int(arg)
+        if not 1 <= i <= len(fights):
+            raise LookupError(f"match has {len(fights)} teamfights, no #{i}")
+        return fights[i - 1]["start"]
+
+    if check == "teamfight_deaths":
+        # "<index>:<radiant|dire>" — how many heroes of that side died in the fight.
+        # The teamfights array lists players in player_slot order, so the first five
+        # entries are Radiant. This carries chapter 21's load-bearing claim that a
+        # fight went three-for-none, which no other registered figure would catch.
+        idx, _, side = arg.partition(":")
+        fights = d.get("teamfights") or []
+        i = int(idx)
+        if not 1 <= i <= len(fights):
+            raise LookupError(f"match has {len(fights)} teamfights, no #{i}")
+        slots = sorted(p["player_slot"] for p in d["players"])
+        total = 0
+        for slot, pl in zip(slots, fights[i - 1].get("players", [])):
+            is_radiant = slot < 128
+            if (side == "radiant") == is_radiant:
+                total += pl.get("deaths", 0)
+        return total
 
     if check == "purchase_time":
         name, _, item = arg.partition(":")
