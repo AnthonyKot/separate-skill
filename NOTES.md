@@ -123,11 +123,13 @@ Leads to chase. Nothing here is sourced yet.
 
 ## 3. Open questions
 
-- **The thesis cannot be tested by the evidence the book collects.** `CONTEXT.md §1` promises the
-  reader diagnosis stays a hypothesis until target-bracket evidence supports it; match records cannot
-  establish age, employment, games per week, or whether someone understood the game while losing.
-  Either recruit a consented cohort or say plainly that the thesis is unfalsifiable here. **Unresolved
-  since 2026-08-04.**
+- ~~The thesis cannot be tested by the evidence the book collects.~~ **Settled 2026-08-04, now in
+  `CONTEXT.md §1`.** The promise that the diagnosis stays hypothetical until target-bracket evidence
+  supports it specified a test that could never run. The **prevalence** claim is dropped — the book
+  does not need it, because the reader self-selects — and the Thesis row is now a **conditional**.
+  **Efficacy** remains untested and is declared as untested; the instrument is three to five readers
+  running an `After the game` loop, not a cohort, because the cohort was specified to establish the
+  claim that has been dropped.
 - **Chapter length.** No ceiling has been set. Ch. 21 is 2,386 words with the hold, up from ~1,850
   without it — so the hold costs roughly 500 words, and a ceiling set now should account for it.
   Book 4 used 2,000–3,000 and found the ceiling useful. Worth setting before four chapters exist and
@@ -285,7 +287,11 @@ made, this file for what is not settled. The repository is authoritative; anythi
 Neither is settled. Both are the author's call, and both are recorded here rather than in
 `CONTEXT.md` for that reason.
 
-**Decision one — what the thesis claims.** `§1` promises the reader diagnosis stays a hypothesis
+**Decision one — SETTLED 2026-08-04, applied in `CONTEXT.md §1`.** The prevalence claim is dropped
+and the Thesis row is conditional; efficacy is declared untested. The analysis that produced it is
+kept below because the reasoning is the useful part.
+
+**What the thesis claims.** `§1` promises the reader diagnosis stays a hypothesis
 "until target-bracket evidence supports it", and `§5` defines that as OpenDota bracket samples.
 Those records cannot show age, employment, games per week, or whether someone understood the game
 while losing, so the promise cannot be kept. Three different claims are tangled in it:
@@ -306,8 +312,8 @@ was specified to establish prevalence, which is the claim being dropped.
 is real evidence about executability, provided it is declared as author self-testing and never as
 data about anyone else.
 
-*What settles it:* a decision about the Thesis row's wording, plus either three to five readers or
-an explicit statement that efficacy is untested.
+*How it was settled:* the Thesis row became conditional and now states that efficacy is untested.
+What remains optional, and is not blocking: running the three-to-five-reader efficacy test at all.
 
 **Decision two — how many seat chapters.** Part VII was specified as five full chapters when its
 premise was inversion. The premise is now reweighting (§5b), so the sizing is genuinely reopened.
@@ -325,7 +331,7 @@ Either outcome settles four chapters' worth of structure for the price of one.
 ### 7b. Suggested order of work
 
 1. **Ch. 30, Position Three** — settles Part VII's size before anything is written on the assumption
-   of five.
+   of five. **The brief is §8, and its criteria are pre-registered.**
 2. **Ch. 02, 03, 04, 05** — completes Part I. This tests something no pilot did: **whether a whole
    part hangs together**, and whether four chapters with adjacent contracts stay distinct in practice
    rather than only on paper. Part I is also the most-read part of any book, and ch. 01 already exists
@@ -353,3 +359,77 @@ Either outcome settles four chapters' worth of structure for the price of one.
 - Do not let a chapter explain a mechanism that belongs to a later chapter — check the contract list
   in `CONTEXT.md §6` before drafting, not after.
 - Do not reuse ch. 01's reveal (§1e). The principle carries; the theatre does not.
+
+---
+
+## 8. Pilot #2 — the brief
+
+One chapter, written to settle whether Part VII wants five chapters or about three. Everything below
+is **pre-registered**: the criteria are fixed now, before the chapter exists, because a test whose
+criteria are chosen after the result is the ex-post error this book bans in three other places. If
+the criteria turn out to be wrong, change them *and say so in the chapter* — do not quietly re-cut
+them to fit what got written.
+
+### 8a. The question
+
+Ch. 32 found that the seat does not *invert* general advice; it changes what is scarce, what is
+visible, and which presumption you start from. **Is that variation actually indexed by seat, or by
+something else that position five happens to sit at one end of?**
+
+The suspicion worth testing: the real axis may be **whether the seat's product is visible in the
+record** — vision, space and pressure are not; farm, items and buildings are. If so, Part VII is
+organised around the wrong variable and five chapters is three too many.
+
+### 8b. Why position three (ch. 30)
+
+The maximal test. The offlane is the only seat that shares position five's problem — its product is
+space and pressure, which the record cannot see — while holding a **core's** resource profile: its
+own gold, its own farm, its own item timings. Every other seat varies both together.
+
+- If ch. 30 comes out like ch. 32, the axis is **visibility of product**, not seat.
+- If ch. 30 comes out unlike ch. 32 despite sharing the invisibility, the axis is genuinely **seat**.
+
+Positions one and two are weak tests: both are visible and well-resourced, so a distinct chapter
+would prove only that carries differ from supports, which nobody doubted.
+
+### 8c. What ch. 32 established, for comparison
+
+Fixed here so the comparison cannot drift. Position five:
+
+| Axis | Ch. 32's answer |
+|---|---|
+| What is scarce | Gold that is not really yours, spent on things that expire; your body, risked to deliver information; vision, on a fixed clock |
+| What is visible | Almost nothing the seat produces; the scoreboard captures outcomes and omits the work |
+| Which presumption | An isolated death is *not* presumed avoidable, because the exchange is routinely unrecorded |
+
+### 8d. The decision rule, fixed in advance
+
+Score ch. 30 against the table above once drafted.
+
+- **KEEP FIVE CHAPTERS** if at least **two of the three axes** differ materially from ch. 32, **and**
+  at least **three of five `Next game` actions** have no analogue in ch. 32.
+- **COLLAPSE PART VII** otherwise — to cores / offlane / supports, or to a single chapter carrying a
+  per-seat table. Under this outcome ch. 30 is rewritten as part of the collapsed structure and ch. 32
+  is trimmed to fit beside it.
+- **A third outcome is possible and must be reported if it happens:** the axes differ, but they differ
+  in the *same direction* as ch. 32 — both seats scarce in invisible product, both presuming an
+  unrecorded exchange. That is evidence for the visibility axis and against the seat axis even though
+  the chapters read differently, and it is the outcome most likely to be mistaken for success.
+
+### 8e. Constraints on the draft
+
+- **New case, new ledger, ledger first** (`CONTEXT.md §10`). Do not reuse 8928118730 — ch. 32 spent it,
+  and comparing two chapters drawn from one match tests nothing.
+- The record can see, for an offlane: lane assignment and position, gold and XP curves against the
+  enemy safe lane, item timings, deaths, and participation in fights. It **cannot** see space created,
+  pressure applied, or attention absorbed — which is the whole difficulty and should be stated in the
+  chapter rather than worked around.
+- One hold, offering a way to pass (`§3`). Do not reuse ch. 01's reveal (§1e).
+- Do not read ch. 32 while drafting. Draft, then compare. A chapter written next to its comparison
+  will converge on it, and the convergence is exactly what is being measured.
+
+### 8f. What this pilot does not test
+
+Efficacy, prevalence, or whether any of Part VII is worth reading. It tests one structural question
+and should not be asked to carry more — the four-pilot round was valuable because each pilot had a
+single question, and the temptation now is to make this one settle everything left over.
