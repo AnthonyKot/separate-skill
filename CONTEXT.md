@@ -879,6 +879,30 @@ Generated from the full series, the peak is **+19,106 at minute 37**. The error 
 than the truth, which is the direction that does not get caught by disbelief. **Compute from the whole
 series; never eyeball a sample and call it a maximum.**
 
+**Ch. 30 — four checkers answered narrower questions than their names, and two of them shipped.**
+The pilot produced findings about position three and a separate set about the machinery that approves
+chapters, and the second set has a shape the earlier entries here do not. Every failure above was a
+**wrong answer**: fail-open, a biased sample, a VOD bound by its title. These four were **right
+answers to smaller questions**, under headings that sounded general.
+
+| Checker | What green actually meant | Shipped? |
+|---|---|---|
+| `retired.py` | No retired *string* appears — not no retired *idea*. A decision restated in new words passes forever | **Yes.** A premise the book had abandoned was live on the home page, twice, across many green builds |
+| `status.py` | *Three named numbers* are current — under the heading "stated status vs reality" | **Yes.** Three of five per-chapter claim counts were wrong in the register |
+| `matches.py`, `hero_death_time` | Unaffected: it raises rather than passing | No. But it could not see 19 of 127 heroes, so it silently decided **which cases the book was allowed to use** |
+| `coverage.py` | Unaffected: the check was correct and said so on every run | No. Two ch. 32 figures were unregistered and both were right |
+
+The third row is the one worth remembering, because it is the only failure here that leaves **no
+artifact**. A fail-open check publishes something wrong that can be pointed at afterwards. A checker
+with a blind spot produces *absence* — a case not chosen, a chapter not attempted — and absence
+cannot be audited later by anyone, including the person who caused it. It was found only because
+ch. 30's case happened to need a hero whose internal name is `magnataur`.
+
+The fourth row is not a machinery failure at all. `coverage.py` worked, reported, and was read past on
+every run since it was written. **Advisory came to mean optional, and optional came to mean never** —
+which is worth stating in the foundations because §5 deliberately keeps one advisory check and this is
+the cost of having one.
+
 ## 9. The pipeline
 
 Built for parallelism where the work is genuinely independent, and strictly serial where it is not.
