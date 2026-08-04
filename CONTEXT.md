@@ -70,7 +70,7 @@ incentives rather than about frequency.
 
 ## 3. Chapter template
 
-Filename: `chapters/NN-slug.html`. Four moves, fixed order, fixed headings.
+Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
 
 1. **The situation** — the decision, stated concretely, second person, present tense, from inside a
    real game state. *"It is twenty-four minutes. You have your first big item. Two of them are
@@ -418,7 +418,7 @@ for a thirty-third chapter, and it should be made then rather than assumed now.
 ### Part V — Can you convert advantage into a win?
 | # | Title | Status |
 |---|---|---|
-| 21 | The Lead That Melts | ☐ · earmarked: match 8929124210 · **pilot chapter** |
+| 21 | The Lead That Melts | ☑ 38 claims · match 8929124210 · **pilot** · revisions owed, see `NOTES.md` §1 |
 | 22 | High Ground Is a Different Game | ☐ · buyback belongs here, as part of high-ground state |
 | 23 | The Objective Window | ☐ · Roshan and Tormentor are dated examples, not the subject |
 | 24 | Ending | ☐ closes Part V |
@@ -495,8 +495,41 @@ professionals playing in broadcast tournaments, and anonymise everyone else by d
 evidence cannot support, and no claim checker will ever flag it.
 
 ### 8929124210 — Yakult Brothers vs Rune Eaters, The Games of the Future 2026
-Earmarked for ch. 21. Ledger to be written when the chapter is drafted, not before — book 4
-reconstructed one afterwards and found it materially harder.
+
+Written after ch. 21 was published rather than before it was drafted, which is a process failure and
+is recorded as one: the policy above says the ledger is written when a match is first used, and the
+chapter shipped without the field that states what the case may never be made to say. Caught on
+external review. The next chapter writes its ledger first.
+
+- **Patch.** 7.41e. **Source mode.** Professional broadcast — identities permitted, per
+  `checks/privacy.py`. **Identity.** Players named; they are named on stream.
+- **Facts.** All registered in `checks/matches.tsv`, 38 rows, every value generated from the record:
+  barracks at 34:46 / 35:17 / 35:28 / 37:20 / 39:39; both tier-four towers 40:09 and 40:22; fort
+  46:21; gold advantage peaking at +19,106 at minute 37, which is the series maximum, falling to
+  +11,252 by minute 45; experience advantage +4,934 at minute 40 and −2,705 at 41, −3,124 at 42;
+  teamfights 5 through 8 with per-side deaths; six buybacks; Roshan at 38:36 with the aegis denied
+  at 38:37.
+- **Permitted.** That a large structural and economic advantage can coexist with several minutes of
+  failed final conversion. That buildings are the cheapest thing an advantage buys. That the reported
+  peak of a lead can postdate the trade that began reversing it.
+- **Observation vs inference.** Every timestamp is observed. That the side ahead lost more heroes
+  than it killed between the last barracks and the fort is computed from the record. That defending
+  a base is a strong position is a **hypothesis** the record is consistent with and does not
+  establish. Nothing here is intention.
+- **Confounders.** The draft; individual hero scaling; deaths taken *while* converting buildings,
+  which are not the same as deaths taken for nothing; the aegis denial; buybacks; and professional
+  coordination throughout.
+- **Prohibited.** Never that stalling **caused** a loss — this team **won**. Never that this pattern
+  is common in Archon–Legend; a professional match cannot establish prevalence in any bracket. Never
+  that a specific alternative line would have ended the game sooner; the record contains no
+  counterfactual. Never that any player intended anything.
+- **Transfer.** Replay diagnosis only. The coordinated actions in this match — a one-second aegis
+  denial, five players arriving together, buybacks timed to a siege — are not available to a
+  solo-queue reader and must never be presented as instructions.
+- **Spent.** Ch. 21 took the stock-versus-flow inference: advantage accumulates, closure does not.
+  A later chapter may return **only for a different inference** — 22 for why the defender's exchange
+  rate improves, 23 for objective windows, 24 for sequencing the ending — and each must draw its own
+  conclusion rather than retell this one.
 
 ## 8. What got caught
 

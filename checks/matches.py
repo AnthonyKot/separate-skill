@@ -80,6 +80,18 @@ def resolve(d, check, arg):
                     return o.get("time")
         raise LookupError(f"no occurrence {nth} of objective {arg!r} (found {seen})")
 
+    if check in ("series_max", "series_max_minute"):
+        # Registering a value at a minute does not license the word "peak" — the
+        # value could be matched or beaten elsewhere in the series. These two make
+        # the maximum itself the claim. Added after review pointed out that ch. 21
+        # asserted a peak while the registry only proved a reading.
+        key = {"gold": "radiant_gold_adv", "xp": "radiant_xp_adv"}[arg]
+        series = d.get(key) or []
+        if not series:
+            raise LookupError(f"no {key} series in this match")
+        top = max(series)
+        return top if check == "series_max" else series.index(top)
+
     if check == "teamfight_start":
         fights = d.get("teamfights") or []
         i = int(arg)
