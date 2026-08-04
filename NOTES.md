@@ -788,6 +788,39 @@ see, because the count was written in words.
   cheerfully invent a plan for you. The ten-minute mark and sixty seconds are now labelled arbitrary
   standardisation rather than implied thresholds.
 
+### 11bis. A second review arrived, of a version that no longer existed
+
+Worth recording because the failure is not the reviewer's and will recur. A second pass on ch. 02
+returned seven recommendations, all confident, all well argued, and **all seven already applied and
+deployed two commits earlier**. It was a fresh generation from a stale copy of the chapter — the
+wording differs from the first pass, so it was genuinely re-run rather than resubmitted.
+
+This is `CONTEXT.md §9`'s standing rule doing its job in an unexpected direction. The rule was written
+for reviewers asserting facts about *the world* — an API that did not exist while it was returning
+200. Here the stale fact was about **the repository itself**, which felt safer and was not.
+
+**The practical countermeasure is one line: give a reviewer the commit, not the prose.** A review of
+"chapter 02" is a review of whichever chapter 02 the reviewer happens to hold. Nothing in a
+well-argued report signals that its subject has moved, and the report will not mention the fixes
+because it cannot see them.
+
+One item in it was genuinely new and was taken — see §11d.
+
+### 11d. The four rungs, from the second pass
+
+The first pass said *rename `known` to `available`*. The second went further and proposed a ladder for
+the player's relationship to a fact: **available → noticed → remembered → acted upon.**
+
+That is orthogonal to the chapter's existing four categories, which describe the *information*. These
+describe the *reader*, and they break differently: not-noticed is an attention problem, not-remembered
+is a holding problem, not-acted-on is a decision problem, and only the last is one the rest of this
+book can help with. Added to ch. 02's review loop, where it converts a diagnosis into a repair, and
+deliberately not to the hold — the chapter has enough taxonomy in it already.
+
+It also closes the chapter's own loop: the record can establish that a fact was available and can
+never say which rung the reader fell off. That is precisely the half of the reconstruction the chapter
+keeps saying the reader must supply, and it had not previously said *where*.
+
 ### 11c. One thing caught in the drafting rather than the review
 
 The first version of the repaired reveal ended on *everything you were shown was unavailable*, which
