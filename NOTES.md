@@ -952,3 +952,68 @@ Fixed, and *leaving was still free* added to `checks/retired.tsv`. **A summary w
 thing it summarises is the one case the audit rule cannot catch by construction**, because at the time
 of writing there is nothing yet to be inconsistent with. The only defence is to re-read forward
 references when the referenced chapter lands, and that is now what the runbook's step 6 means.
+
+## 14. Ch. 03 — the contract could not be met, and the failure is the chapter
+
+### 14a. What the record can and cannot trace
+
+Checked before drafting, per §10a's warning that this was the thinnest of the four.
+
+**Traceable, with timestamps:** deaths, objectives, buybacks, ward placements and endings (with x, y),
+purchases, runes. **Positions:** deaths inside teamfight windows only. **Per minute only:** gold, xp,
+last hits. **Absent entirely:** hero position over time, health, mana, cooldown state, ability
+timestamps.
+
+So the contract as written — *trace the action sequence that removed the escape* — **is not
+deliverable** if "action" means the player's own actions. There is no per-second anything. The
+original title, *The Thirty Seconds Before*, promised precisely that reconstruction and was retired
+before a word was drafted.
+
+**What is deliverable is one step earlier and turned out to be worth more.** A sequence can only be
+traced once it is established to be one sequence, and the record can test that: ordered deaths, with
+places.
+
+### 14b. The case
+
+Match **8928851109**. The parser's third teamfight runs 18:38–19:30 and holds **six deaths** —
+Puck 18:53, Techies 18:54, Mirana 19:05, Earth Spirit 19:15, Clinkz and Undying at 19:30. Four
+against two: a rout, with an obvious story.
+
+The positions say otherwise. **Puck and Techies died 1.0 cell apart; everyone else died 63 to 69 cells
+away from them.** Spread **69.6**, against **20.6** for ch. 04's fight — which was genuinely one pile.
+The eleven-second "pause" is not a pause; it is the record crossing the map with no marker, under one
+heading.
+
+The hold gives the reader the six timings alone and asks where the joins are. The gaps are visible
+without coordinates, so the split is reachable from the evidence shown, and *"these are one
+engagement and here is why the pauses do not trouble me"* is stated as a passing answer.
+
+**The threshold is declared as the book's choice**, not the record's: 30 cells, and any value between
+roughly 30 and 60 gives the same two groups because the between-group gap is 63 and the widest
+within-group gap is 26. A case whose answer moved with the threshold would not have been usable, and
+the chapter says so.
+
+### 14c. The runbook's new step 6 paid for itself immediately
+
+Ch. 01 described ch. 03 as *"the thirty seconds that removed your exit"* — a forward reference written
+before ch. 03 existed, to a title that no longer does. Caught by the step added one commit earlier
+after the same failure with ch. 04. **Two for two: every forward reference written before its subject
+existed has been wrong when the subject arrived.** That is now the expectation rather than a surprise,
+and it is an argument for writing forward references vaguely or not at all.
+
+### 14d. `coverage.py` had a compound-value gap
+
+`teamfight_death_pos` registers a coordinate as the string `"118,122"`. The registry scan only matched
+cells that were entirely one integer, so **every coordinate ch. 03 quotes looked unregistered while
+being registered exactly.** Fixed by splitting compound numeric cells into their parts. The pattern to
+watch: a checker that reads claim *files* has to understand every shape a claim value can take, and
+each new check type is a new shape.
+
+### 14e. Part I is complete except ch. 05
+
+01, 02, 03, 04 are written. **Ch. 05 remains**, and it needs a different kind of case from all four:
+a player who did not die and lost anyway. `life_state_dead`, low deaths beside poor `lane_efficiency`,
+or a low `teamfight_participation` on a losing side are the places to look. It is the chapter that
+stops Part I teaching the second stuck population to keep doing what is already losing them games —
+see §6's two-population table, which remains a **hypothesis with no bracket evidence** and must not be
+presented as more.

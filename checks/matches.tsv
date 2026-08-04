@@ -265,3 +265,29 @@
 4	8927063876	teamfight_death_dist_from_centre	5:Tusk	2.9
 4	8927063876	teamfight_death_dist_from_centre	5:Shadow Fiend	5.4
 4	8927063876	teamfight_death_dist_from_centre	5:Earth Spirit	9.8
+
+# ch 03 — What Counts as One Fight. Match 8928851109, patch 7.41e. The parser's
+# third teamfight window holds six deaths in TWO places 63-69 cells apart. Compare
+# teamfight_death_spread here (69.6) with ch. 04's fight 5 (20.6): one is a pile,
+# one is two engagements sharing a label.
+3	8928851109	duration		2822
+3	8928851109	winner		radiant
+3	8928851109	count	teamfights	6
+3	8928851109	teamfight_start	3	1118
+3	8928851109	teamfight_end	3	1170
+3	8928851109	teamfight_summary_deaths	3	4
+3	8928851109	teamfight_deaths	3:radiant	2
+3	8928851109	teamfight_deaths	3:dire	4
+3	8928851109	hero_death_time	Puck:1	1133
+3	8928851109	hero_death_time	Techies:6	1134
+3	8928851109	hero_death_time	Mirana:2	1145
+3	8928851109	hero_death_time	Earth Spirit:2	1155
+3	8928851109	hero_death_time	Clinkz:1	1170
+3	8928851109	hero_death_time	Undying:7	1170
+3	8928851109	teamfight_death_pos	3:Puck	118,122
+3	8928851109	teamfight_death_pos	3:Techies	117,122
+3	8928851109	teamfight_death_pos	3:Mirana	122,190
+3	8928851109	teamfight_death_pos	3:Earth Spirit	96,188
+3	8928851109	teamfight_death_pos	3:Clinkz	98,182
+3	8928851109	teamfight_death_pos	3:Undying	98,184
+3	8928851109	teamfight_death_spread	3	69.6

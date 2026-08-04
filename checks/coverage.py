@@ -46,6 +46,14 @@ def registered():
                     cell = cell.strip()
                     if re.fullmatch(r"-?\d+", cell):
                         values.add(cell.lstrip("+-"))
+                    # A compound value registers each of its parts. Coordinates are
+                    # stored as "118,122" by teamfight_death_pos, and ch. 03 quotes
+                    # the two numbers separately — which the scan above could not
+                    # see, so every coordinate in that chapter looked unregistered
+                    # while being registered exactly.
+                    if re.fullmatch(r"-?\d+(,-?\d+)+", cell):
+                        for part in cell.split(","):
+                            values.add(part.strip().lstrip("+-"))
                     # a match id is registered by being the row's subject
                     if re.fullmatch(r"\d{8,}", cell):
                         values.add(cell)

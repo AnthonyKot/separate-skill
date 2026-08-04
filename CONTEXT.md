@@ -563,7 +563,7 @@ jobs are defined by the seat rather than by the topic.
 |---|---|---|
 | 01 | The Death You Didn't Notice | ☑ 11 claims · match 8928953683 · **pilot** |
 | 02 | What the Map Already Said | ☑ 24 claims · match 8928953683 · reuses ch. 01's case for a different inference |
-| 03 | The Thirty Seconds Before | ☐ |
+| 03 | What Counts as One Fight | ☑ 21 claims · match 8928851109 · retitled before drafting |
 | 04 | Leaving Is a Skill | ☑ 42 claims · match 8927063876 |
 | 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
 
@@ -978,6 +978,38 @@ Written before ch. 04 was drafted.
   inference that leaving has a price the record cannot state and staying has one it can. Ch. 17
   (*Cooldowns Are the Real Clock*) and ch. 20 (*The Fight You Declined*) may return for different
   inferences and must draw their own.
+
+### 8928851109 — Gaimin Gladiators vs Nigma Galaxy, The Games of the Future 2026
+
+Written before ch. 03 was drafted. Team names as reported by the record.
+
+- **Patch.** 7.41e. **Source mode.** Professional broadcast. **Identity.** Heroes only.
+- **Facts.** 47:02, Radiant won. The parser's **third teamfight** runs **18:38–19:30**, fifty-two
+  seconds, and contains **six hero deaths**: Puck 18:53, Techies 18:54, Mirana 19:05, Earth Spirit
+  19:15, and Clinkz and Undying together at 19:30. Every death carries a position, and they fall into
+  **two groups 63 to 69 cells apart** in the parser's grid — Puck and Techies within **1.0** cell of
+  each other at one end of the map, the other four within **26** cells at the other. The overall
+  spread is **69.6** cells. The fight's own `deaths` field reads **4** against the kill log's six.
+- **Permitted.** That a window the parser labels one teamfight can contain engagements in two places,
+  separated in this case by eleven seconds and by most of the map. That a reader reviewing "the fight
+  we lost" is working from a label, not from an established event.
+- **Observation vs inference.** Times, positions and the grouping are observed; the 30-cell threshold
+  used to group them is **this book's choice**, stated in the chapter, and the gap here is wide enough
+  that any threshold between about 30 and 60 gives the same two groups. That the two groups are
+  *causally* related is **not established and must not be implied** — they are two sets of deaths in
+  one window, and the whole chapter is that joining them is the reader's act rather than the record's.
+- **Confounders.** The parser's teamfight definition, again. The grid is not game units and no
+  distance here is converted to any. Five of the six deaths are on one side, which makes the window
+  look like a rout and may make the split *less* visible to a reader, not more.
+- **Prohibited.** Never that the first pair of deaths caused the second group — no positions over
+  time, no counterfactual. Never that anyone should have disengaged between them; that is ch. 04's
+  question and this record cannot price it either. Never that this split is typical: it is one window
+  in one professional game, and the bracket sample carries no fight data at all.
+- **Transfer.** The procedure — segment before explaining — transfers completely. The distances, the
+  eleven seconds and the two-group shape do not.
+- **Spent.** Ch. 03 takes the two-cluster split and the sequence of six deaths, for the inference that
+  a labelled window is not an established event. Ch. 20 (*The Fight You Declined*) may return for a
+  different inference and must draw its own.
 
 ## 8. What got caught
 

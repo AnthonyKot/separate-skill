@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<!-- rules: CALIBRATION_MARK=2 HOLD_PASSABLE=2 NEXT_GAME_LIVE=1 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · What Counts as One Fight — Winning Is a Separate Skill</title>
+<meta name="description" content="Before you can trace the sequence that removed your escape, you have to establish that it was one sequence. Six deaths, fifty-two seconds, one label — and two engagements most of the map apart.">
+<script>try{var t=localStorage.getItem("separate-skill-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="../static/style.css">
+<script defer src="../static/theme.js"></script>
+
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Separate<span>Skill</span></a>
+    <nav class="site-nav">
+      <a href="../index.html">Contents</a>
+      <a href="../about.html">Method</a>
+      <button class="theme-toggle" type="button">☾ Dark</button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <p class="kicker">Part I · Chapter 03 · Can you distinguish free deaths from necessary risk?</p>
+    <h1>What Counts as One Fight</h1>
+
+    <div class="situation">
+      <p>You lost a fight and you can describe it. <em>They caught our support, we went in to help,
+        it collapsed, we lost four.</em> One sentence, one event, one cause, and it explains
+        everything.</p>
+      <p>The trouble is that you assembled it. What you were actually given was a stretch of time
+        containing some deaths, and the joining-up — <em>we went in to help</em> — is yours. This
+        chapter is about the step before tracing what removed your escape: establishing that the thing
+        you are tracing happened once.</p>
+    </div>
+
+    <h2>What actually happened</h2>
+
+    <div class="case">
+      <p class="case-head"><span class="who">Gaimin Gladiators vs Nigma Galaxy</span> · The Games of
+        the Future 2026 · match 8928851109 · patch 7.41e</p>
+
+      <p>Forty-seven minutes and two seconds; Radiant won. The parser records six teamfights. Here is
+        the third of them, exactly as the record hands it over — a window, a label, and a list.</p>
+
+      <div class="state">TEAMFIGHT 3      18:38 – 19:30      fifty-two seconds
+
+18:53   Puck dies
+18:54   Techies dies
+19:05   Mirana dies
+19:15   Earth Spirit dies
+19:30   Clinkz dies
+19:30   Undying dies
+</div>
+
+      <div class="figures">
+        <div><span class="k">Window</span><span class="v">52s</span></div>
+        <div><span class="k">Deaths in it</span><span class="v">6</span></div>
+        <div><span class="k">One side lost</span><span class="v">4</span></div>
+        <div><span class="k">The other</span><span class="v">2</span></div>
+      </div>
+
+      <p>Four deaths against two, inside a minute. That is a rout, and a rout has an obvious story: one
+        side got caught, the other side punished it, and the punishment ran until there was nobody
+        left to punish. You can feel the sentence forming.</p>
+
+      <p class="note"><strong>And a familiar disagreement.</strong> The fight's own <code>deaths</code>
+        field reads <strong>4</strong> while the kill log inside the window gives six. The same
+        undercount appeared in <a href="04-leaving-is-a-skill.html">chapter 04</a>'s case, from the
+        same parser. Both figures are registered here. The label on a thing and the contents of a
+        thing are different objects, which is going to turn out to be the whole chapter.</p>
+    </div>
+
+    <div class="hold">
+      <p>Stop here and commit before reading on</p>
+
+      <p>You have the six deaths and their times, and nothing else. That is genuinely all the record
+        offers before the next section. Commit in writing:</p>
+
+      <ol>
+        <li><strong>Which of these six deaths belong to the same engagement?</strong> Draw the lines.
+          It is legitimate to answer <em>all of them</em>, and it is legitimate to split them — if you
+          split, say where and say why.</li>
+        <li><strong>For the last hero to die at 19:30 — what removed their escape?</strong> Answer
+          from the list.</li>
+        <li><strong>What single further fact would most change your answer?</strong></li>
+      </ol>
+
+      <p>The timings are the only evidence you have and they are enough to reason from. There is an
+        <strong>eleven-second gap</strong> between the second death and the third, and a
+        <strong>fifteen-second gap</strong> between the fourth and the last two. Whether gaps like
+        those mean anything is exactly what you are being asked.</p>
+
+      <p><em>These are one engagement and here is why the pauses do not trouble me</em> is a passing
+        answer. So is a split at either gap, or at both. What does not pass is a sequence with no
+        joins stated, because an unstated join is the thing this chapter is about.</p>
+    </div>
+
+    <h2>What happened next</h2>
+
+    <div class="reveal">
+      <p>Every one of those six deaths carries a map position, and the positions are not close
+        together.</p>
+
+      <div class="timeline">
+        <table>
+          <thead><tr><th>Time</th><th>Hero</th><th>Where, in the parser's grid</th></tr></thead>
+          <tbody>
+            <tr><td>18:53</td><td>Puck</td><td>118, 122</td></tr>
+            <tr><td>18:54</td><td>Techies</td><td>117, 122</td></tr>
+            <tr><td>19:05</td><td>Mirana</td><td>122, <strong>190</strong></td></tr>
+            <tr><td>19:15</td><td>Earth Spirit</td><td>96, 188</td></tr>
+            <tr><td>19:30</td><td>Clinkz</td><td>98, 182</td></tr>
+            <tr><td>19:30</td><td>Undying</td><td>98, 184</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Puck and Techies died 1.0 cell apart. Everyone else died between 63 and 69 cells away
+        from them</strong>, and within 26 cells of each other. The full spread of this "one teamfight"
+        is <strong>69.6</strong> cells.</p>
+
+      <p>For comparison, chapter 04's fight — seven deaths in forty-seven seconds — had a spread of
+        <strong>20.6</strong>. That one was a pile. This one is two events that share a label.</p>
+
+      <p class="note"><strong>Where the split comes from, stated so you can argue with it.</strong> The
+        grouping uses a 30-cell threshold, and that number is this book's choice rather than the
+        record's. It happens not to matter here: any threshold between roughly 30 and 60 produces the
+        same two groups, because the gap between them is 63 cells wide and the widest gap inside
+        either group is 26. A case where the answer moved with the threshold would not be usable, and
+        this chapter would have said so.</p>
+
+      <p>So the eleven-second pause was not a pause. It was the record moving from one place on the
+        map to another, with no marker, under one heading.</p>
+
+      <p>If you split at that gap, you were right — and you were right from the timings alone, which
+        is the point. The gap was doing work before you had any coordinates to confirm it.</p>
+    </div>
+
+    <h2>The reasoning</h2>
+
+    <p><strong>Observed.</strong> The window and its label; six deaths with times; six positions; the
+      distances between them; the parser's own death count of four against the log's six.</p>
+
+    <p><strong>Supported inference.</strong> That this window contains at least two engagements, in two
+      places, separated by eleven seconds and by most of the map's width.</p>
+
+    <p><strong>Hypothesis.</strong> That anything in the first group caused anything in the second.
+      Attractive — a support dies, the team responds, the response fails — and <strong>entirely
+      unestablished</strong>. The record holds no movement, so there is nothing connecting the two
+      groups except that they fell inside one window somebody drew.</p>
+
+    <p><strong>Unknowable.</strong> Whether any of the six could have escaped. What removed anyone's
+      escape. What anybody did between 18:54 and 19:05, which is the eleven seconds the whole causal
+      story would have to live in.</p>
+
+    <blockquote><strong>Before you can trace what removed your escape, you have to establish that it
+      was one thing that removed it.</strong> A window is a label. An engagement is an event. The
+      genre routinely treats the first as the second, and so does memory.</blockquote>
+
+    <p>Which is why this chapter is shorter on prescription than its neighbours, and why it sits where
+      it does. <a href="02-what-the-map-already-said.html">Chapter 02</a> asks what you could have
+      known before you moved. <a href="04-leaving-is-a-skill.html">Chapter 04</a> asks what your exit
+      was and what using it would have cost. This one asks the question that has to be answered before
+      either of those can be applied to a stretch of a game: <strong>how many decisions are in front
+      of me?</strong></p>
+
+    <p>And the practical failure it prevents is specific. When you review a loss as one event, you
+      look for one cause, and you will find one, because a sufficiently motivated reviewer always
+      does. Here the available causes are things that happened sixty-odd cells away from each other
+      with an eleven-second hole in the middle — and any story joining them is written by you, from
+      material the record does not contain.</p>
+
+    <div class="boundary">
+      <p><strong>Where this stops applying.</strong> Plenty of windows really are one fight. Chapter
+        04's is: seven deaths inside twenty-one cells, and splitting it would be inventing a
+        distinction the record does not support. The move is to check, not to assume fragmentation any
+        more than to assume unity.</p>
+      <p>The grid is not game units and this chapter converts nothing. Every distance here is
+        comparative — this fight against that one, this group against that group — and a reader who
+        turns 63 cells into a number of metres has left what the record supports.</p>
+      <p>And you do not have coordinates in your own review. What you have is a replay you can scrub,
+        which is better: you can watch the eleven seconds instead of reasoning about them. The
+        procedure below is built for that, not for this.</p>
+    </div>
+
+    <div class="owed">
+      <p><strong>What is owed.</strong> Any claim about how often a labelled window contains more than
+        one engagement — here, or at any bracket. This is one window in one professional game. The
+        bracket sample behind this book carries duration, rank tier and result and no fight data of
+        any kind, which is itself a registered claim, so there is no evidence about frequency and the
+        chapter makes none. What would settle it is a sample of fights with death positions across a
+        stated bracket, which nothing available supplies.</p>
+    </div>
+
+    <h2>Next game</h2>
+
+    <div class="nextgame">
+      <ol>
+        <li>When a fight ends badly, note the clock <strong>twice</strong>: when it started for you,
+          and when you died. Two numbers, said out loud during the respawn timer.</li>
+        <li>Say where you were at each. Not coordinates — a landmark. <em>Their tier two</em>,
+          <em>our triangle</em>, <em>the river outside Roshan</em>.</li>
+        <li>If those two places are far apart, you have already learned something: what you are about
+          to call "the fight" moved, and the part that killed you may not be the part that started
+          it.</li>
+        <li>Once a game, before you explain a loss to yourself, ask <strong>how many separate things
+          am I explaining?</strong> If the answer is one, say what makes it one.</li>
+        <li>Do not count the enemy's deaths as part of your event unless you saw them happen. They may
+          belong to a different fight entirely, and the scoreboard will not tell you.</li>
+      </ol>
+    </div>
+
+    <h2>After the game</h2>
+
+    <div class="aftergame">
+      <p><strong>Use a fight where you noted the two clocks.</strong> Without them the honest result is
+        <em>not enough evidence to reconstruct my process</em> — and this chapter is the reason that
+        matters, because a replay will happily show you one continuous stretch of time and leave the
+        segmenting to you.</p>
+      <p><strong>Open the replay at the first clock, not the second</strong>, and watch forward.</p>
+      <p><strong>The observable decision:</strong> the moment you committed to the second place —
+        which is a different decision from the one you made at the first, and the one you probably
+        never reviewed.</p>
+      <p><strong>1 · The process mark, set before you look.</strong> You can state where the fight
+        began, where you died, and whether you decided to move between them or arrived there without
+        deciding. Pass if you can name a decision at the join. Fail if the honest answer is that you
+        were carried.</p>
+      <p><strong>2 · The calibration review, which the process mark cannot do.</strong> Given what was
+        visible when you committed to the second place: was that a fight worth joining on its own
+        terms? Not <em>should I have helped</em> — whether the second engagement, priced by itself,
+        was worth what it cost. A commitment inherited from an earlier decision has not been priced;
+        it has been continued.</p>
+      <div class="state">Began:     18:53, top rune, I was not there
+Died:      19:30, our bottom triangle
+Joined at: 19:05 — I moved when I saw the first death on the minimap
+Priced?:   no. I moved because we were losing, not because of what I could add
+</div>
+      <p>Four results, as everywhere in this book: good process and good calibration; good process and
+        poor calibration — you decided at the join and decided badly; no process, meaning there was no
+        decision at the join at all; or not enough evidence. Whether the fight was lost goes on its own
+        line and never moves the grade.</p>
+      <p>Ten of these and you will have a count of how often you made a fresh decision at the join
+        against how often you were carried into the second half of somebody else's fight. That count
+        is not available anywhere else, and no scoreboard has a column for it.</p>
+    </div>
+
+    <div class="replay">match 8928851109 · 47:02 · the parser's third teamfight, 18:38–19:30<br>
+      watch 18:50–19:30 — two deaths at one end of the map, eleven seconds of nothing, then four at
+      the other</div>
+
+    <p class="note">Chapter 03 was called <em>The Thirty Seconds Before</em> until it was drafted. The
+      title promised a second-by-second reconstruction of the moments before a death, and the record
+      does not hold one — no hero positions over time, no health, no cooldowns. What it holds is
+      ordered deaths with places, which asks a different and prior question, so the chapter was
+      renamed rather than written to a title it could not honour.
+      <a href="../index.html">Back to contents</a>.</p>
+  </div>
+</main>
+</html>
