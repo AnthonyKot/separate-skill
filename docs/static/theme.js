@@ -1,9 +1,9 @@
-/* DutchABC — theme toggle.
-   Vanilla JS, no dependencies. Unlike its three predecessors this book has
+/* Winning Is a Separate Skill — theme toggle.
+   Vanilla JS, no dependencies. Like DutchABC before it, this book has
    no mathematics, so there is no KaTeX bootstrap here. */
 
 (function () {
-  var KEY = "dutchabc-theme";
+  var KEY = "separate-skill-theme";
   var root = document.documentElement;
 
   // Apply saved preference as early as possible.

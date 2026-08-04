@@ -1,0 +1,18 @@
+# chapter	snapshot	metric	expected	[tolerance]
+#
+# Recomputation is GATING: every figure here is recomputed from the raw rows
+# committed in data/brackets/, so a registered number is reproducible rather
+# than merely re-fetchable. Live drift is reported separately and never fails.
+#
+# THIS IS A SAMPLE, NOT A POPULATION. n is registered as a claim of its own so
+# no chapter can quote a percentage without the count that produced it.
+#
+# EMPTY ON PURPOSE, and this is the honest state rather than an oversight.
+# Three sampling biases were found and fixed while building tools/fetch-bracket.py
+# (length, mode, temporal clustering); the fourth — a seek that overshot 108 days
+# and pulled pre-7.41e matches into a snapshot labelled 7.41e — is fixed by the
+# acceptance band but the corrected sample has not been taken yet, because the
+# rewrite ran into OpenDota's rate limit mid-run.
+#
+# No bracket claim is registered until a clean sample exists. A figure whose
+# provenance is 'we think the fetcher works now' is exactly what section 5 forbids.

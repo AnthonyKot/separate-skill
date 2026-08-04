@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — Winning Is a Separate Skill</title>
+<meta name="description" content="How this Dota 2 book is sourced and checked: match IDs, Valve's structured patch notes, bracket samples, and a verification script that fails the build. Including what a green build does not prove.">
+<script>try{var t=localStorage.getItem("separate-skill-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="stylesheet" href="static/style.css">
+<script defer src="static/theme.js"></script>
+
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Separate<span>Skill</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Contents</a>
+      <a href="about.html">Method</a>
+      <button class="theme-toggle" type="button">☾ Dark</button>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <p class="kicker">How this is put together</p>
+    <h1>Method</h1>
+    <p class="lede">Almost all Dota advice is assertion from rank: I am Immortal, therefore do this.
+      It might be right. There is no way to tell, and no way to notice when it stops being right.</p>
+
+    <p>This book is an attempt at the other thing. Every figure in it is registered in a file, and a
+      script re-checks every registered figure against the record it came from. When a number stops
+      being true, the build goes red.</p>
+
+    <h2>Where the numbers come from</h2>
+
+    <p>Four classes of source, ordered by distance from the game itself. The order matters more than
+      the list, because it decides what may be said with what.</p>
+
+    <table>
+      <thead><tr><th>Class</th><th>What</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td>Official record</td><td>Valve's patch datafeed, dated and versioned</td><td>Rules. Quoted directly</td></tr>
+        <tr><td>Machine-derived match record</td><td>Parsed match JSON — events, purchase and buyback logs, ward logs, per-minute gold and XP, the full draft</td><td>What happened in a specific game</td></tr>
+        <tr><td>Direct observation</td><td>The replay itself</td><td>What a careful viewer can see. Described as observation, never as measurement</td></tr>
+        <tr><td>Interpretive</td><td>Commentary, analysis, recollection, bracket consensus</td><td>Proposing a reading. <strong>Never a number</strong></td></tr>
+      </tbody>
+    </table>
+
+    <p>The second class is deliberately not called primary. It is Valve's replay put through somebody
+      else's parser, and that is a real distinction worth keeping.</p>
+
+    <h2>Two things this book refuses to do</h2>
+
+    <p><strong>Win rate is not advice.</strong> A hero's win rate is confounded by who picks it and
+      what they are picking into. It can describe a population. It cannot instruct you. Any guide
+      that reads a percentage off a stats site and turns it into a recommendation has skipped the
+      only interesting step.</p>
+
+    <p><strong>A professional match cannot tell you what your bracket does.</strong> Watching five
+      coordinated professionals is useful for seeing the <em>shape</em> of a decision, and useless for
+      establishing what usually happens in your games. Claims about the Archon–Legend bracket are
+      sourced from samples of ranked Archon–Legend games. Where a pro match is used, the chapter says
+      what transfers and what does not — the failure has a name here, the <em>altitude error</em>, so
+      that it can be caught.</p>
+
+    <h2>What a green build proves, and what it does not</h2>
+
+    <p>It proves that every registered figure is present in the record it is attributed to, checked
+      by something that could actually see that record. That is all.</p>
+
+    <p>It does not prove the advice is right. The previous book in this series shipped a chapter in
+      which every single claim verified and the central causal arrow pointed backwards — the argument
+      said one thing caused another when the dates in its own quoted sources ruled that out. Every
+      row passed. Nothing in a checker can catch that.</p>
+
+    <p>So the machinery is a floor, not a warrant. It stops the book asserting numbers it has not
+      looked up. Whether the reasoning built on those numbers is any good is a question for a reader,
+      which is why corrections are wanted.</p>
+
+    <h2>Four ways a sample lied, before a word was written</h2>
+
+    <p>The bracket data is supposed to be the honest part — real games at the reader's own rank rather
+      than borrowed professional examples. Getting it turned out to be four separate traps, each
+      visible only after the previous one was fixed. They are worth stating, because the first sample
+      looked entirely reasonable and was nonsense.</p>
+
+    <ol>
+      <li><strong>Length.</strong> The public match feed is ordered by match ID, which is assigned when
+        a game <em>starts</em>, and only finished games are in it. So the newest entries are the games
+        that ended soonest. A fifty-minute game begun at the same moment has not arrived yet. The
+        first sample had a median of 18.6 minutes and, in five hundred games, none longer than 25.7.</li>
+      <li><strong>Mode.</strong> Filtering by rank does not filter to ranked. That sample was 58%
+        Turbo — which is the same bias wearing a second hat, since Turbo games finish fastest and so
+        crowd the front of the feed.</li>
+      <li><strong>Clustering.</strong> Fixed both of those, and every game in the sample had started
+        within the same <em>minute</em>. That is not a sample of a bracket; it is one time of day, one
+        day of the week, one regional mix.</li>
+      <li><strong>Drift across patches.</strong> Spread the sample over five days, and one window
+        landed 108 days back — quietly mixing games played under three earlier patches into a sample
+        labelled with the current one. This was caught by a diagnostic added for tidiness rather than
+        suspicion.</li>
+    </ol>
+
+    <p>Corrected, the same bracket reads a median of 39.8 minutes with roughly half of games running
+      past forty. The biased version said 18.6. Both were produced by the same short program, and only
+      one of them was wrong in a way anyone would have noticed by reading it.</p>
+
+    <p>None of those figures appear in the book yet. The corrected sample has not been taken —
+      the rewrite ran into a rate limit — and no bracket claim is registered until it has been.</p>
+
+    <h2>Corrections</h2>
+
+    <p>Wanted, especially about the Dota. The script checks that quoted figures are real. It cannot
+      check whether a case supports the lesson drawn from it, whether a principle survives at your
+      bracket, or whether a chapter is describing a patch that has since moved. If something here is
+      wrong, open an issue.</p>
+
+    <p class="note">Everything is a plain static site: hand-written HTML, one stylesheet, one small
+      script, no build step, no framework, no trackers, no fonts or scripts loaded from anywhere else.
+      Caster transcripts are used as research and never published here; they belong to the people who
+      made them.</p>
+  </div>
+</main>
+</html>

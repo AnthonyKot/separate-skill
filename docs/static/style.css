@@ -18,13 +18,13 @@
   --ink-soft:      #47453f;
   --ink-faint:     #78756c;
   --rule:          #e3e0d8;
-  --accent:        #1f4e79;   /* document blue — the blue envelope */
-  --accent-soft:   #6389ad;
-  --link:          #1f4e79;
-  --link-hover:    #143454;
+  --accent:        #8a6d1f;   /* gold — the resource the book is mostly about */
+  --accent-soft:   #b09a5e;
+  --link:          #7a5f18;
+  --link-hover:    #4f3d0f;
   --known:         #2f6048;   /* what you already have; a correct parse */
   --trap:          #9c4221;   /* the wrong parse; the failure mode */
-  --paper:         #f6f3ea;   /* document facsimile background */
+  --paper:         #f6f3ea;   /* the raised block behind a situation */
   --code-bg:       #f1efe8;
   --max:           44rem;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
@@ -40,10 +40,10 @@
     --ink-soft:    #c1bfb7;
     --ink-faint:   #8d8b83;
     --rule:        #32343a;
-    --accent:      #8db4dc;
-    --accent-soft: #6b8cb0;
-    --link:        #9cc0e8;
-    --link-hover:  #c4dbf5;
+    --accent:      #d9bd6a;
+    --accent-soft: #a89050;
+    --link:        #e0c67a;
+    --link-hover:  #f0dfa8;
     --known:       #7cc0a0;
     --trap:        #e0a07c;
     --paper:       #22242a;
@@ -54,14 +54,14 @@
 /* explicit toggle wins over OS preference in both directions */
 :root[data-theme="light"] {
   --bg:#fbfaf7; --bg-raised:#ffffff; --ink:#1b1a17; --ink-soft:#47453f;
-  --ink-faint:#78756c; --rule:#e3e0d8; --accent:#1f4e79; --accent-soft:#6389ad;
-  --link:#1f4e79; --link-hover:#143454; --known:#2f6048; --trap:#9c4221;
+  --ink-faint:#78756c; --rule:#e3e0d8; --accent:#8a6d1f; --accent-soft:#b09a5e;
+  --link:#7a5f18; --link-hover:#4f3d0f; --known:#2f6048; --trap:#9c4221;
   --paper:#f6f3ea; --code-bg:#f1efe8;
 }
 :root[data-theme="dark"] {
   --bg:#15161a; --bg-raised:#1d1f24; --ink:#eae8e2; --ink-soft:#c1bfb7;
-  --ink-faint:#8d8b83; --rule:#32343a; --accent:#8db4dc; --accent-soft:#6b8cb0;
-  --link:#9cc0e8; --link-hover:#c4dbf5; --known:#7cc0a0; --trap:#e0a07c;
+  --ink-faint:#8d8b83; --rule:#32343a; --accent:#d9bd6a; --accent-soft:#a89050;
+  --link:#e0c67a; --link-hover:#f0dfa8; --known:#7cc0a0; --trap:#e0a07c;
   --paper:#22242a; --code-bg:#24262b;
 }
 
@@ -177,439 +177,104 @@ th { font-weight: 700; color: var(--ink); font-size: .8rem; letter-spacing: .04e
 .lede { font-size: 1.28rem; line-height: 1.5; color: var(--ink-soft); margin: 0 0 1.6rem; }
 
 /* ============================================================
-   DUTCH TEXT
-   Every piece of Dutch in this book is marked up, so the whole
-   corpus can be extracted mechanically by checks/. See CONTEXT.md
-   → Verification. This is not decoration; it is the check.
+   Winning Is a Separate Skill — book components
+   Added on top of the shared skeleton. The chapter blocks below
+   are declared before any chapter exists, because the template
+   in CONTEXT.md 3 is fixed and the markup should not be invented
+   per chapter by whoever happens to be drafting.
    ============================================================ */
 
-/* inline Dutch inside an English sentence */
-.nl {
-  font-style: italic;
-  color: var(--ink);
-  font-feature-settings: "liga" 0;
-}
-/* a Dutch word being talked about as an object, not used */
-.nl.term { font-style: normal; font-weight: 600; }
-
-/* a block of Dutch: an example sentence standing alone */
-p.nl, .nl-block {
-  font-style: normal;
-  margin: 1.2rem 0;
-  padding: .1rem 0 .1rem 1rem;
-  border-left: 2px solid var(--accent-soft);
-  color: var(--ink);
-}
-
-/* Dutch line + English gloss underneath */
-.gloss { margin: 1.2rem 0; }
-.gloss .nl { display: block; font-style: normal; }
-.gloss .en {
-  display: block; margin-top: .15rem;
-  font-family: var(--sans); font-size: .9rem; color: var(--ink-faint);
-}
-
-/* ---- document facsimile: a real fragment as it arrived ---- */
-.doc {
+/* An aside that qualifies rather than decorates: what is not yet
+   written, what a check does not prove, what is owed. */
+.note {
+  border-left: 3px solid var(--rule);
+  padding: 0.6rem 0 0.6rem 1rem;
   margin: 1.6rem 0;
-  padding: 1.1rem 1.25rem;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  font-size: .98rem;
-  line-height: 1.55;
-}
-.doc .doc-head {
-  display: block; margin-bottom: .7rem; padding-bottom: .5rem;
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--sans); font-size: .68rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint);
-}
-.doc p { margin: 0 0 .7rem; }
-.doc p:last-child { margin-bottom: 0; }
-/* the span of a fragment the chapter is about */
-.doc mark, mark.focus {
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
-  color: inherit; padding: .05em .1em; border-radius: 2px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
 }
 
-/* ---- compound splitting (chapter 01) ---- */
-.split {
-  margin: 1.4rem 0; padding: .9rem 1.1rem;
-  background: var(--bg-raised); border: 1px solid var(--rule); border-radius: 8px;
+/* Contents entries carry no links while the chapters do not exist.
+   Unlinked entries are set quieter than linked ones so the page
+   cannot be mistaken for a book that is finished. */
+ol.toc { margin: 0.4rem 0 1.8rem 1.4rem; }
+ol.toc li { margin: 0.3rem 0; color: var(--ink-soft); }
+ol.toc li a { color: var(--link); }
+.tag {
   font-family: var(--sans);
-}
-.split .whole {
-  display: block; font-size: 1.05rem; font-weight: 600;
-  color: var(--ink); margin-bottom: .5rem; word-break: break-word;
-}
-.split .parts { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem; }
-.split .part {
-  padding: .16em .5em; border-radius: 4px;
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  color: var(--ink); font-size: .95rem;
-}
-/* the head: the rightmost element, the noun that actually matters */
-.split .part.head {
-  background: color-mix(in srgb, var(--known) 16%, transparent);
-  font-weight: 700;
-}
-/* linking -s- / -en- carry no meaning */
-.split .join { color: var(--ink-faint); font-size: .85rem; padding: 0 .1rem; }
-.split .en {
-  display: block; margin-top: .55rem;
-  font-size: .88rem; color: var(--ink-faint);
-}
-
-/* ---- wrong parse vs right parse ---- */
-.contrast { margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: .9rem; }
-.contrast > div {
-  flex: 1 1 14rem; min-width: 0;
-  padding: .8rem 1rem; border-radius: 8px; border: 1px solid var(--rule);
-  background: var(--bg-raised);
-}
-.contrast .label {
-  display: block; margin-bottom: .35rem;
-  font-family: var(--sans); font-size: .66rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-}
-.contrast .fout { border-left: 3px solid var(--trap); }
-.contrast .fout .label { color: var(--trap); }
-.contrast .goed { border-left: 3px solid var(--known); }
-.contrast .goed .label { color: var(--known); }
-.contrast p { margin: 0 0 .4rem; font-size: .96rem; }
-.contrast p:last-child { margin-bottom: 0; }
-.contrast .en { font-family: var(--sans); font-size: .86rem; color: var(--ink-faint); }
-
-/* ---- the device strip (top of each chapter) ---- */
-.device {
-  border: 1px solid var(--rule); border-left: 3px solid var(--accent);
-  border-radius: 8px; background: var(--bg-raised);
-  padding: .9rem 1.1rem; margin: 1.6rem 0 2rem;
-  font-family: var(--sans); font-size: .95rem;
-}
-.device .tag {
-  font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--accent); display: block; margin-bottom: .3rem;
-}
-
-/* ---- steps (the four sections of a chapter) ---- */
-.step { scroll-margin-top: 4rem; }
-.step > h2 { display: flex; align-items: baseline; gap: .6rem; }
-.step > h2 .num {
-  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-  color: var(--bg); background: var(--accent);
-  border-radius: 999px; padding: .18em .6em; font-family: var(--sans);
-  position: relative; top: -.15em; white-space: nowrap;
-}
-
-/* ---- the kaart (three columns, end of each chapter) ---- */
-.kaart {
-  margin: 2.8rem 0 0; padding: 1.1rem 1.2rem;
-  border: 1px solid var(--rule); border-radius: 10px;
-  background: var(--bg-raised); font-family: var(--sans);
-}
-.kaart h2 {
-  font-size: .78rem; font-weight: 700; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ink-faint);
-  margin: 0 0 .9rem; border-bottom: 1px solid var(--rule); padding-bottom: .5rem;
-}
-.kaart .cols { display: flex; flex-wrap: wrap; gap: 1rem; }
-.kaart .col { flex: 1 1 11rem; min-width: 0; }
-.kaart .col h3 {
-  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; margin: 0 0 .5rem;
-}
-.kaart .nieuw h3 { color: var(--accent); }
-.kaart .terug h3 { color: var(--known); }
-.kaart .nog-niet h3 { color: var(--ink-faint); }
-.kaart ul { list-style: none; margin: 0; padding: 0; font-size: .88rem; line-height: 1.45; }
-.kaart li { margin-bottom: .4rem; padding-left: 1.1rem; position: relative; color: var(--ink-soft); }
-.kaart .nieuw li::before { content: "+"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-.kaart .terug li::before { content: "\2190"; position: absolute; left: 0; color: var(--known); font-weight: 700; }
-.kaart .nog-niet li::before { content: "\2192"; position: absolute; left: 0; color: var(--ink-faint); }
-.kaart .kref { color: var(--ink-faint); font-size: .8em; }
-.kaart .none { margin: 0; color: var(--ink-faint); font-size: .84rem; font-style: italic; }
-
-/* ---- standing banner ---- */
-.fence {
-  margin: 1.6rem 0 2rem; padding: .85rem 1.1rem;
-  border: 1px dashed var(--trap); border-radius: 8px;
-  font-family: var(--sans); font-size: .9rem; color: var(--ink-soft);
-}
-.fence strong { color: var(--trap); }
-
-/* ---- draft-status line, directly under the lede ---- */
-.status {
-  margin: 0 0 1.6rem; padding: .6rem .85rem;
-  border: 1px solid var(--rule); border-left: 3px solid var(--accent-soft);
-  border-radius: 6px; background: var(--bg-raised);
-  font-family: var(--sans); font-size: .88rem; color: var(--ink-soft);
-}
-.status .label {
-  display: block; margin-bottom: .12rem;
-  color: var(--accent); font-size: .66rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-}
-
-/* ---- prerequisite / orientation bands ---- */
-.prereq {
-  margin: .8rem 0 1.1rem; padding: .65rem .8rem;
-  border-left: 3px solid var(--accent-soft);
-  background: var(--bg-raised); color: var(--ink-soft);
-  font-family: var(--sans); font-size: .84rem; line-height: 1.45;
-}
-.prereq .label {
-  display: block; margin-bottom: .18rem;
-  color: var(--accent); font-size: .66rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-}
-
-/* ---- unverified citation mark ---- */
-.unverified {
-  display: inline-block;
-  font-family: var(--sans); font-size: .62rem; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase;
-  color: var(--trap); border: 1px solid var(--trap); border-radius: 999px;
-  padding: .02em .42em; margin-left: .3em; white-space: nowrap;
-  vertical-align: super; line-height: 1.35;
-}
-.unverified::before { content: "unverified source"; }
-
-/* ---- table of contents (landing) ---- */
-.part { margin: 2.4rem 0; }
-/* An <h2>, not a <p>: these divide the contents page and a screen-reader user
-   navigating by heading was previously offered the <h1> and nothing else on the
-   one page that IS the book's navigation. Every property h2 would contribute is
-   restated here so the rendering is unchanged — in particular the margin, since
-   h2's 2.6rem top would otherwise stack on .part's own 2.4rem. */
-.part-head {
-  font-family: var(--sans); font-size: .82rem; font-weight: 700;
-  line-height: 1.35; letter-spacing: .12em; text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--accent);
-  border-bottom: 1px solid var(--rule); padding-bottom: .4rem;
-  margin: 0 0 .3rem;
-}
-.part-intro {
-  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
-  color: var(--ink-soft); margin: .5rem 0 1rem; max-width: 42rem;
-}
-.toc { list-style: none; margin: 0; padding: 0; }
-.toc li { border-bottom: 1px solid var(--rule); margin: 0; }
-.toc a, .toc .stub { display: block; padding: .85rem .2rem; color: inherit; text-decoration: none; }
-.toc a:hover { background: var(--bg-raised); }
-.toc .stub { cursor: default; opacity: .62; }
-.toc .n { font-family: var(--sans); font-size: .8rem; color: var(--ink-faint); margin-right: .7rem; }
-.toc .adds {
-  display: block; margin-top: .2rem; font-size: .92rem;
-  color: var(--ink-soft); font-family: var(--sans);
-}
-.toc .adds .reads { color: var(--known); font-weight: 600; }
-.toc .soon {
-  font-family: var(--sans); font-size: .68rem; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--ink-faint);
-  border: 1px solid var(--rule); border-radius: 999px;
-  padding: .1em .5em; margin-left: .5rem;
+  border: 1px solid var(--accent-soft);
+  border-radius: 2px;
+  padding: 0.05rem 0.35rem;
+  margin-left: 0.45rem;
+  white-space: nowrap;
 }
 
-/* ---- prev/next footer nav ---- */
-.chapter-nav {
-  display: flex; justify-content: space-between; gap: 1rem;
-  margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--rule);
-  font-family: var(--sans); font-size: .9rem;
-}
-.chapter-nav a { text-decoration: none; color: var(--ink-soft); max-width: 45%; }
-.chapter-nav a:hover { color: var(--link-hover); }
-.chapter-nav .dir {
-  display: block; font-size: .72rem; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--ink-faint);
-}
-.chapter-nav .next { text-align: right; margin-left: auto; }
+/* --- the four moves, and the blocks that follow them --- */
 
-.site-footer {
-  border-top: 1px solid var(--rule); color: var(--ink-faint);
-  font-family: var(--sans); font-size: .82rem;
+.situation {                      /* move 1: where you are, in the second person */
+  background: var(--paper);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.2rem;
+  margin: 1.8rem 0;
 }
-.site-footer .wrap { padding: 1.6rem 1.25rem 2.4rem; }
-
-img, svg { max-width: 100%; }
-
-/* ---- opening retrieval prompt ----
-   Sits between the lede and the device box — that is, after the chapter has said
-   what it is about but BEFORE it states any rule, including the previous
-   chapter's. A prompt placed after the restatement is not retrieval, it is a quiz
-   about the paragraph you just read. */
-.recall {
-  margin: 0 0 1.6rem; padding: .8rem 1rem;
-  border: 1px solid var(--rule); border-left: 3px solid var(--known);
-  border-radius: 8px; background: var(--bg-raised);
-  font-family: var(--sans); font-size: .9rem; line-height: 1.5;
-}
-.recall h2 {
-  margin: 0 0 .4rem; font-size: .66rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--known);
-}
-.recall .q { margin: 0; color: var(--ink); font-weight: 600; }
-.recall details { margin: .5rem 0 0; }
-.recall summary {
-  cursor: pointer; list-style: none;
-  font-size: .82rem; color: var(--ink-faint);
-}
-.recall summary::-webkit-details-marker { display: none; }
-.recall summary:hover { color: var(--ink-soft); }
-.recall details > p {
-  margin: .4rem 0 0; padding-left: .6rem;
-  border-left: 2px solid var(--known);
-  color: var(--ink-soft); font-size: .88rem;
-}
-.recall .kref { color: var(--ink-faint); font-size: .8em; font-weight: 400; }
-
-/* ---- attempt, then reveal ----
-   Step 3 gives an unseen example and hides the worked parse behind this. The
-   hiding is the point: a reader who has read the answer cannot afterwards find
-   out whether they would have got it, and that is the one thing worth knowing. */
-.worked { margin: 1.4rem 0; }
-.worked > summary {
-  cursor: pointer; list-style: none;
-  font-family: var(--sans); font-size: .84rem; font-weight: 600;
-  color: var(--accent); padding: .5rem .8rem;
-  border: 1px dashed var(--accent-soft); border-radius: 7px;
-  display: inline-block;
-}
-.worked > summary::-webkit-details-marker { display: none; }
-.worked > summary:hover { border-style: solid; }
-.worked[open] > summary { margin-bottom: .9rem; border-style: solid; }
-.worked .body {
-  padding: .9rem 1.1rem; border-left: 3px solid var(--accent-soft);
-  background: var(--bg-raised); border-radius: 0 8px 8px 0;
-}
-.worked .body > :last-child { margin-bottom: 0; }
-
-/* ---- the stopping point ----
-   CONTEXT gate 2: the usable operation must be extractable without reading the
-   whole chapter. Everything above this line is the method; everything below is
-   qualification, register and reference. Piloted in chapter 08; chapter 04 is the
-   one that most needs it retrofitted. */
-.stop {
-  margin: 2.2rem 0; padding: .7rem 1rem;
-  border-top: 2px solid var(--known); border-bottom: 1px solid var(--rule);
+.case {                           /* move 2: the named, replay-verifiable match */
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--known);
+  padding: 1rem 1.2rem;
+  margin: 1.8rem 0;
   background: var(--bg-raised);
-  font-family: var(--sans); font-size: .88rem; color: var(--ink-soft);
 }
-.stop strong { color: var(--known); }
+.case-head { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-faint); }
+.case-head .who { color: var(--ink); font-weight: 600; }
 
-/* ---- a branch in the procedure ----
-   Distinct from .undecided on purpose. This marks a case the reader WILL hit and
-   CAN resolve, once they know to test for it — a fork, not a dead end. Same shape
-   as the undecidable box so it reads as a caution, but the accent colour rather
-   than the trap colour, because the outcome here is an answer. */
-.branch {
-  margin: 1.6rem 0; padding: .9rem 1.1rem;
-  border: 1px solid var(--rule); border-left: 3px solid var(--accent);
-  border-radius: 8px; background: var(--bg-raised);
-  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
-}
-.branch h3 {
-  margin: 0 0 .45rem; font-size: .72rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
-}
-.branch p { margin: 0 0 .7rem; color: var(--ink-soft); }
-.branch > :last-child { margin-bottom: 0; }
+.figures { display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 0.9rem 0 0.2rem; }
+.figures .k { display: block; font-family: var(--sans); font-size: 0.72rem;
+              text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-faint); }
+.figures .v { font-family: var(--mono); font-size: 1.05rem; color: var(--ink); }
 
-/* ---- the case the procedure cannot settle ----
-   Every chapter carries one. A reading method that never admits a limit teaches
-   the reader to force an answer, which on a real letter is worse than stopping. */
-.undecided {
-  margin: 1.6rem 0; padding: .9rem 1.1rem;
-  border: 1px solid var(--rule); border-left: 3px solid var(--trap);
-  border-radius: 8px; background: var(--bg-raised);
-  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
+.nextgame {                       /* move 4: solo-actionable, no hedging verbs */
+  border: 1px solid var(--accent-soft);
+  padding: 1rem 1.2rem;
+  margin: 1.8rem 0;
 }
-.undecided h3 {
-  margin: 0 0 .45rem; font-size: .72rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--trap);
-}
-.undecided p { margin: 0 0 .7rem; color: var(--ink-soft); }
-.undecided > :last-child { margin-bottom: 0; }
-
-/* ---- self-check block, closing step 3 and reused in step 4 ----
-   The reader works on a letter nobody has an answer key for, so these are the
-   tests that run without one. Deliberately not styled like a summary box: it is
-   a procedure, and it should look like work rather than like a recap. */
-.check {
-  margin: 2rem 0 1.4rem; padding: 1rem 1.15rem;
-  border: 1px solid var(--rule); border-left: 3px solid var(--known);
-  border-radius: 8px; background: var(--bg-raised);
-  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
-}
-.check h3 {
-  margin: 0 0 .5rem; font-size: .74rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--known);
-}
-.check > p { margin: 0 0 .8rem; color: var(--ink-soft); font-size: .88rem; }
-.check ul { margin: 0; padding: 0; list-style: none; }
-.check li {
-  margin: 0 0 .7rem; padding-left: 1.3rem; position: relative; color: var(--ink-soft);
-}
-.check li:last-child { margin-bottom: 0; }
-.check li::before {
-  content: "\2713"; position: absolute; left: 0; top: 0;
-  color: var(--known); font-weight: 700;
-}
-/* A test whose failure is decisive gets the trap colour: these are the ones that
-   tell the reader they are wrong, which is the only feedback an unseen letter
-   can give. */
-.check li.hard::before { content: "\2717"; color: var(--trap); }
-.check li strong { color: var(--ink); }
-.check .nl { font-size: .95em; }
-
-/* ---- retrieval in the kaart's terug column ----
-   The column used to state what earlier chapters established, which is re-reading,
-   not recall. It now asks. The answer is one click away so that a reader who wants
-   the old summary still has it, but has to fail first. */
-.kaart .terug details > summary {
-  cursor: pointer; list-style: none; color: var(--ink-soft);
-}
-.kaart .terug details > summary::-webkit-details-marker { display: none; }
-.kaart .terug details > summary:hover { color: var(--ink); }
-.kaart .terug details[open] > summary { color: var(--ink); font-weight: 600; }
-.kaart .terug details > p {
-  margin: .35rem 0 0; padding-left: .1rem;
-  border-left: 2px solid var(--known); padding-left: .55rem;
-  color: var(--ink-faint); font-size: .95em;
+.aftergame {                      /* move 5: the review loop, with a pass mark set in advance */
+  border: 1px dashed var(--accent-soft);
+  padding: 1rem 1.2rem;
+  margin: 1.8rem 0;
 }
 
-/* ---- responsive ---- */
-@media (max-width: 34rem) {
-  body { font-size: 1.06rem; }
-  h1 { font-size: 1.7rem; }
-  .lede { font-size: 1.14rem; }
-  .kaart .cols { gap: 1.1rem; }
-  .kaart .col { flex-basis: 100%; }
-  .contrast > div { flex-basis: 100%; }
+.boundary {                       /* required: where the advice stops applying */
+  border-left: 3px solid var(--trap);
+  padding: 0.7rem 0 0.7rem 1rem;
+  margin: 1.8rem 0;
+}
+.inversion {                      /* earned, never required: same action, opposite result by bracket */
+  border: 1px solid var(--trap);
+  padding: 1rem 1.2rem;
+  margin: 1.8rem 0;
+}
+.owed {                           /* an honest outcome: no inversion found, and what one would look like */
+  border: 1px dashed var(--trap);
+  padding: 0.7rem 1rem;
+  margin: 1.8rem 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
 }
 
-/* ---- print ---- */
-@media print {
-  :root {
-    --bg:#fff; --bg-raised:#fff; --ink:#000; --ink-soft:#222; --ink-faint:#555;
-    --rule:#ccc; --paper:#f7f7f7;
-  }
-  .site-header, .theme-toggle, .site-nav, .chapter-nav, .site-footer { display: none !important; }
-  body { font-size: 11pt; color: #000; background: #fff; }
-  main { padding: 0; }
-  a { color: #000; text-decoration: none; }
-  .step > h2 .num { color: #000; background: none; border: 1px solid #000; }
-  .kaart, .device, .fence, .doc, .split, .check, .recall, .undecided, .branch, .stop,
-  .worked .body { border: 1px solid #000; break-inside: avoid; }
-  .worked > summary { border: none; color: #000; padding: 0; font-style: italic; }
-  .contrast > div { border: 1px solid #000; }
-  /* On paper there is no clicking, so a retrieval prompt whose answer is hidden
-     would print as a question with no answer anywhere in the book. theme.js opens
-     every details on beforeprint; this is the fallback for print-to-PDF paths that
-     never fire that event, and it is only a fallback — in browsers that hide the
-     content with content-visibility on the slot rather than display:none, CSS
-     alone cannot reveal it. */
-  details > *:not(summary) { display: block !important; }
-  .kaart .terug details > summary { font-weight: 700; }
+.replay {                         /* the match ID and timestamps, so the reader can go and look */
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  background: var(--code-bg);
+  padding: 0.9rem 1.1rem;
+  margin: 1.8rem 0;
+  overflow-x: auto;
 }
+
+/* Event timelines are wide and must scroll inside themselves rather than
+   making the page scroll sideways on a phone. */
+.timeline { overflow-x: auto; margin: 1.4rem 0; }
+.timeline table { font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
