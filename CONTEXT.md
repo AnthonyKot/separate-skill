@@ -38,7 +38,7 @@ nothing else published organises the game this way, and the reason to state it c
 strong version is untrue.
 
 > **survive with purpose → acquire resources → convert them into capability → act while it matters →
-> convert advantage → keep the framework current → invert by seat**
+> convert advantage → keep the framework current → reweight by seat**
 
 | Part | Question | What it establishes for the next | Ch. |
 |---|---|---|---|
@@ -48,7 +48,7 @@ strong version is untrue.
 | IV | Do you act while it matters? | Whether they act before that permission expires. | 16–20 |
 | V | Can you convert advantage into a win? | Whether the action changed the game state that actually wins. | 21–24 |
 | VI | Can you keep the framework current? | A season, not a game. | 25–27 |
-| VII | Which of this changes for your seat? | Where the general advice is false until inverted. | 28–32 |
+| VII | Which of this changes for your seat? | What is scarce, what is visible, and which presumption you start from. | 28–32 |
 
 **Parts I and II describe one loop.** You die *while* farming and rotating; where you stand, which
 camp is next, when you leave for a wave and when you leave at all are the same decision viewed twice.
