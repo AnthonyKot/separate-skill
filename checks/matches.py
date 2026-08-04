@@ -315,6 +315,51 @@ def resolve(d, check, arg):
                     standing += 1
         return standing
 
+    def _tf(idx):
+        fights = d.get("teamfights") or []
+        i = int(idx)
+        if not 1 <= i <= len(fights):
+            raise LookupError(f"match has {len(fights)} teamfights, no #{i}")
+        return fights[i - 1]
+
+    def _tf_player(idx, name):
+        t = _tf(idx)
+        heroes = hero_names()
+        order = sorted(d["players"], key=lambda q: q["player_slot"])
+        for pl, entry in zip(order, t.get("players", [])):
+            if heroes.get(str(pl.get("hero_id"))) == name:
+                return entry
+        raise LookupError(f"no {name!r} in this match")
+
+    if check == "teamfight_item_use":
+        # "<fight>:<Hero>:<item>" — how many times that hero used that item INSIDE
+        # that fight. Zero is a legitimate registered answer: ch. 04 is about
+        # exits, and "the exit item was not used" is exactly as much a claim as
+        # "it was", and needs checking just as hard.
+        idx, name, item = arg.split(":", 2)
+        return (_tf_player(idx, name).get("item_uses") or {}).get(item, 0)
+
+    if check == "teamfight_delta":
+        # "<fight>:<Hero>:<gold|xp|damage>" — what that hero's fight was worth.
+        # This is the only thing in the record that prices STAYING, and ch. 04
+        # turns on it: the player who gained most in this fight is one who died
+        # in it.
+        idx, name, field = arg.split(":", 2)
+        key = {"gold": "gold_delta", "xp": "xp_delta", "damage": "damage"}[field]
+        return _tf_player(idx, name).get(key)
+
+    if check == "teamfight_summary_deaths":
+        # "<fight>" — the `deaths` field the parser puts on the fight itself.
+        #
+        # Registered SEPARATELY from teamfight_deaths, which sums the per-player
+        # entries, because in ch. 04's case the two disagree: the summary says 6
+        # and both the per-player detail and the kill log say 7. The difference is
+        # a hero who died at the exact end of the window. A book that quietly
+        # picked whichever number suited its sentence would be doing the thing it
+        # accuses the genre of, so both are registered and the chapter states the
+        # gap.
+        return _tf(arg).get("deaths")
+
     if check == "ward_ended_by":
         # "<Hero>:<obs|sen>:<placed_seconds>" -> "expired", or the internal name of
         # whatever killed it.

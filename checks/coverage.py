@@ -66,6 +66,49 @@ def allowed():
     return out
 
 
+_UNITS = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16,
+    "seventeen": 17, "eighteen": 18, "nineteen": 19,
+}
+_TENS = {
+    "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+    "seventy": 70, "eighty": 80, "ninety": 90,
+}
+_SMALL = "|".join(k for k, v in _UNITS.items() if v < 10)
+_WORD_NUM = re.compile(
+    r"\b(?:(%s)[- ](%s)|(%s)|(%s))\b"
+    % ("|".join(_TENS), _SMALL, "|".join(_TENS), "|".join(_UNITS)),
+    re.I,
+)
+# A spelled-out number followed by a time unit is a duration restating a
+# registered timestamp — "forty-nine minutes and thirty-three seconds" is the
+# duration 2973 in words. Those are not the failure this pass is for.
+_TIME_UNIT = re.compile(r"^[-\s]*(minute|minutes|second|seconds|hour|hours|per)\b", re.I)
+
+
+def word_numbers(body):
+    """Spelled-out COUNTS in prose, as integers. Durations are excluded."""
+    out = set()
+    for m in _WORD_NUM.finditer(body):
+        tens, unit, tens_only, unit_only = m.groups()
+        if tens:
+            value = _TENS[tens.lower()] + _UNITS[unit.lower()]
+        elif tens_only:
+            value = _TENS[tens_only.lower()]
+        else:
+            value = _UNITS[unit_only.lower()]
+        if value <= 3:
+            continue
+        if _TIME_UNIT.match(body[m.end():m.end() + 12]):
+            continue
+        if re.search(r"\bminute\s*$", body[:m.start()], re.I):
+            continue
+        out.add(value)
+    return out
+
+
 def main():
     only = sys.argv[1] if len(sys.argv) > 1 else None
     reg, allow = registered(), allowed()
@@ -83,6 +126,21 @@ def main():
         # times and counts already covered by other rows, and including them
         # produced more noise than signal.
         found = {n.replace(",", "") for n in re.findall(r"\b\d[\d,]{2,}\b", body)}
+
+        # Counts written as WORDS. This exists because two of them shipped: ch. 32
+        # said "eleven wards expired" when ten did, and ch. 04 said "nine uses"
+        # when there were seven. Both passed every check in this repository,
+        # because the digit pass above cannot see a word — and a count is exactly
+        # the kind of figure a writer adds up by hand and gets wrong.
+        #
+        # LIMIT, stated because a checker oversold is worse than none: the
+        # registry is a flat set of values, so a small count clears whenever that
+        # number is registered anywhere for any reason. "nine" passes if any claim
+        # in the book has the value 9. It catches the larger counts reliably and
+        # the small ones only sometimes, and it is not a substitute for adding up
+        # twice.
+        found |= {str(v) for v in word_numbers(body)}
+
         ok = reg | allow.get(chapter, set()) | allow.get("*", set())
         unregistered = sorted(n for n in found if n not in ok)
 

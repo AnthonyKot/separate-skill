@@ -564,7 +564,7 @@ jobs are defined by the seat rather than by the topic.
 | 01 | The Death You Didn't Notice | ☑ 11 claims · match 8928953683 · **pilot** |
 | 02 | What the Map Already Said | ☑ 24 claims · match 8928953683 · reuses ch. 01's case for a different inference |
 | 03 | The Thirty Seconds Before | ☐ |
-| 04 | Leaving Is a Skill | ☐ |
+| 04 | Leaving Is a Skill | ☑ 34 claims · match 8927063876 |
 | 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
 
 **The working definition of a free death, and the reason Part I is five chapters.**
@@ -928,6 +928,48 @@ their lane opponent at minute ten, finishing with rows that order the opposite w
   the two-offlane comparison, for the inference that this seat's product is recorded early and
   against the wrong opponent. Ch. 07 (*The Lane Is Not the Game*) and ch. 11 (*Gold in the Bank Is
   Not Gold*) may return for different inferences and must draw their own.
+
+### 8927063876 — GLYPH vs PlayTime, The Games of the Future 2026
+
+Written before ch. 04 was drafted.
+
+- **Patch.** 7.41e — played 2026-08-03. **Source mode.** Professional broadcast. **Identity.** Heroes
+  only, as in ch. 01, 02, 12, 30 and 32.
+- **Facts.** 60:38, Radiant won. Teamfight 5 ran **49:49–50:36**, forty-seven seconds, and **seven of
+  the ten heroes died in it** — four Radiant, three Dire, at 50:04, 50:06, 50:15, 50:15, 50:21, 50:21
+  and 50:36. Inside that fight: **Undying used a town portal scroll and two blinks and died**;
+  **Doom used a scroll, a blink and a Shiva's and died**; **Earthshaker used a blink and a force
+  staff and died**. Dark Seer used two blinks and a wind waker and lived, gaining 980 gold and 5,868
+  experience. **Gyrocopter died in the fight and still finished it +1,769 gold and +5,912
+  experience** — the largest gain of anyone on the map.
+- **The parser contradicts itself here, and the chapter says so.** The fight's own `deaths` field
+  reads **6**; the per-player entries sum to **7**, and the kill log inside the window also gives 7.
+  The difference is Earth Spirit, who died at 50:36 — the exact end of the window. Both figures are
+  registered. Choosing the convenient one silently is the failure this book exists to avoid.
+- **Permitted.** That an exit is an action with a price and a failure rate: it costs an item, a
+  cooldown and a position, and in this fight it was paid three times and failed three times. That
+  what staying earns is partly recorded — and that the largest earner in this fight is a player who
+  died in it.
+- **Observation vs inference.** Every time, item use, delta and death is observed. That a scroll or a
+  blink was used **in order to leave** is **inference and a weak one** — a scroll can bring a player
+  in, a blink is an entry tool at least as often as an exit, and the record carries no destination.
+  The chapter must say this where it uses the word *exit*.
+- **Confounders.** An aegis was taken at 47:39, three minutes before the fight, and Gyrocopter used a
+  cheese inside it — so at least one participant had resources the record prices at nothing. Two
+  Radiant barracks had already fallen at 46:56 and 47:06. A Radiant tier-two fell at 51:12, after the
+  fight. Professional coordination throughout.
+- **Prohibited.** **Never that anyone should have left**, or left earlier — the record contains no
+  counterfactual and no position, and the whole chapter is that the price of leaving is unrecorded.
+  Never that the three who used movement items used them to escape; see *Observation vs inference*.
+  Never that Gyrocopter's death was worth it *because* of the gold — that grades by outcome, which
+  ch. 01 bans. Never a prevalence claim about any bracket.
+- **Transfer.** The pricing procedure — naming what the exit costs and when it expires, before it is
+  needed. Not the items, the timings, or the survival rate. Five coordinated professionals contesting
+  a base after mega creeps is not a solo-queue skirmish.
+- **Spent.** Ch. 04 takes fight 5's exit-item usage and the gold and experience deltas, for the
+  inference that leaving has a price the record cannot state and staying has one it can. Ch. 17
+  (*Cooldowns Are the Real Clock*) and ch. 20 (*The Fight You Declined*) may return for different
+  inferences and must draw their own.
 
 ## 8. What got caught
 

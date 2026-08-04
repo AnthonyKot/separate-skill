@@ -795,3 +795,54 @@ is **ch. 01's reveal in a new costume** and is forbidden by §1e. Restructured s
 their own two facts** — one checkable, one unavailable — and the reveal contrasts those with the list
 they were handed. The finding becomes positive rather than negative: *the replay is best at exactly
 the category you can never act on, and worst at the one you can.*
+
+## 12. Ch. 04 — and the word-count gap, closed
+
+### 12a. The chapter
+
+*Leaving Is a Skill*, match **8927063876**, GLYPH vs PlayTime. Teamfight 5 ran 49:49–50:36 and
+**seven of ten heroes died in forty-seven seconds**. Three of them — Undying, Doom, Earthshaker —
+spent **seven movement-item uses between them** inside that window and died anyway. Dark Seer spent
+three and lived.
+
+The chapter's two halves:
+
+1. **An exit has a price and a failure rate.** It was available, it was paid for, and three times it
+   did not work.
+2. **The record can price staying and can never price leaving.** Gyrocopter *died* in this fight and
+   came out **+1,769 gold and +5,912 experience**, more than anyone on the map — including Dark Seer,
+   who survived it. So *I should have left sooner* compares a real outcome against a fantasy in which
+   leaving was free, instant and successful, and this fight contains three demonstrations that it is
+   none of those.
+
+Boundaries named in the chapter, because three neighbours are close: **ch. 03** owns how the escape
+closed, **ch. 17** owns cooldowns as a clock, **ch. 20** owns declining a fight not yet entered.
+
+**The parser contradicts itself in this case and the chapter says so.** The fight's own `deaths` field
+reads 6; the per-player entries and the kill log both give 7. The difference is a hero who died at the
+exact closing second. Both are registered — `teamfight_deaths` and `teamfight_summary_deaths` — because
+picking the convenient one quietly is the habit this book is against.
+
+### 12b. Two counts shipped wrong because they were written as words
+
+`coverage.py` compares prose figures against the registry and **only saw digits**. Two errors got
+through it:
+
+- **Ch. 32: "eleven wards expired"** — ten did. Live for a day.
+- **Ch. 04: "nine movement-item uses"** — seven. Caught before publishing, but only because the
+  number was re-derived by hand for an unrelated reason.
+
+Worse, when correcting ch. 32 I audited with a **case-sensitive `grep`** and declared it clean while
+two capitalised instances survived. That is the audit rule failing at the level of the tool: *a search
+for the old string finds neither the chapters that moved past it nor the ones that capitalised it.*
+
+`coverage.py` now reads **spelled-out counts**, including hyphenated compounds. Durations are excluded
+deliberately — *forty-nine minutes and thirty-three seconds* is a registered timestamp in words and
+flagging it is noise. On its first run over seven chapters it produced **three** hits, all genuine
+derived figures now declared, and **one real error**: ch. 02's *seventy-one seconds* against its own
+window of 6:39–7:48, which is seventy. Negative-controlled by restoring ch. 32's "Eleven".
+
+**Its limit is in its header.** The registry is a flat set of values, so a small count clears whenever
+that number is registered anywhere for any reason — *nine* passes if any claim in the book has the
+value 9. It catches large counts reliably and small ones only sometimes. It is not a substitute for
+adding up twice.

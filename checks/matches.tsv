@@ -212,3 +212,44 @@
 2	8928953683	ward_ended_by	Mirana:obs:469	npc_dota_hero_bane
 2	8928953683	ward_ended_by	Storm Spirit:obs:374	npc_dota_hero_hoodwink
 2	8928953683	ward_fates	Mirana:obs:destroyed	2
+
+# ch 04 — Leaving Is a Skill. GLYPH vs PlayTime, The Games of the Future 2026,
+# match 8927063876, patch 7.41e. Teamfight 5 killed seven of ten heroes in 47
+# seconds. Note teamfight_deaths (per-player sum) against teamfight_summary_deaths
+# (the parser's own field): they disagree by one, and both are registered.
+4	8927063876	duration		3638
+4	8927063876	winner		radiant
+4	8927063876	count	teamfights	7
+4	8927063876	teamfight_start	5	2989
+4	8927063876	teamfight_end	5	3036
+4	8927063876	teamfight_deaths	5:radiant	4
+4	8927063876	teamfight_deaths	5:dire	3
+4	8927063876	teamfight_summary_deaths	5	6
+4	8927063876	hero_death_time	Doom:3	3004
+4	8927063876	hero_death_time	Gyrocopter:2	3006
+4	8927063876	hero_death_time	Tusk:8	3015
+4	8927063876	hero_death_time	Undying:7	3015
+4	8927063876	hero_death_time	Earthshaker:12	3021
+4	8927063876	hero_death_time	Shadow Fiend:5	3021
+4	8927063876	teamfight_item_use	5:Undying:tpscroll	1
+4	8927063876	teamfight_item_use	5:Undying:blink	2
+4	8927063876	teamfight_item_use	5:Doom:tpscroll	1
+4	8927063876	teamfight_item_use	5:Doom:blink	1
+4	8927063876	teamfight_item_use	5:Earthshaker:blink	1
+4	8927063876	teamfight_item_use	5:Earthshaker:force_staff	1
+4	8927063876	teamfight_item_use	5:Dark Seer:blink	2
+4	8927063876	teamfight_item_use	5:Dark Seer:wind_waker	1
+4	8927063876	teamfight_item_use	5:Earth Spirit:blink	0
+4	8927063876	teamfight_delta	5:Gyrocopter:gold	1769
+4	8927063876	teamfight_delta	5:Gyrocopter:xp	5912
+4	8927063876	teamfight_delta	5:Dark Seer:gold	980
+4	8927063876	teamfight_delta	5:Dark Seer:xp	5868
+4	8927063876	teamfight_delta	5:Earthshaker:gold	-84
+4	8927063876	teamfight_delta	5:Shadow Fiend:gold	-15
+4	8927063876	objective_time	CHAT_MESSAGE_ROSHAN_KILL#3	2859
+4	8927063876	objective_time	building_kill:npc_dota_goodguys_tower2_top	3072
+4	8927063876	hero_stat	Gyrocopter:kills	17
+4	8927063876	hero_stat	Earthshaker:deaths	14
+# the seven movement-item uses by the three heroes who died, registered so the
+# prose count is recomputable rather than added up by hand.
+4	8927063876	teamfight_item_use	5:Doom:shivas_guard	1
