@@ -29,7 +29,12 @@ than being discovered.
 | `docs/` | The static site — contents and method pages |
 | `data/matches/` | Committed match snapshots, one per registered case |
 
-Chapter 21 is drafted first, out of spine order, because its case is already sourced and registered.
+Chapter 21 will be drafted first, out of spine order, because its case is already sourced and
+registered. It is one of four pilots — 01, 12, 21 and 32 — which are written and reviewed before the
+remaining chapters are commissioned. Each tests a different way this book could fail: whether the
+method avoids hindsight, whether general principles survive item specificity, whether professional
+evidence transfers without the altitude error, and whether seat inversion produces genuinely
+different advice.
 
 ## The premise
 
@@ -57,9 +62,9 @@ python3 checks/matches.py    # registered events vs committed snapshots
 python3 checks/data.py       # bracket figures recomputed from their sample
 ```
 
-Unlike its predecessors, **every check here is gating.** Books 4 and 5 could only mark claim checks
-advisory, because they read HTML on other people's servers and a moved page is not an error. Two
-things changed that:
+Unlike its predecessors, **every check here is gating** — with one deliberate exception, stated
+rather than buried. Books 4 and 5 could only mark claim checks advisory, because they read HTML on
+other people's servers and a moved page is not an error. Two things changed that:
 
 - **Valve publishes structured patch notes.** `dota2.com/datafeed/patchnotes?version=7.41&language=english`
   returns versioned, timestamped JSON. The human-facing `/patches/{version}` pages are a JavaScript
@@ -71,6 +76,12 @@ things changed that:
 Gating also means an **unreachable source fails the build**. The first version of the patch checker
 printed `SKIP` and returned 0 when it could not reach a source, so a DNS failure produced a green
 build indistinguishable from a verified one.
+
+**The exception**: bracket figures are gating when *recomputed from the sample committed beside
+them*, and advisory when compared against a fresh sample of live play. Those are two different
+questions — one about this repository, one about the current game — and only the first can be
+somebody's fault. Giving both the same name is how the foundations came to say "advisory" while the
+code said "gating"; caught on review, 2026-08-04.
 
 **What a green build proves:** every registered figure is present in the record it is attributed to,
 checked by something that could actually see that record. **What it does not prove:** that the advice

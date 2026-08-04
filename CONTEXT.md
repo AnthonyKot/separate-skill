@@ -247,7 +247,15 @@ Three files, three checkers, because the sources verify differently:
 |---|---|---|---|
 | `checks/claims.tsv` | Exact string in the official notes for a stated patch | Fetch the datafeed, match the string | **Gating** — Valve's own structured record |
 | `checks/matches.tsv` | An event in a registered match | Assert against the committed snapshot | **Gating** — the snapshot is in this repository |
-| `checks/data.tsv` | An aggregate query, stamped with the patch it ran under | Re-run, compare within tolerance, diff the snapshot | Advisory — drift is the game changing, which is information |
+| `checks/data.tsv` | An aggregate figure, computed from a committed sample and stamped with the patch it ran under | **Recompute** from the stored rows | **Gating** — the sample is in this repository |
+| `checks/data.tsv`, live | The same figure against a fresh sample | Re-query and compare | Advisory — drift is the game changing, which is information |
+
+The bracket row was recorded as "advisory" in the first version of this table and stayed that way
+after the checker was redesigned, so the foundations said advisory while `checks/data.py`,
+`verify.sh` and `README.md` all said gating. Caught on external review. **Two different operations
+were being given one name**: recomputing a registered figure from its own committed sample is a
+question about this repository and fails the build; re-querying the live game is a question about
+the game and cannot.
 
 Gating means *content mismatch fails the build*, and it also means **an unreachable source fails the
 build**. Those are different guarantees and conflating them is how a check quietly stops working; see
@@ -280,6 +288,50 @@ build means the numbers are real. It does not mean the advice is.**
 
 Legend: ☐ not started · ◐ drafted · ☑ written and sourced
 
+### Chapter contracts
+
+Each chapter has **one job no other chapter may do**. Written before drafting, because the failure
+mode is specific and predictable: adjacent chapters in the same part converge, and Part I in
+particular can collapse into four retellings of *look at the map and leave sooner*. A chapter that
+cannot state a job distinct from its neighbours should be merged rather than padded — but that test
+is only meaningful if the jobs were fixed in advance, rather than discovered afterwards by whoever
+notices the repetition.
+
+| # | The exclusive job |
+|---|---|
+| 01 | **Classify** a death: necessary risk, execution failure, or free risk. Establishes the ex-ante test above |
+| 02 | Reconstruct the information that was **available before** the decision |
+| 03 | Trace the **action sequence** that removed the escape |
+| 04 | Identify the **final exit decision** and what leaving would have cost |
+| 05 | Stop the framework teaching passive scoreboard preservation |
+| 06 | Distinguish **gold from XP** — two resources, different purchases, one usually ignored |
+| 07 | Decide when the lane **stops being the best source** |
+| 08 | Identify the income **available** across the map |
+| 09 | Determine which of that income is **safe and ownable** given who controls what |
+| 10 | **Deadline-adjusted** farming: the fastest route to a required capability may have lower GPM |
+| 11 | Unspent resources and **delayed delivery** |
+| 12 | Buying for **your own required function** |
+| 13 | Buying **against enemy capabilities** |
+| 14 | Reading what **all ten heroes** can currently do |
+| 15 | Recognising the capability is **reached**, and that farming must now stop |
+| 16 | Your own **level and item** spike |
+| 17 | **Cooldowns** — spells, ultimates, buyback, defensive items |
+| 18 | The **lifetime** of usable vision |
+| 19 | The **state change** a fight is meant to purchase |
+| 20 | The **cost of refusing** — declining is also a decision with a price |
+| 21 | Why numerical advantage **fails to become** map closure |
+| 22 | Why high ground **changes the risk model** |
+| 23 | Recognising **temporary permission** to take an objective |
+| 24 | Turning repeated permission into an **irreversible** ending |
+
+Two boundaries worth naming because they are the ones most likely to blur. **10** is not another
+farming-pattern chapter; 08 and 09 have already covered where the money is and which of it is yours,
+so 10 is about arriving in time to matter. And **19 and 20** must not become the positive and
+negative forms of one maxim: 19 diagnoses *purpose*, 20 diagnoses the *cost of refusal*.
+
+Parts VI and VII are not contracted here. Part VI runs on a different engine (below) and Part VII's
+jobs are defined by the seat rather than by the topic.
+
 ### Part I — Can you distinguish free deaths from necessary risk?
 | # | Title | Status |
 |---|---|---|
@@ -289,10 +341,31 @@ Legend: ☐ not started · ◐ drafted · ☑ written and sourced
 | 04 | Leaving Is a Skill | ☐ |
 | 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
 
-**The working definition of a free death, and the reason Part I is five chapters.** A death is *free*
-when no objective, no map information and no economic trade was gained by it. That definition is what
-separates this part from the KDA doctrine the genre correctly rejects — the target is avoidable
-deaths, not zero deaths, and never an attractive scoreboard.
+**The working definition of a free death, and the reason Part I is five chapters.**
+
+> A death is **free** when, given what was reasonably knowable at the time, the player accepted
+> substantial death risk without a plausible exchange — in objectives, information, resources, space,
+> time, or another player's survival.
+
+The definition is deliberately **ex ante**: it is settled by what was knowable when the risk was
+accepted, not by what the risk went on to produce. Two things are then assessed separately, and
+keeping them apart is the whole method:
+
+| | Question | Settled by |
+|---|---|---|
+| **Decision quality** | Was a meaningful exchange reasonably available, and was it taken? | What the player could know at the moment of the decision |
+| **Outcome** | Did the exchange actually occur? | What happened afterwards, including what four other people did |
+
+An earlier version defined a free death as one from which no objective, information or trade **was
+gained**, which judges the decision by its result. Under that wording a sound sacrifice fails its
+grade because a teammate misexecuted, and a reckless one passes because it happened to reveal a
+rotation. Corrected on external review before any chapter existed, which is the only cheap time to
+correct a definition: **chapter 01 is built on this distinction**, and had it been drafted first, the
+book would have spent five chapters teaching hindsight while calling it diagnosis.
+
+This is also what separates Part I from the KDA doctrine the genre correctly rejects. The target is
+*avoidable* deaths, not zero deaths, and never an attractive scoreboard. A player who takes no risks
+is not passing this test — they are failing it in the direction chapter 05 exists to catch.
 
 There appear to be **two different stuck players**, and a book that addresses only one will actively
 harm the other:

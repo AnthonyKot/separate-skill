@@ -7,6 +7,7 @@
 #   * checks/patchnotes.py  registered strings vs Valve's own datafeed   (GATING)
 #   * checks/matches.py     registered events vs committed snapshots     (GATING)
 #   * checks/data.py        bracket figures recomputed from their sample (GATING)
+#   * checks/privacy.py     no identifiers in public or bracket snapshots     (GATING)
 #   * internal links        entirely inside this repository              (GATING)
 #
 # Nothing here is advisory yet, which is deliberate and slightly unusual for this
@@ -37,6 +38,9 @@ if [ "$only_links" = "0" ]; then
 
   echo "== bracket claims recomputed from their samples (gating) =="
   python3 checks/data.py || fail=1
+
+  echo "== player identifiers in snapshots (gating) =="
+  python3 checks/privacy.py || fail=1
 fi
 
 echo "== count sync (computed, not typed) =="
