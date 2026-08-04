@@ -80,3 +80,22 @@
 12	8928916055	objective_time	building_kill:npc_dota_badguys_tower2_bot	1517
 12	8928916055	purchases_between	608:1987:black_king_bar,blink,radiance,desolator,manta,pipe,guardian_greaves,aeon_disk,octarine_core,refresher,sheepstick,abyssal_blade,bloodthorn,satanic,butterfly,assault,heart,shivas_guard,silver_edge,skadi,daedalus,mjollnir,nullifier,ultimate_scepter	16
 12	8928916055	objectives_between	608:1987:building_kill	7
+#
+# ch 32 — Position Five. Vici Gaming vs Team Liquid.
+# A support who finished 0/8/15 on the winning side, with 39 wards.
+# The ward placed at 35:09 lived twelve seconds; a typical one lived six minutes.
+32	8928118730	duration	-	2796
+32	8928118730	winner	-	radiant
+32	8928118730	hero_stat	Crystal Maiden:kills	0
+32	8928118730	hero_stat	Crystal Maiden:deaths	8
+32	8928118730	hero_stat	Crystal Maiden:assists	15
+32	8928118730	hero_series_at	Crystal Maiden:gold:46	16558
+32	8928118730	hero_series_at	Lone Druid:gold:46	40243
+32	8928118730	ward_count	Crystal Maiden:obs	14
+32	8928118730	ward_count	Crystal Maiden:sen	25
+32	8928118730	ward_uptime	Crystal Maiden:obs	3964
+32	8928118730	ward_lifetime	Crystal Maiden:obs:2109	12
+32	8928118730	ward_lifetime	Crystal Maiden:obs:307	360
+32	8928118730	hero_death_time	Crystal Maiden:8	2139
+32	8928118730	objective_time	building_kill:npc_dota_badguys_tower2_mid	2221
+32	8928118730	objective_time	building_kill:npc_dota_badguys_tower2_bot	2243

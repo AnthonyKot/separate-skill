@@ -24,6 +24,10 @@ Claim types, one per row:
     hero_purchase_time <Hero Name>:<item>    seconds, first completion
     purchases_between <start>:<end>:<items>  completions of any listed item in a window
     objectives_between <start>:<end>:<type>  objectives of that type in a window
+    ward_count      <Hero>:<obs|sen>         wards placed
+    ward_lifetime   <Hero>:<obs|sen>:<sec>   seconds that ward survived, -1 if never
+    ward_uptime     <Hero>:<obs|sen>         ward-seconds contributed (overlaps counted)
+    hero_death_time <Hero>:<n>               nth death, 1-based
     hero_series_at  <Hero>:<gold|xp|lh>:<min>  that hero's per-minute series
     teamfight_deaths <index>:<radiant|dire>  hero deaths on that side in that fight
     hero_stat       <Hero Name>:<field>      any scoreboard field, addressed by hero
@@ -152,6 +156,66 @@ def resolve(d, check, arg):
             for b in (p.get("purchase_log") or [])
             if b["key"] in wanted and start <= b["time"] <= end
         )
+
+    def _hero(name):
+        heroes = hero_names()
+        for pl in d["players"]:
+            if heroes.get(str(pl.get("hero_id"))) == name:
+                return pl
+        raise LookupError(f"no {name!r} in this match")
+
+    if check == "ward_count":
+        # "<Hero>:<obs|sen>" — wards placed. Position five's resources are not
+        # gold, and no other check in this file can see them.
+        name, _, kind = arg.partition(":")
+        return len(_hero(name).get(f"{kind}_log") or [])
+
+    if check == "ward_lifetime":
+        # "<Hero>:<obs|sen>:<placed_seconds>" — how long that ward survived, by
+        # matching the entity handle to the corresponding left-log entry.
+        # -1 means it was still standing when the game ended.
+        name, kind, placed = arg.split(":", 2)
+        p_ = _hero(name)
+        placed = int(placed)
+        gone = {o.get("ehandle"): o["time"] for o in (p_.get(f"{kind}_left_log") or [])}
+        for o in p_.get(f"{kind}_log") or []:
+            if o["time"] == placed:
+                end = gone.get(o.get("ehandle"))
+                return -1 if end is None else end - placed
+        raise LookupError(f"{name} placed no {kind} ward at {placed}s")
+
+    if check == "ward_uptime":
+        # "<Hero>:<obs|sen>" — total seconds of ward uptime contributed, counting
+        # only wards whose end is recorded. Overlaps are NOT deduplicated: this is
+        # ward-minutes contributed, not minutes of the game covered, and a chapter
+        # citing it must say which.
+        name, _, kind = arg.partition(":")
+        p_ = _hero(name)
+        gone = {o.get("ehandle"): o["time"] for o in (p_.get(f"{kind}_left_log") or [])}
+        return sum(
+            gone[o["ehandle"]] - o["time"]
+            for o in p_.get(f"{kind}_log") or []
+            if o.get("ehandle") in gone
+        )
+
+    if check == "hero_death_time":
+        # "<Hero>:<n>" — the nth death, 1-based, from every player's kill log.
+        name, _, nth = arg.partition(":")
+        heroes = hero_names()
+        hid = None
+        for k, v in heroes.items():
+            if v == name:
+                hid = k
+        times = sorted(
+            k["time"]
+            for pl in d["players"]
+            for k in (pl.get("kills_log") or [])
+            if k["key"] == "npc_dota_hero_" + name.lower().replace(" ", "_").replace("'", "")
+        )
+        i = int(nth)
+        if not 1 <= i <= len(times):
+            raise LookupError(f"{name} died {len(times)} times, no #{i}")
+        return times[i - 1]
 
     if check == "objectives_between":
         # "<start_sec>:<end_sec>:<type>" — objectives of that type in the window.

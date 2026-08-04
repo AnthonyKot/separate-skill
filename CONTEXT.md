@@ -550,7 +550,7 @@ reduces noise while learning, never as a theory of how MMR is won.
 | 29 | Position Two | ☐ |
 | 30 | Position Three | ☐ |
 | 31 | Position Four | ☐ |
-| 32 | Position Five | ☐ |
+| 32 | Position Five | ☑ 15 claims · match 8928118730 · **pilot** |
 
 **Part VII chapters are full chapters, not appendices.** Each carries the complete template — its own
 situation, its own replay-verifiable case, its own figures, its own `Next game` and `After the game`
@@ -694,6 +694,39 @@ Written before ch. 12 was drafted.
 - **Spent.** Ch. 12 takes the five-BKB cluster, the fight gap and the seven buildings, for the
   inference that a purchase and its first observable use can be separated by many minutes. Ch. 16 (*The Spike*) may return for a different inference about timing, and
   must draw its own.
+
+### 8928118730 — Vici Gaming vs Team Liquid, 1win Essence II
+
+Written before ch. 32 was drafted.
+
+- **Patch.** 7.41e. **Source mode.** Professional broadcast. **Identity.** Heroes only.
+- **Facts.** 46:36, Radiant won. Crystal Maiden finished **0 kills, 8 deaths, 15 assists** on the
+  winning side, with a final net worth of **16,558** against the same team's highest of **40,243**.
+  Placed **14 observers and 25 sentries**; the observers whose end is recorded contributed
+  **3,964 ward-seconds**. Eleven of twelve tracked observers survived exactly 360 seconds. The
+  exception was placed at 35:09 and killed twelve seconds later; Crystal Maiden's eighth and last
+  death was at 35:39, and two enemy tier-two towers fell at 37:01 and 37:23.
+- **Permitted.** That a scoreboard line can omit almost everything a position-five player did. That
+  a support's resources are time-boxed in a way a core's are not — a ward has a fixed duration
+  printed on it before you place it.
+- **Observation vs inference.** All times, counts and lifetimes are observed. That eleven identical
+  360-second lifetimes indicate the ward's full duration is a safe inference from the repetition.
+  **That the deep ward at 35:09 or the death at 35:39 contributed to the towers at 37:01 and 37:23
+  is neither** — it is a sequence, and the chapter must present it as one.
+- **Confounders.** Ward uptime counts overlapping wards separately, so 3,964 seconds is ward-seconds
+  contributed rather than seconds of the game covered; say which. A support's death count is
+  entangled with the team's whole approach. Two towers falling ninety seconds later has many
+  candidate causes and this record ranks none of them.
+- **Prohibited.** Never that the deaths were justified *because* the team won — that is outcome
+  reasoning, banned in ch. 01 and no more permissible here. Never that the ward bought the towers.
+  Never that supports should die more, or less. Never a prevalence claim: this is one support in one
+  professional game, and the book has no bracket evidence about warding at all.
+- **Transfer.** That the seat changes which resources are scarce, and therefore which of the earlier
+  chapters apply unchanged. Not the ward count, the death count, or any tempo from this match.
+- **Spent.** Ch. 32 takes the scoreboard line, the ward counts and lifetimes, and the 35:08–35:39
+  sequence, for the inference that position five's resources are time-boxed and largely invisible to
+  the scoreboard. Chapter 18 (*Vision Is a Timing*) may return for a different inference and must
+  draw its own.
 
 ## 8. What got caught
 
