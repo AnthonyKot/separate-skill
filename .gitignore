@@ -1,0 +1,30 @@
+# Caster transcripts — research material only, never redistributed.
+# The commentary is someone else's expression: it supplies hypotheses, never
+# claim strings. See CONTEXT.md → Sourcing. Nothing under here is ever committed.
+data/transcripts/
+*.vtt
+*.srt
+*.json3
+
+# Source material — read locally, never redistributed.
+sources/
+*.pdf
+*.epub
+
+# Cached API responses fetched by verify.sh
+.cache/
+
+# Scratch
+scratch/
+notes-private/
+*.tmp
+
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
