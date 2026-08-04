@@ -113,8 +113,17 @@ Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
    omission was an inconsistency in this document rather than a decision: the definition asks whether
    a meaningful exchange was *reasonably available*, which is precisely a calibration question, while
    the pass mark asked only whether the reader followed their own instructions. **Found on external
-   review of ch. 30, and it applies retroactively — chapters 12, 21 and 32 carry process-only pass
-   marks and are owed the second half.** Ch. 21 shipped with one — "you were alive at the end of it" —
+   review of ch. 30, and it applies retroactively.** Every published chapter is affected and they are
+   not affected equally, which the first version of this note got wrong by listing three of four:
+
+   - **Ch. 12, 21 and 32 carry pure process marks** — *could you name the function, the window, the
+     cost; did you honour them* — and are owed the calibration half as written above.
+   - **Ch. 01 is the exception and needs a different fix.** Its mark asks whether an exchange was
+     *available* and whether you took it, which is already the calibration question, because it was
+     derived from §6's free-death definition rather than from the template. What it does not ask is
+     whether the exchange was worth the risk accepted. It needs a clause, not a second block — and
+     the fact that the one chapter built directly on the definition is the one closest to correct is
+     the argument for the definition over the template. Ch. 21 shipped with one — "you were alive at the end of it" —
    which is the free-death error of §6 reappearing in the review loop one commit after it was
    corrected in the definition, because survival is easy to score and decision quality is not. A
    support who dies to force two buybacks may have played the sequence correctly, and a book that

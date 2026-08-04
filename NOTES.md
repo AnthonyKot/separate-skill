@@ -569,9 +569,15 @@ objective was worth that cost *on what was knowable*, which is ex ante and not h
 
 This was an inconsistency inside the document rather than a decision. §6's free-death definition
 already asks whether a meaningful exchange was **reasonably available** — a calibration question —
-while the pass mark asked only whether instructions were followed. **Ch. 12, 21 and 32 carry
-process-only pass marks and are owed the second half.** That is the revision backlog for the next
-session, and it is small: one block per chapter.
+while the pass mark asked only whether instructions were followed. **Ch. 12, 21 and 32 carry pure process marks and are owed
+the calibration half; ch. 01 needs a clause rather than a block** — its mark already asks whether an
+exchange was *available*, which is the calibration question, because it was derived from the
+free-death definition rather than from the template. It omits only whether the exchange was worth the
+risk. The first version of this note said "three chapters" and there are four; that the chapter built
+directly on the definition is the one closest to correct is an argument about which document to trust.
+
+That is the revision backlog for the next session, and it is small: one block in three chapters, one
+clause in a fourth.
 
 ### 9c. Pushed back on, with reasons
 
