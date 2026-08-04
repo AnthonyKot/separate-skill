@@ -730,3 +730,68 @@ and README.md still said six — drift in the one number that file already compu
 2. **Part VII's sizing.** `§8h`, `§8i`. The author's call, deferred, blocks nothing until ch. 28.
 
 Everything else in this file is closed. Part I can start at ch. 02.
+
+## 11. Ch. 02 on review — and the ward-fate error it exposed in ch. 32
+
+Review 2026-08-04. The most consequential finding was a factual one that propagated backwards into a
+published chapter.
+
+### 11a. Expiry versus destruction is a fact, not an inference
+
+Ch. 02 called three Radiant observers *"320, 361 and 361 — their full duration, untouched"*, which is
+self-contradictory: the same table gives 360 as a full life. The reviewer spotted the inconsistency
+and offered three candidate explanations. The record supplies a fourth and better one.
+
+**`obs_left_log` carries `attackername`, and it is self-attributed on expiry** — an expiring ward is
+credited to the player who placed it, a destroyed one to whoever killed it. So the 320-second ward was
+**killed by Mirana**, the very hero the chapter is about, three minutes after the death it examines.
+That is not a footnote: it is the evidence against the reading the chapter was drifting toward, that
+Dire were not contesting vision. She killed two Radiant observers in that game.
+
+**The same field falsifies ch. 32, which was live.** Ch. 32 said *"eleven survived exactly 360
+seconds… eleven expired and one was destroyed"*, inferring fate from duration. By `attackername`:
+**ten expired, two were destroyed**, and only **nine** ran exactly 360 with a tenth at 361. The extra
+kill lived **351 of its 360 seconds** — taken nine seconds before it would have run out anyway, which
+no duration heuristic could ever have caught, and which is a better illustration of the seat's fixed
+clock than the sentence it replaces.
+
+Two new check types, `ward_ended_by` and `ward_fates`, so the fate is registered rather than read off
+a lifetime. **The individual lifetimes in ch. 32 were all registered and all correct; the sentence
+that counted them was checked by nothing.** That is the aggregate-versus-item gap `coverage.py` cannot
+see, because the count was written in words.
+
+### 11b. Applied to ch. 02
+
+- **`KNOWN` renamed to `AVAILABLE WITHOUT LOOKING FURTHER`.** The chapter said in one breath that the
+  record cannot establish what anyone attended to, and in another labelled a list *what you know*.
+  Availability is not attention, and the gap between them may be the improvable error the chapter is
+  hunting.
+- **Three categories became four:** available / **checkable** / **inferable** / unavailable. The old
+  middle row held two different operations — a sentry *settles* whether a ward is there; a missing
+  hero *shifts a probability* and says nothing about wards. Collapsing them eventually grades a reader
+  for failing to deduce something never deducible.
+- **The reveal now closes the loop**, answering each item rather than introducing a proposition the
+  hold never raised.
+- **"Every answer passes" → "admissible".** The self-validation defect in miniature, in the one place
+  the calibration split had not reached.
+- **"a half of the map her team had been unable to see"** → no observer coverage. Ward counts are not
+  vision; heroes, creeps and buildings see things. The chapter said so two sections later and the
+  later caveat cannot repair the earlier claim.
+- **"you have found the answer" → "you have found an information gap"**, which is what an empty blank
+  actually is. Acting under a known gap can be correct.
+- Superlative removed (*the single largest thing most players never hold on to* — a bracket-frequency
+  claim in a chapter that states it has no bracket data). *Do not infer enemy ward counts* narrowed to
+  the exact banned move: no confident global number, provisional local beliefs encouraged with their
+  evidence named.
+- **The after-game loop no longer runs on memory.** It requires the in-game note, and *not enough
+  evidence to reconstruct my process* is a stated valid outcome — because a known outcome will
+  cheerfully invent a plan for you. The ten-minute mark and sixty seconds are now labelled arbitrary
+  standardisation rather than implied thresholds.
+
+### 11c. One thing caught in the drafting rather than the review
+
+The first version of the repaired reveal ended on *everything you were shown was unavailable*, which
+is **ch. 01's reveal in a new costume** and is forbidden by §1e. Restructured so the reader **writes
+their own two facts** — one checkable, one unavailable — and the reveal contrasts those with the list
+they were handed. The finding becomes positive rather than negative: *the replay is best at exactly
+the category you can never act on, and worst at the one you can.*

@@ -315,6 +315,51 @@ def resolve(d, check, arg):
                     standing += 1
         return standing
 
+    if check == "ward_ended_by":
+        # "<Hero>:<obs|sen>:<placed_seconds>" -> "expired", or the internal name of
+        # whatever killed it.
+        #
+        # The left-log carries `attackername`, and it is SELF-ATTRIBUTED when a ward
+        # runs out: an expiring ward is credited to the hero who placed it. So
+        # expiry versus destruction is a fact in the record, not an inference from
+        # duration — which matters, because both ch. 32 and ch. 02 inferred it from
+        # duration and both got it wrong. Ch. 32 called eleven wards expired when
+        # ten expired and two were killed, one of them after 351 seconds, which no
+        # duration heuristic would ever have caught.
+        name, kind, placed = arg.split(":", 2)
+        p_ = _hero(name)
+        placed = int(placed)
+        gone = {o.get("ehandle"): o for o in (p_.get(f"{kind}_left_log") or [])}
+        for o in p_.get(f"{kind}_log") or []:
+            if o["time"] == placed:
+                e = gone.get(o.get("ehandle"))
+                if e is None:
+                    return "standing"
+                att = e.get("attackername") or "unknown"
+                own = hero_npc_names().get(str(p_.get("hero_id")))
+                return "expired" if att == own else att
+        raise LookupError(f"{name} placed no {kind} ward at {placed}s")
+
+    if check == "ward_fates":
+        # "<Hero>:<obs|sen>:<expired|destroyed|standing>" — how many of that hero's
+        # wards met that end. Registers the AGGREGATE, which is where ch. 32 went
+        # wrong: individual lifetimes were registered and correct, and the sentence
+        # that counted them was not checked by anything.
+        name, kind, want = arg.split(":", 2)
+        p_ = _hero(name)
+        own = hero_npc_names().get(str(p_.get("hero_id")))
+        gone = {o.get("ehandle"): o for o in (p_.get(f"{kind}_left_log") or [])}
+        n = 0
+        for o in p_.get(f"{kind}_log") or []:
+            e = gone.get(o.get("ehandle"))
+            if e is None:
+                fate = "standing"
+            else:
+                fate = "expired" if (e.get("attackername") == own) else "destroyed"
+            if fate == want:
+                n += 1
+        return n
+
     if check == "wards_standing_side_at":
         # "<obs|sen>:<radiant|dire>:<seconds>" — how many of that ward type ONE
         # SIDE had standing at that moment. Ch. 02's whole argument is the vision

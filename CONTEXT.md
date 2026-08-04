@@ -562,7 +562,7 @@ jobs are defined by the seat rather than by the topic.
 | # | Title | Status |
 |---|---|---|
 | 01 | The Death You Didn't Notice | ☑ 11 claims · match 8928953683 · **pilot** |
-| 02 | What the Map Already Said | ☑ 18 claims · match 8928953683 · reuses ch. 01's case for a different inference |
+| 02 | What the Map Already Said | ☑ 24 claims · match 8928953683 · reuses ch. 01's case for a different inference |
 | 03 | The Thirty Seconds Before | ☐ |
 | 04 | Leaving Is a Skill | ☐ |
 | 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
@@ -676,7 +676,7 @@ reduces noise while learning, never as a theory of how MMR is won.
 | 29 | Position Two | ☐ |
 | 30 | Position Three | ☑ 53 claims · match 8926599506 · **pilot** · see `NOTES.md` §8h–8i |
 | 31 | Position Four | ☐ |
-| 32 | Position Five | ☑ 17 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
+| 32 | Position Five | ☑ 23 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
 
 **Part VII chapters are full chapters, not appendices.** Each carries the complete template — its own
 situation, its own replay-verifiable case, its own figures, its own `Next game` and `After the game`

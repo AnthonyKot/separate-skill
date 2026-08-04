@@ -191,3 +191,24 @@
 2	8928953683	ward_lifetime	Bane:obs:467	361
 2	8928953683	ward_count	Mirana:obs	6
 2	8928953683	hero_stat	Mirana:deaths	9
+
+# ch 32, corrected. The chapter said eleven observers expired and one was
+# destroyed, inferring the fate from the duration. The left-log's attackername
+# settles it directly and says ten and two — the extra kill lived 351 of its 360
+# seconds, which no duration heuristic would have caught.
+32	8928118730	ward_fates	Crystal Maiden:obs:expired	10
+32	8928118730	ward_fates	Crystal Maiden:obs:destroyed	2
+32	8928118730	ward_fates	Crystal Maiden:obs:standing	2
+32	8928118730	ward_ended_by	Crystal Maiden:obs:1854	npc_dota_hero_kez
+32	8928118730	ward_lifetime	Crystal Maiden:obs:1854	351
+32	8928118730	wards_standing_side_at	obs:dire:2108	2
+
+# ch 02, on review. The chapter called three Radiant observers 'their full
+# duration, untouched' when one was killed by the very hero the chapter is about.
+# Fate now comes from attackername rather than from reading a duration.
+2	8928953683	ward_ended_by	Earth Spirit:obs:357	npc_dota_hero_mirana
+2	8928953683	ward_ended_by	Hoodwink:obs:461	expired
+2	8928953683	ward_ended_by	Bane:obs:467	expired
+2	8928953683	ward_ended_by	Mirana:obs:469	npc_dota_hero_bane
+2	8928953683	ward_ended_by	Storm Spirit:obs:374	npc_dota_hero_hoodwink
+2	8928953683	ward_fates	Mirana:obs:destroyed	2

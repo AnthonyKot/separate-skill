@@ -100,13 +100,13 @@
         are standing next to it. The state below is split into two lists <em>on purpose</em>, and the
         split is what this chapter is about.</p>
 
-      <div class="state">WHAT YOU KNOW — you did these things, or watched them happen
+      <div class="state">AVAILABLE WITHOUT LOOKING FURTHER — your own actions, your allies', the ordinary interface
   your team's last observer expired at 5:43
   the one your mid placed at 6:14 was gone within half a minute
   the only observer your team now has is the one you placed a moment ago
   you are standing beside it, at 7:50, in the eighth minute
 
-WHAT THE RECORD ALSO HOLDS — and you, at 7:50, do not
+IN THE COMPLETE RECORD — but not automatically in front of you at 7:50
   Radiant has three observers standing
   two of them went down at 7:41 and 7:47, in the six seconds before yours
   Radiant has three sentries standing to your two
@@ -124,14 +124,21 @@ WHAT THE RECORD ALSO HOLDS — and you, at 7:50, do not
           This is the real question. Answer it before reading on.</li>
       </ol>
 
-      <p>Then one more, and it is the one this chapter is for: <strong>for each item in the second
-        list, could you have found it out?</strong> Not <em>did you</em> — <em>could you</em>. Some of
-        it was discoverable in the eighth minute by someone who went looking. Some of it was not
-        available to anybody on that team at any price. Sorting the two is the skill.</p>
+      <p>Then two more, and they are what this chapter is for. Do not sort the list you were given —
+        <strong>write your own.</strong></p>
 
-      <p>Every answer passes that names its own reasoning. Including <em>nothing in the second list
-        would have changed what I did</em> — that is a real position, and if you hold it, say which
-        item comes closest.</p>
+      <ol start="5">
+        <li><strong>One fact you would most want, that a deliberate action could settle before you
+          move.</strong> Name the action and what it costs you.</li>
+        <li><strong>One fact you would most want, that no action available to you could produce in
+          time.</strong> Naming it is how you stop being graded on it later.</li>
+      </ol>
+
+      <p>Every answer that names its reasoning is <strong>admissible</strong> — which is not the same
+        as good, and the difference is deliberate. The reveal will not grade whether you matched the
+        professional. It will grade whether your two facts went in the right buckets, and a plan can
+        be perfectly well stated and still be wrong about that.</p>
+
     </div>
 
     <h2>What happened next</h2>
@@ -140,9 +147,58 @@ WHAT THE RECORD ALSO HOLDS — and you, at 7:50, do not
       <p>Mirana died at <strong>8:15</strong>, twenty-six seconds after placing the ward, to Nature's
         Prophet. It was her second death of nine.</p>
 
-      <p>Her observer was destroyed at 9:10. It had stood for <strong>81 seconds</strong>. Radiant's
-        three, placed either side of it, ran <strong>320, 361 and 361</strong> — their full duration,
-        untouched.</p>
+      <p>Her observer was destroyed by Bane at 9:10. It had stood for <strong>81 seconds</strong>.</p>
+
+      <p>Radiant's three ran <strong>320, 361 and 361</strong>. Two of those expired; the third — the
+        320 — was <strong>killed by Mirana at 11:17</strong>, three minutes after the death in this
+        chapter. That matters twice. It corrects a sentence an earlier version of this page carried,
+        which called all three <em>untouched</em>; and it is the evidence against the reading this
+        chapter would otherwise invite, that Dire were not contesting vision. They were. She
+        killed two Radiant observers in this game.</p>
+
+      <p class="note"><strong>How the record knows.</strong> An expiring ward is credited in the log
+        to the player who placed it; a destroyed one is credited to whoever killed it. So expiry and
+        destruction are a fact here rather than something inferred from a duration — which is how
+        both this chapter and chapter 32 first got it wrong. Reading fate from lifetime looks safe
+        and fails silently: chapter 32 had a ward killed after <strong>351</strong> of its 360
+        seconds, and no duration heuristic would ever have caught it.</p>
+
+      <p><strong>Where the facts sort.</strong> The three you were shown, then the two worth
+        generating.</p>
+
+      <div class="timeline">
+        <table>
+          <thead><tr><th>Item from the second list</th><th>Verdict</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Radiant has exactly three observers standing</td><td><strong>Unavailable</strong></td>
+              <td>A global count. No action in the eighth minute produces it, for anybody</td></tr>
+            <tr><td>Two went down at 7:41 and 7:47</td><td><strong>Unavailable</strong></td>
+              <td>Unless a placement was physically watched — and the record cannot establish that
+                anyone did, which is itself the chapter's point</td></tr>
+            <tr><td>Three sentries to your two</td><td><strong>Unavailable</strong></td>
+              <td>Same as the first. A count is not a thing the game shows you</td></tr>
+            <tr><td><em>Whether a ward covered the route she was about to take</em></td>
+              <td><strong>Checkable</strong></td>
+              <td>Not in the list, and the one that matters. A sentry settles it, at the cost of a
+                sentry and the seconds it takes</td></tr>
+            <tr><td><em>Whether that half of the map had been watched recently</em></td>
+              <td><strong>Inferable</strong></td>
+              <td>From heroes missing, routes avoided, an earlier death. Moves the probability;
+                settles nothing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Notice what the second list turned out to be. <strong>Every fact the record volunteered was
+        unavailable</strong>, and the two that could actually have been acted on were not in it —
+        you had to write them yourself. That is not a trick played on you; it is the ordinary shape
+        of replay evidence. A match file is generous with global counts and silent about the specific,
+        local, checkable question you needed answered before you moved.</p>
+
+      <p>Which is the practical form of the whole chapter. <strong>The replay is best at exactly the
+        category you can never act on, and worst at the one you can.</strong> So reviewing from a
+        replay without writing your own list is a reliable way to feel informed and improve
+        nothing.</p>
 
       <p>Now the part that matters more than the death, and it is a negative result.
         <strong>None of this classifies the death.</strong> Chapter 01's verdict on death A stands
@@ -152,9 +208,8 @@ WHAT THE RECORD ALSO HOLDS — and you, at 7:50, do not
 
       <p>So what has actually been gained? The thing chapter 01 said the test required and did not
         supply: <strong>an information state.</strong> Not <em>she died at 8:15</em>, but <em>she died
-        twenty-six seconds after placing her team's only standing ward, into a half of the map her
-        team had been unable to see for the previous seventy-one seconds, against opponents holding
-        three.</em> That is not a verdict. It is the input a verdict would need.</p>
+        twenty-six seconds after placing her team's only standing observer, following seventy-one seconds
+        in which her team had none at all, against opponents holding three.</em> That is not a verdict. It is the input a verdict would need.</p>
     </div>
 
     <h2>The reasoning</h2>
@@ -184,30 +239,53 @@ WHAT THE RECORD ALSO HOLDS — and you, at 7:50, do not
       It is which parts of what the record knows were discoverable at the time, by someone who went
       looking.</blockquote>
 
-    <p>Three categories, and sorting a fact into the right one is the whole method:</p>
+    <p>Four categories, and sorting a fact into the right one is the whole method. An earlier version
+      of this page used three, with a row called <em>known</em> — which this chapter's own evidence
+      forbids, since nothing in the record establishes what anyone attended to. <strong>Available is
+      not noticed.</strong> And the old middle row quietly held two different operations: finding out
+      a fact, and shifting a probability.</p>
 
+    <div class="table-scroll">
     <table>
-      <thead><tr><th>Category</th><th>At 7:50, for Mirana</th><th>What to do with it</th></tr></thead>
+      <thead><tr><th>Category</th><th>Means</th><th>At 7:50, for Mirana</th><th>What to do with it</th></tr></thead>
       <tbody>
         <tr>
-          <td><strong>Known</strong></td>
+          <td><strong>Available</strong></td>
+          <td>Exposed without taking another action — your own doing, an ally's, or the ordinary
+            interface</td>
           <td>Her own ward. Her team's last one expiring. The replacement lasting half a minute</td>
-          <td>This is what the decision is graded against — nothing else was in her hands</td>
+          <td>The decision is graded against this. Whether she <em>noticed</em> it is not in the
+            record, and in your own game it is the part only you can supply</td>
         </tr>
         <tr>
-          <td><strong>Discoverable</strong></td>
-          <td>That an enemy observer covered ground she was walking into. Findable with a sentry, or
-            by someone else's death, or by a hero disappearing from a lane</td>
-          <td>The improvable category, and the only one. Every gain in this chapter lives here</td>
+          <td><strong>Checkable</strong></td>
+          <td>A deliberate action could settle it before you commit</td>
+          <td>Whether a ward covered the specific route she was taking — a sentry answers that</td>
+          <td>The improvable category. Every real gain lives here, and it costs an action</td>
+        </tr>
+        <tr>
+          <td><strong>Inferable</strong></td>
+          <td>Signals move the probability without settling the fact</td>
+          <td>That someone had been watching that half of the map recently — from a hero missing, a
+            route being avoided, an earlier death</td>
+          <td>Act on it as a probability and say so. Grade the inference against the evidence it
+            actually had, never against what turned out to be true</td>
         </tr>
         <tr>
           <td><strong>Unavailable</strong></td>
-          <td>That the count was exactly three to one. That two went down at 7:41 and 7:47</td>
+          <td>No action available in the time could have revealed it</td>
+          <td>That the global count was exactly three to one. That two went down at 7:41 and 7:47</td>
           <td>Nothing. It is not a failure to have missed it, and treating it as one is hindsight
             wearing a spreadsheet</td>
         </tr>
       </tbody>
     </table>
+    </div>
+
+    <p>The two middle rows are the ones worth keeping apart. A sentry can tell you a ward is there. A
+      missing enemy tells you nothing whatever about wards — it tells you about a hero. Both are
+      useful and they answer different questions, and a review that treats them as one thing will
+      eventually grade you for failing to deduce something that was never deducible.</p>
 
     <p>Almost every bad review of your own game collapses the second and third rows. You watch a
       replay in which the enemy positions are drawn on the map for you, you feel the obviousness of
@@ -242,26 +320,35 @@ WHAT THE RECORD ALSO HOLDS — and you, at 7:50, do not
       <ol>
         <li>Once per game, before you walk into ground you do not control, say the sentence out loud:
           <strong>"the last thing I actually saw here was ___."</strong> If the blank is empty or
-          older than a minute, you have found the answer without needing anything else.</li>
+          older than a minute, you have found an <em>information gap</em> — not an answer. Then
+          either reduce it, or decide the objective is worth acting under it and say which.</li>
         <li>When you die, note one thing before the respawn timer runs out: <strong>whether you had
           asked that question.</strong> Not whether you were right. Whether you asked.</li>
         <li>Keep track of your own team's last observer — when it went down and roughly when it ends.
-          It is one number, it is yours, and it is the single largest thing you know about the map
-          that most players never hold on to.</li>
+          It is one useful live fact that requires guessing nothing about the enemy, which is rarer
+          than it sounds.</li>
         <li>When a hero you were watching disappears from a lane, treat it as information rather than
           as nothing. It is the cheapest item in the discoverable column and it costs a glance.</li>
-        <li>Do not try to infer enemy ward counts live. You cannot, it is in the unavailable column,
-          and pretending otherwise is how this chapter would make you worse.</li>
+        <li><strong>Do not invent an exact enemy ward count.</strong> It is unavailable and always
+          will be. <em>Do</em> form provisional local beliefs — this route is watched, that one
+          probably is not — and say the evidence and the uncertainty out loud when you act on one.
+          The banned move is the confident global number, not the reasoning.</li>
       </ol>
     </div>
 
     <h2>After the game</h2>
 
     <div class="aftergame">
-      <p><strong>Open the replay at your first death after the ten-minute mark</strong>, and wind back
-        sixty seconds from it.</p>
-      <p><strong>The observable decision:</strong> the moment you committed to being where you died —
-        which is earlier than the moment you died, and usually earlier than you expect.</p>
+      <p><strong>Use a death for which you made the in-game note</strong> from item two above. Without
+        that note, the honest result is <em>not enough evidence to reconstruct my process</em>, and
+        that is a real outcome rather than a failure — chapter 01's warning about reconstructing a
+        classification from vague memory applies with more force to reconstructing a <em>plan</em>,
+        because a plan is exactly the thing a known outcome will happily invent for you.</p>
+      <p><strong>Open the replay at that death and wind back sixty seconds.</strong> The ten-minute
+        mark and the sixty seconds are arbitrary standardisation — pick something fixed so that ten
+        reviews are comparable, not because either number is correct.</p>
+      <p><strong>The observable decision:</strong> the moment you committed to being where you died,
+        which is earlier than the moment you died.</p>
       <p><strong>1 · The process mark, set before you look.</strong> Before moving, you had a
         objective, a maximum cost and something that would have turned you around. Pass if you can
         state all three now and they are the ones you actually held then, not the ones the replay has
