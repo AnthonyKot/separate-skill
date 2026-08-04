@@ -7,12 +7,14 @@
 # THIS IS A SAMPLE, NOT A POPULATION. n is registered as a claim of its own so
 # no chapter can quote a percentage without the count that produced it.
 #
-# EMPTY ON PURPOSE, and this is the honest state rather than an oversight.
-# Three sampling biases were found and fixed while building tools/fetch-bracket.py
-# (length, mode, temporal clustering); the fourth — a seek that overshot 108 days
-# and pulled pre-7.41e matches into a snapshot labelled 7.41e — is fixed by the
-# acceptance band but the corrected sample has not been taken yet, because the
-# rewrite ran into OpenDota's rate limit mid-run.
+# Ranked all draft (lobby_type 7, game_mode 22), avg_rank_tier 41-55 = Archon 1
+# to Legend 5. 240 matches drawn from six windows spread over five days, each
+# behind a settle horizon so long games are present. Sampled 2026-08-04; every
+# match played after 7.41e shipped, which checks/data.py now enforces.
 #
-# No bracket claim is registered until a clean sample exists. A figure whose
-# provenance is 'we think the fetcher works now' is exactly what section 5 forbids.
+27	archon-legend-7.41e	n	240
+27	archon-legend-7.41e	median_duration_s	2393.5
+27	archon-legend-7.41e	pct_over_40min	49.58
+21	archon-legend-7.41e	pct_over_40min	49.58
+27	archon-legend-7.41e	radiant_win_pct	52.08
+27	archon-legend-7.41e	sample_span_hours	96.1

@@ -39,8 +39,9 @@ visible once the first stops dominating.
    one time of day, one day of the week, one regional mix. Fixed by drawing from
    --windows separate points spread over --spread-hours.
 
-Seeking is done by extrapolation rather than paging: consecutive pages move only
-about a minute of match time, so walking back three hours would cost ~170 requests.
+Seeking is done by BISECTION. Paging is hopeless (consecutive pages move about a
+minute of match time) and extrapolation overshoots, because the match_id rate is
+not constant. Bisection converges from both sides and cannot run past the target.
 """
 import argparse
 import datetime
@@ -58,41 +59,64 @@ sys.path.insert(0, os.path.join(HERE, "checks"))
 from metrics import compute  # noqa: E402  shared with checks/data.py, deliberately
 
 
-def page(min_rank, max_rank, less_than=None):
+def page(min_rank, max_rank, less_than=None, tries=5):
     url = f"{API}?min_rank={min_rank}&max_rank={max_rank}"
     if less_than:
         url += f"&less_than_match_id={less_than}"
     req = urllib.request.Request(url, headers={"User-Agent": "book6-verify/1.0"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.load(r)
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.load(r)
+        except Exception as e:
+            # The free tier rate-limits, and a sampling run makes a lot of requests.
+            # Dying half way leaves a partial snapshot, which is worse than waiting.
+            wait = 5 * (attempt + 1)
+            print(f"    retry {attempt + 1}/{tries} after {e} — sleeping {wait}s")
+            time.sleep(wait)
+    raise RuntimeError(f"gave up on {url}")
 
 
-def seek(min_rank, max_rank, target_time, probes=8):
-    """Return a match_id whose page is at or before target_time, by extrapolation."""
-    head = page(min_rank, max_rank)
-    ref_id = max(m["match_id"] for m in head)
-    ref_t = max(m["start_time"] for m in head)
-    cur_id, cur_t = ref_id, ref_t
+def seek(min_rank, max_rank, target_time, lo_id, hi_id, precision=40_000):
+    """Largest match_id whose page is at or before target_time, by bisection.
 
-    for i in range(probes):
-        if cur_t <= target_time:
-            return cur_id
-        # ids per second, measured over the distance travelled so far
-        span_t = ref_t - cur_t
-        rate = ((ref_id - cur_id) / span_t) if span_t > 60 else 400.0
-        jump = int(rate * (cur_t - target_time) * 1.1) or 200_000
-        cur_id -= jump
-        batch = page(min_rank, max_rank, cur_id)
+    The first implementation extrapolated from a match_id-per-second rate. That
+    rate is not constant — measured at 27 ids/s over two hours and 17 over sixteen
+    — so the jumps overshot, once by 108 days, which quietly pulled matches from
+    three earlier patches into a snapshot labelled 7.41e. Bisection cannot overshoot:
+    it converges on the boundary from both sides and every probe narrows the range.
+
+    Costs about log2(range/precision) requests, and the caller passes tighter
+    bounds each time by seeking oldest window first and reusing the answer.
+    """
+    while hi_id - lo_id > precision:
+        mid = (lo_id + hi_id) // 2
+        batch = page(min_rank, max_rank, mid)
         if not batch:
-            return cur_id
-        cur_id = max(m["match_id"] for m in batch)
-        cur_t = max(m["start_time"] for m in batch)
-        print(
-            f"  seek {i + 1}: at {datetime.datetime.fromtimestamp(cur_t, datetime.UTC):%H:%M} UTC, "
-            f"{(cur_t - target_time) / 60:+.0f} min from target"
-        )
-        time.sleep(1.1)
-    return cur_id
+            hi_id = mid
+            continue
+        t = max(m["start_time"] for m in batch)
+        if t > target_time:
+            hi_id = mid          # still too recent; look further back
+        else:
+            lo_id = mid          # candidate; try nearer the target
+        time.sleep(1.2)
+    return lo_id
+
+
+def bracket_bounds(min_rank, max_rank, target_time, hi_id):
+    """Find an id known to be older than target_time, by doubling backwards."""
+    jump = 200_000
+    for _ in range(12):
+        candidate = hi_id - jump
+        batch = page(min_rank, max_rank, candidate)
+        time.sleep(1.2)
+        if not batch:
+            return candidate
+        if max(m["start_time"] for m in batch) <= target_time:
+            return candidate
+        jump *= 2
+    return hi_id - jump
 
 
 def main():
@@ -131,22 +155,23 @@ def main():
     per_window = max(1, a.target // a.windows)
     rows, seen, skipped, pages = [], set(), {"mode": 0, "out_of_band": 0}, 0
 
-    for w in range(a.windows):
-        offset_h = a.settle_hours + (a.spread_hours * w / max(1, a.windows - 1) if a.windows > 1 else 0)
+    head_id = max(m["match_id"] for m in head)
+    offsets = [
+        a.settle_hours + (a.spread_hours * w / max(1, a.windows - 1) if a.windows > 1 else 0)
+        for w in range(a.windows)
+    ]
+    # Oldest first: each answer becomes the lower bound for the next, so only the
+    # first window pays for the backwards expansion.
+    lo_bound = None
+    for w, offset_h in enumerate(sorted(offsets, reverse=True), 1):
         target_t = newest_t - offset_h * 3600
         stamp = datetime.datetime.fromtimestamp(target_t, datetime.UTC)
-        print(f"\n  window {w + 1}/{a.windows}: seeking to {stamp:%Y-%m-%d %H:%M} UTC (-{offset_h:.0f}h)")
-        cursor = seek(a.min, a.max, target_t)
+        print(f"\n  window {w}/{a.windows}: seeking {stamp:%Y-%m-%d %H:%M} UTC (-{offset_h:.0f}h)")
+        if lo_bound is None:
+            lo_bound = bracket_bounds(a.min, a.max, target_t, head_id)
+        cursor = seek(a.min, a.max, target_t, lo_bound, head_id)
+        lo_bound = cursor  # every later window is newer, so this is a floor
 
-        # The seek extrapolates and routinely overshoots — landing early is safe for
-        # the length bias, so it is tuned to overshoot rather than undershoot. But
-        # "early" has no floor, and one window here landed 108 DAYS back, dragging
-        # matches played under three earlier patches into a snapshot labelled 7.41e.
-        # Nothing in the fetch noticed; the sample_span_hours metric did.
-        #
-        # So a row is only accepted if it actually falls near the window it was
-        # sought for. A missed seek now discards rows instead of quietly widening
-        # the sample into a different game.
         band = a.band_hours * 3600
         got = 0
         for i in range(a.max_pages):
@@ -179,7 +204,7 @@ def main():
             cursor = min(m["match_id"] for m in batch)
             if got >= per_window:
                 break
-            time.sleep(1.1)
+            time.sleep(1.2)
         print(f"    kept {got}  (out of band so far: {skipped['out_of_band']})")
 
     rows = rows[: a.target]

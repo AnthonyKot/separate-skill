@@ -32,6 +32,7 @@ import sys
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(HERE, "checks"))
 from metrics import compute  # noqa: E402
+from patchnotes import notes  # noqa: E402  reuses the cached datafeed fetch
 
 TSV = os.path.join(HERE, "checks", "data.tsv")
 SNAP = os.path.join(HERE, "data", "brackets")
@@ -64,6 +65,35 @@ def main():
                 print(f"  FAIL: line {n}: expected 4 or 5 columns, got {len(parts)}")
                 return 1
             rows.append((n, parts))
+
+    # GATING: a sample must not contain matches played before the patch it is
+    # labelled with. This is the bug the first sampler had — a seek overshot 108
+    # days and pulled pre-7.41e games into a snapshot named 7.41e — and nothing
+    # noticed until a span metric was added for unrelated reasons. It is cheap to
+    # check and impossible to spot by reading the file.
+    boundary = []
+    for path in sorted(glob.glob(os.path.join(SNAP, "*.json"))):
+        with open(path) as f:
+            snap = json.load(f)
+        starts = [m["start_time"] for m in snap.get("matches", []) if m.get("start_time")]
+        if not starts:
+            continue
+        try:
+            released = notes(snap["patch"]).get("patch_timestamp")
+        except Exception as e:
+            print(f"  UNRESOLVED: could not date patch {snap['patch']} ({e})")
+            boundary.append(snap["patch"])
+            continue
+        if released and min(starts) < released:
+            early = (released - min(starts)) / 86400.0
+            boundary.append(
+                f"{os.path.basename(path)}: earliest match predates patch "
+                f"{snap['patch']} by {early:.1f} days"
+            )
+    for b in boundary:
+        print(f"  FAIL: {b}")
+    if not boundary:
+        print("  every sample is entirely within the patch it is labelled with")
 
     cache, checked, failures = {}, 0, []
     for n, parts in rows:
@@ -107,7 +137,7 @@ def main():
     print(f"  {checked} bracket claims recomputed from {snapshots} snapshots")
     for f_ in failures:
         print(f"  FAIL: {f_}")
-    return 1 if failures else 0
+    return 1 if failures or boundary else 0
 
 
 if __name__ == "__main__":

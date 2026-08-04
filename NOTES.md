@@ -142,9 +142,12 @@ Leads to chase. Nothing here is sourced yet.
 
 ## 4. Known gaps in the machinery
 
-- **The bracket sampler's seek overshoots.** It extrapolates from a match-ID rate that is not linear
-  (measured 17–27 ids/second at different distances). Replace with bisection. Until then
-  `checks/data.tsv` is empty and no bracket claim exists.
+- ~~The bracket sampler's seek overshoots.~~ **Closed 2026-08-04.** Replaced with bisection, which
+  converges from both sides and cannot run past the target; the extrapolation could not be fixed by
+  tuning because the match-ID rate is not constant (17–27 ids/second at different distances). First
+  clean sample: 240 ranked Archon–Legend matches across six windows, span 96.1 hours, zero out of
+  band, every match played after 7.41e shipped. `checks/data.py` now enforces that last property —
+  a sample containing matches older than the patch it is labelled with fails the build.
 - ~~Nothing checks prose against the registry.~~ **Closed 2026-08-04.** `checks/coverage.py` extracts
   every number from a chapter's HTML and reports any that matches no registered claim. Advisory, and
   the only advisory check here, because prose legitimately contains years and derived figures — but
@@ -167,3 +170,81 @@ Kept so they are not re-proposed.
   too little; cutting it would leave Part I teaching passivity to exactly the reader it would harm.
 - **Demoting ch. 27 to an appendix.** For a reader with six games a week, practice design is the
   subject rather than lifestyle advice around it.
+
+---
+
+## 6. Chapter 12 — the plan
+
+*The Item You Want and the Item That Wins.* Part III, contract: **buying for your own required
+function**. Third pilot to be drafted, and the designated test of whether a chapter ever needs two
+holds (`CONTEXT.md §3`).
+
+### Why this chapter is the risky one
+
+Ch. 21 tested whether professional evidence transfers. Ch. 01 tested whether the method avoids
+hindsight. Ch. 12 tests something harder: **whether a general principle survives contact with
+specifics.** Item decisions are where a decision book is most likely to collapse into a build guide —
+and a build guide is stale within two patches, which is the failure `CONTEXT.md §6` already flags for
+this part.
+
+The chapter must therefore be about a **procedure for choosing**, with the items as dated examples.
+Test to apply to every draft sentence: *would this still be true if every item in it were renamed?*
+If not, it is a build guide sentence and it goes.
+
+### The evidence available
+
+Better than either pilot had. `purchase_log` gives every item every player bought, to the second, so
+the record supports:
+
+- exact completion timings for any item;
+- what happened in the minutes after a completion — fights, objectives, gold and XP curves;
+- what the *opponents* had bought by that moment.
+
+What it still cannot establish, and the chapter must say so: why anything was bought, what was
+expected, or whether an alternative would have been better. There is no counterfactual in a replay.
+
+### The hold, and the two-hold experiment
+
+The natural chain is exactly the one that motivated the question:
+
+1. **Hold one** — you have the gold. Which function do you buy? *Commit: the function, not the item;
+   the cost you will accept; the condition that would change your mind.*
+2. **Hold two** — the item is finished. *Now* do you act on it or keep farming?
+
+Two holds are permitted only if the second tests a genuinely different operation and introduces new
+information, a changed resource state, or a recovery decision. Here it plausibly does: between the
+two, the state has materially changed — the item exists, and so does a window that expires.
+
+**But that is the hypothesis, not the finding.** Draft it with two, then apply the test honestly: does
+hold two teach anything hold one did not, or is it *do you still agree?* wearing a timestamp. If the
+latter, cut it and one hold becomes the rule for the book. Either outcome is a result; the failure
+mode is keeping both because the chapter feels richer.
+
+### Case
+
+**Do not reuse 8929124210.** Its ledger reserves later returns for chapters 22–24, and a third use of
+one match starts making the book look like a study of a single game. Fetch a new parsed professional
+match and write its ledger *before* drafting — the policy ch. 21 broke and ch. 01 kept.
+
+Selection criterion: a game containing a clearly datable expensive-item completion followed by an
+identifiable window — a fight, an objective, or a conspicuous absence of both. The absence is the
+more interesting case, because ch. 12's real subject is the item that was bought and then not used.
+
+### The inversion, which this chapter can probably earn
+
+Ch. 21 and ch. 01 both owe an inversion. Ch. 12 has a strong candidate already identified in the genre
+survey: **copying professional item builds is advice that inverts by bracket**, because a professional
+build assumes stacking, space and draft coordination that a solo-queue game does not supply. If a
+bracket sample can show a divergence in what wins at Archon–Legend versus what professionals buy,
+that is a real `.inversion` rather than a boundary — the first in the book.
+
+Depends on `checks/data.tsv` having claims, which depends on the sampler.
+
+### Risks, in order
+
+1. Becoming a build guide. Mitigated by the rename test above.
+2. Patch decay — item specifics move most. Every item figure gets a patch stamp, and the principle
+   must not depend on the current cost of anything.
+3. Two holds turning the chapter into a quiz. Decide honestly after drafting.
+4. Altitude error, worse here than elsewhere, because item builds are the single most-copied thing
+   professionals produce.
