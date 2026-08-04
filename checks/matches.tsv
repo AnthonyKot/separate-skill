@@ -315,3 +315,8 @@
 5	8929364604	hero_death_time	Undying:6	1082
 5	8929364604	hero_death_time	Undying:7	1604
 5	8929364604	count	teamfights	7
+# ch 05, on review. The third scoreboard death has no timestamp in any kill log
+# because a NEUTRAL CREEP dealt it; only killed_by records it. That is why the
+# chapter cannot place all three in time, and it is the chapter's own argument.
+5	8929364604	hero_killed_by	Alchemist:npc_dota_neutral_ancient_frog	1
+5	8929364604	hero_killed_by	Alchemist:npc_dota_hero_spectre	2

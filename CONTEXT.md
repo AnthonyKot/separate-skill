@@ -578,7 +578,7 @@ jobs are defined by the seat rather than by the topic.
 | 02 | What the Map Already Said | ☑ 24 claims · match 8928953683 · reuses ch. 01's case for a different inference |
 | 03 | What Counts as One Fight | ☑ 21 claims · match 8928851109 · retitled before drafting |
 | 04 | Leaving Is a Skill | ☑ 42 claims · match 8927063876 |
-| 05 | The Death You Should Have Taken | ☑ 20 claims · match 8929364604 · closes Part I · **the anti-passivity chapter** |
+| 05 | The Death You Should Have Taken | ☑ 22 claims · match 8929364604 · closes Part I · **the anti-passivity chapter** |
 
 **The working definition of a free death, and the reason Part I is five chapters.**
 
@@ -1051,9 +1051,18 @@ which removes outcome reasoning from the chapter entirely rather than requiring 
   disagree sharply on the same team in the same game. That the scoreboard prices some of what a death
   costs and none of what an avoided risk costs.
 - **Observation vs inference.** Counts, seconds and timings are observed. That the asymmetry follows
-  from *when* the deaths happened is a **supported inference** from the timings — Undying's six before
-  minute nineteen, Alchemist's two after minute eleven — and the chapter must not state a respawn
+  from *when* the deaths happened is **consistent with the available timings and not established by
+  them**, because **one of Alchemist's three deaths cannot be placed in time at all**: `killed_by`
+  attributes it to a neutral creep, and a death nobody is credited with has no entry in any kill log.
+  So one of the three intervals inside the 187 seconds is invisible, and the chapter says so rather
+  than narrating the total as if it were accounted for. The chapter must also not state a respawn
   formula, which is a rule it has not looked up and may not assert from memory.
+- **The mirrored test, which the first draft got wrong.** The obvious mirror of ch. 01 — *you fail if
+  an exchange was available and you declined it* — is far too permissive and teaches the reckless
+  inverse. Exchanges are available constantly and most are not worth their price. The correct form
+  carries **two clauses**: a risk is wrongly declined when the expected exchange justified its cost
+  **and** what was done instead offered less. Same standard as §3's calibration review, pointed the
+  other way.
 - **Confounders.** Level and net worth differ enormously between the two, and both plausibly drive
   respawn cost; the chapter says so. Seat differs. And 187 against 81 seconds is one pair in one game.
 - **Prohibited.** **Never that either player played badly or well.** They won, and grading either by

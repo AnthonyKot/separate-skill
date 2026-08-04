@@ -348,6 +348,14 @@ def resolve(d, check, arg):
         key = {"gold": "gold_delta", "xp": "xp_delta", "damage": "damage"}[field]
         return _tf_player(idx, name).get(key)
 
+    if check == "hero_killed_by":
+        # "<Hero>:<internal killer name>" — how many of that hero's deaths the
+        # record attributes to that killer. Added for ch. 05, where a scoreboard
+        # death could not be placed in time by any kill log: it was dealt by a
+        # neutral creep, and only `killed_by` records it at all.
+        name, _, killer = arg.partition(":")
+        return (_hero(name).get("killed_by") or {}).get(killer, 0)
+
     if check == "teamfight_death_pos":
         # "<fight>:<Hero>" -> "x,y" in the parser's grid. Not game units, and the
         # book quotes no conversion, so these are only ever used comparatively.

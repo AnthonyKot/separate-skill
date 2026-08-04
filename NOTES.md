@@ -1146,3 +1146,44 @@ Two structural facts worth carrying into Part II. **Three of the five needed the
 changed once the evidence was checked** — ch. 03 retitled, ch. 05 redesigned away from its obvious
 case, ch. 02 made possible only by correcting a ledger. And **every chapter's most serious defect was
 found by a reader, never by the machinery**, which is now five for five.
+
+### 16e. Ch. 05 on review — the mirror was too permissive
+
+The most valuable finding is not a factual one. **The obvious mirror of ch. 01's test teaches
+recklessness**, and the chapter shipped it: *you fail if an exchange was available and you declined
+it.* Exchanges are available constantly and most are not worth their price; declining a bad one is a
+correct decision that test punishes. It is the exact inverse of the error the chapter exists to
+prevent, arriving inside the chapter's own remedy.
+
+The corrected form carries **two clauses**, and both are load-bearing:
+
+> A risk is wrongly declined when, given what was reasonably knowable at the time, the expected
+> exchange justified its cost — **and** what you did instead offered less.
+
+That is the same standard `CONTEXT.md §3`'s calibration review applies in the other direction, so the
+mirror is now symmetric with the thing it mirrors. It also means the scoreboard is unhelpful in both
+directions: a player failing this test has a tidier row *for* the failure.
+
+**The third death, and why it could not be placed.** The chapter said "the timings say where it came
+from" while showing two of three deaths. `killed_by` explains the gap better than the review assumed:
+the third was dealt by **a neutral creep**, so no player's kill log has a row for it and it has no
+timestamp anywhere. One of the three intervals inside the 187 seconds is invisible. That is now
+stated, and it is the chapter's own argument arriving unbidden — *a death nobody is credited with is a
+death the log has no row for.* New check type `hero_killed_by`.
+
+**Dead time was becoming the new metric.** "That is what this death actually cost", "the row that
+looks disciplined paid the larger bill", "add those numbers up rather than counting the deaths" — the
+chapter was replacing one number with another, which is the failure it was written to prevent. Dead
+time is now stated as *one* direct recorded cost that prices neither gold, map access, a lost
+objective, a forced buyback, nor whether the seconds landed in a window that mattered.
+
+**"Free forever" was too absolute.** A declined risk leaves no *direct debit*, and its consequences
+may well surface elsewhere — a lost tower, a teammate's row. What is absent is the option weighed and
+the reason it was rejected. Same correction in the synthesis table and in the replay section, where
+"leaves no trace whatever" became: the replay preserves what you did instead, and not the option you
+considered.
+
+**The title promises a case the chapter cannot contain**, and that is now said in the second
+paragraph rather than admitted late: no professional case can show a death that should have been
+taken, because an action that did not happen has no entry. The death in the title has to come from the
+reader's own recorded decision, which is what the exercise is built for.
