@@ -10,6 +10,8 @@
 #   * checks/privacy.py     no identifiers in public or bracket snapshots     (GATING)
 #   * checks/coverage.py    numbers in prose that match no claim            (ADVISORY)
 #   * checks/register.py    banned vocabulary in chapter prose             (GATING)
+#   * checks/retired.py     terminology a decision retired, reappearing     (GATING)
+#   * checks/status.py      stated counts vs what is on disk               (GATING)
 #   * internal links        entirely inside this repository              (GATING)
 #
 # One check is advisory — coverage — because prose legitimately contains numbers
@@ -50,6 +52,12 @@ if [ "$only_links" = "0" ]; then
 
   echo "== banned vocabulary (gating) =="
   python3 checks/register.py || fail=1
+
+  echo "== retired terminology (gating) =="
+  python3 checks/retired.py || fail=1
+
+  echo "== stated status vs reality (gating) =="
+  python3 checks/status.py || fail=1
 fi
 
 echo "== count sync (computed, not typed) =="
@@ -93,7 +101,7 @@ fi
 
 echo
 if [ "$fail" = "0" ]; then
-  echo "PASS"
+  echo "PASS — the production system is ready; this says nothing about whether the book is right"
 else
   echo "FAIL"
 fi

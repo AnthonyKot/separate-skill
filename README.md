@@ -18,23 +18,25 @@ your bracket.
 
 ## Status
 
-**No chapters are written.** The foundations, the sourcing standard and the verification machinery
-exist; the prose does not. This is stated here, on the landing page and on the method page rather
-than being discovered.
+**Four chapters of thirty-two are written, and all four are pilots.** They were drafted and reviewed
+before the remaining chapters are commissioned, each testing a different way this book could fail.
+`checks/status.py` verifies that sentence against the files on disk, because it went stale here once
+already.
 
 | | |
 |---|---|
 | `CONTEXT.md` | The foundations: reader, spine, template, sourcing standard, chapter register |
-| `checks/` | Three verifiers, all gating, all negative-controlled |
-| `docs/` | The static site — contents and method pages |
-| `data/matches/` | Committed match snapshots, one per registered case |
+| `NOTES.md` | The working notebook: unsettled things, plans, and what was rejected |
+| `checks/` | Seven verifiers, six gating, all negative-controlled |
+| `docs/` | The static site — contents, method, and the chapters |
+| `data/` | Committed match snapshots and bracket samples |
 
-Chapter 21 will be drafted first, out of spine order, because its case is already sourced and
-registered. It is one of four pilots — 01, 12, 21 and 32 — which are written and reviewed before the
-remaining chapters are commissioned. Each tests a different way this book could fail: whether the
-method avoids hindsight, whether general principles survive item specificity, whether professional
-evidence transfers without the altitude error, and whether seat inversion produces genuinely
-different advice.
+| Pilot | What it tests | What it found |
+|---|---|---|
+| 01 | Does the method avoid hindsight? | A hold must offer a way to pass; instructing a reader to do the impossible tests obedience |
+| 12 | Do general principles survive item specificity? | One hold, not two — a second belongs to a neighbouring chapter |
+| 21 | Does professional evidence transfer? | Yes, with a transfer block; the case shows a stall, not a loss |
+| 32 | Does a seat chapter produce different advice? | **The premise was wrong.** Nothing inverts; what changes is what is scarce, visible and presumed |
 
 ## The premise
 
@@ -103,7 +105,10 @@ patches. The first sample it produced reported a median game length of 18.6 minu
 same bracket reads 39.8. Both came from the same short program. The header of
 `tools/fetch-bracket.py` documents all four.
 
-No bracket claim is registered yet, because the corrected sample has not been taken.
+Six bracket claims are registered from a corrected sample of 240 ranked Archon–Legend matches:
+median game length 39.9 minutes, 49.6% running past forty. Every match in it was played after 7.41e
+shipped, which `checks/data.py` enforces — a sample containing games older than the patch it is
+labelled with fails the build.
 
 ## Stack
 

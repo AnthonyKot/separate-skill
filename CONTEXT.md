@@ -254,6 +254,32 @@ Three rules follow.
 - **No hero players.** The point of a case is the decision. Nobody in this book is a genius.
 - **Name the failure mode inside the principle**, not in a footnote.
 
+### The audit rule
+
+> **Any structural decision change triggers a repository-wide search for its old terminology and
+> every summary that restates it.** Not a manual re-read — a search, for the retired phrases and for
+> any label or status value the decision touched.
+
+`checks/retired.py` and `checks/status.py` enforce it, because the rule was needed twice before it
+was written and a rule that relies on remembering to search fails the same way the re-read does.
+
+The pattern, stated once so it is recognisable next time: **when a decision changes, the places that
+repeat it are exactly the places nobody re-reads, because they are summaries.** The Part VII premise
+was removed from the decision record, the register and the chapter, and survived in the spine arrow.
+The bracket claim class became gating in the code, the script and the README, and stayed advisory in
+the foundations. Both were found by someone else.
+
+On the first run of `checks/retired.py`, **seven surviving occurrences appeared, one of them on the
+published home page** — the spine table still telling readers that Part VII finds advice "false until
+inverted", a premise the book had already abandoned. That is the whole argument for the rule.
+
+The two checkers do different halves. `retired.py` freezes *vocabulary*: each retired phrase has a
+declared count per file, so a historical mention in the decision record is legitimate and a new one
+anywhere fails. `status.py` freezes *counts*: how many chapters are written, how many checkers exist,
+whether any bracket claim is registered. It exists because the README simultaneously claimed no
+chapters were written, three verifiers, and no bracket claims, while four chapters were live, seven
+checkers existed and six claims were passing.
+
 ### The headline rule
 
 > **No headline sentence may claim more than its chapter's observed / inference / hypothesis /

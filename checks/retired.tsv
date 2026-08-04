@@ -1,0 +1,15 @@
+# retired term	replaced by	retired	why
+#
+# Terminology a structural decision removed. checks/retired.py freezes the count
+# per file, so a NEW occurrence fails the build. Historical mentions are declared
+# in checks/retired-allow.tsv — a decision record that cannot say what it replaced
+# is a worse document, and the point is not to ban the words but to notice them
+# reappearing somewhere that used to be current.
+seat inversion	the seat's reweighting	2026-08-04	Part VII's premise; ch. 32 found no inversions exist to be had
+invert by seat	reweight by seat	2026-08-04	same decision, in the spine arrow — where it survived the first fix
+false until inverted	what is scarce, visible, presumed	2026-08-04	same decision, in the Part VII spine row
+chapters that invert	chapters this seat changes	2026-08-04	same decision, in chapter prose
+unreadable until	diagnostically premature	2026-08-04	the spine's original overclaim; Dota is a web, not a chain
+The Item You Want and the Item That Wins	Every Item Is a Forecast	2026-08-04	ch. 12 retitled; old title promised a contrast the evidence cannot deliver
+Roshan and the Two-Minute Window	The Objective Window	2026-08-04	ch. 23 retitled; 7.41 moved the geography, the window is the concept
+The Queue Is Part of the Game	Six Games a Week	2026-08-04	ch. 27 retitled and promoted from lifestyle note to practice protocol

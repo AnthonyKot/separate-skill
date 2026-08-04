@@ -1,0 +1,8 @@
+# term	file	count	why this file may say it
+#
+# Declared historical mentions. A decision record that cannot state what it
+# replaced is a worse document, so the retired check freezes counts rather than
+# banning words. Raising a number here should feel like a decision.
+Roshan and the Two-Minute Window	CONTEXT.md	1	the register records the rename and the patch that forced it
+The Queue Is Part of the Game	CONTEXT.md	1	the register records the rename and the reason it was promoted
+The Item You Want and the Item That Wins	NOTES.md	1	the ch. 12 plan predates the retitle and is kept as written
