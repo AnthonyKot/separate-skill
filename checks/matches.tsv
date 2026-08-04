@@ -1,0 +1,18 @@
+# chapter	match_id	check	arg	expected	[tolerance]
+#
+# GATING. Snapshots live in data/matches/, so a failure here is always ours.
+# Every row was generated from the record, never typed from memory —
+# see CONTEXT.md 5, 'No number from memory'.
+#
+# ch 21 — The Lead That Melts. Yakult Brothers vs Rune Eaters,
+# The Games of the Future 2026. Peak gold lead with two lanes of barracks
+# already down, and the game still needed another eleven minutes.
+21	8929124210	duration	-	2781
+21	8929124210	winner	-	radiant
+21	8929124210	gold_adv_at	37	19106
+21	8929124210	gold_adv_at	45	11252
+21	8929124210	objective_time	building_kill:npc_dota_badguys_melee_rax_top	2086
+21	8929124210	objective_time	building_kill:npc_dota_badguys_melee_rax_mid	2117
+21	8929124210	count	buybacks	6
+21	8929124210	count	teamfights	8
+21	8929124210	count	picks_bans	24

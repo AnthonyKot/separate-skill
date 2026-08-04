@@ -1,0 +1,22 @@
+# chapter	patch	exact string that must appear in the official notes
+#
+# GATING, unlike the equivalent file in books 4 and 5. Valve serves structured
+# patch notes as JSON at dota2.com/datafeed/patchnotes, so a failure here means
+# the claim is wrong, not that a page moved. See checks/patchnotes.py.
+#
+# Whitespace is collapsed and dashes/apostrophes unified before matching.
+# Matching is case-insensitive.
+#
+# ch 25 — Reading a Patch. The worked example is 7.41, which deleted an entire
+# hero-customisation system four months before this book was started. Any guide
+# written before 2026-03-24 and not revised since is teaching a game that no
+# longer exists — which is the chapter's whole argument, and is registered here
+# rather than asserted.
+25	7.41	Facets removed from the game
+25	7.41	Innate abilities no longer scale with other abilities' level
+#
+# ch 23 — Roshan and the Two-Minute Window. The geography moved in the same
+# patch; the chapter must teach the timing concept, not the current terrain.
+23	7.41	Tormentor's spawn preference has switched
+23	7.41	Tormentor spawns have been positioned closer towards Lotus Pools
+23	7.41	Tormentor spawn areas have been reduced to low ground relative to the lane's level
