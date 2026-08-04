@@ -119,8 +119,11 @@ Leads to chase. Nothing here is sourced yet.
   without it — so the hold costs roughly 500 words, and a ceiling set now should account for it.
   Book 4 used 2,000–3,000 and found the ceiling useful. Worth setting before four chapters exist and
   fix the norm by accident.
-- **Is one hold per chapter right?** Ch. 21 has a single hold at 39:39. A chapter with two decision
-  points might teach more, or might turn into a quiz. Settle after pilot two rather than by drift.
+- ~~Is one hold per chapter right?~~ **Settled 2026-08-04, now `CONTEXT.md §3`.** One by default; a
+  second only when it tests re-evaluation after the state materially changes, and only if it brings
+  new information, a changed resource state or a recovery decision. Ch. 12 drafts second and is the
+  test case, because item decisions chain naturally — *what do I buy*, then *do I act on it or keep
+  farming*.
 
 ---
 

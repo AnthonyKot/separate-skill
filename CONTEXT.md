@@ -130,6 +130,28 @@ Two rules that keep the hold honest:
   A hold that grades by outcome is the ex-post error again, and this book has now made that error
   twice in two different places.
 
+**How many holds — settled.** **One is the default.** A single decision gives the chapter a centre,
+keeps the prose continuous, and leaves room for the reconstruction and transfer work that follows it.
+
+A **second hold is permitted only when it tests a genuinely different operation**: the first is the
+initial decision, the second a *re-evaluation after the state has materially changed*. To qualify, the
+second hold must introduce **new information, a changed resource state, or a recovery decision**. If
+it amounts to *do you still agree?*, it is not a second hold and it comes out.
+
+The risks of reaching for two are specific and worth naming, because each is a way the book stops
+being a book:
+
+- the chapter becomes a quiz;
+- the second decision dilutes the chapter's exclusive job (§6);
+- the reader starts trying to **guess what historically happened** rather than deciding — which is
+  the failure the "right answers can lose" rule exists to prevent, arriving through the back door;
+- the prose fragments, and every case begins to read as a branching simulation.
+
+**Ch. 12 is the natural test** and should be drafted second among the pilots. Item decisions come in
+chains — *what do I buy*, and then, once it is finished, *do I act on it or keep farming* — so if two
+holds ever earn their place, that is where. Whether they do is a question for the draft, not for this
+file; if ch. 12 works with one, one is the rule for the rest of the book.
+
 ### The honesty mechanism: the inversion
 
 Book 4 uses the counter-case because business failure is unpublished. This book's characteristic
