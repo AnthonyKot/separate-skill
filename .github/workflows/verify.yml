@@ -1,0 +1,36 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # The game moves. Once a week, re-check every registered claim against the
+    # live sources — a patch can falsify a claim in this repository without
+    # anyone touching it.
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  links:
+    # Gating, and offline. Internal links live entirely inside this repository:
+    # always the author's fault, always fixable, so a red build here is always
+    # actionable. Runs separately from the network checks so a GitHub outage
+    # cannot mask a broken link.
+    name: internal links (gating, offline)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./verify.sh --links
+
+  claims:
+    # Gating, including on unreachable sources. Unlike the equivalent job in
+    # books 4 and 5, this one is allowed to fail on network trouble rather than
+    # reporting a green build it could not substantiate. If dota2.com is down,
+    # the honest state of the claims is "not checked", and "not checked" is not
+    # "passed". A rerun costs one click.
+    name: all claims (gating)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./verify.sh
