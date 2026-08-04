@@ -433,3 +433,30 @@ Score ch. 30 against the table above once drafted.
 Efficacy, prevalence, or whether any of Part VII is worth reading. It tests one structural question
 and should not be asked to carry more — the four-pilot round was valuable because each pilot had a
 single question, and the temptation now is to make this one settle everything left over.
+
+### 8g. The kickoff prompt
+
+The first prompt of the next session. Short on purpose: everything it would otherwise explain is in
+the repository, checked, and would drift if restated here.
+
+> Work in `~/book6` — *Winning Is a Separate Skill*.
+>
+> Read `CONTEXT.md` before anything else, especially §10, the runbook. Then read `NOTES.md` §7 (the
+> handover plan) and §8 (the brief for this task).
+>
+> **Task: draft chapter 30, Position Three.** It is pilot #2, and it exists to settle whether Part VII
+> wants five chapters or about three. Follow §8e's constraints exactly — in particular, **do not open
+> chapter 32 until your draft is finished.** A chapter written beside its comparison converges on it,
+> and that convergence is the thing being measured.
+>
+> When it is drafted, score it against §8d's decision rule and tell me which of the three outcomes it
+> is, including the third one. **Do not adjust the criteria to fit what you wrote** — if they turn out
+> to be the wrong criteria, say so explicitly rather than re-cutting them.
+>
+> Then publish it the way §10 says: verify, commit, push, confirm the page is live and CI is green.
+
+**Why it is this short.** A prompt that restates the reader, the spine, the template or the voice
+rules is a summary of documents that are already authoritative and mechanically checked — and §4's
+audit rule exists because summaries are where decisions go stale. The prompt's only job is to name
+the task and the two things a fresh session cannot infer: which brief applies, and that the
+comparison must not be read first.
