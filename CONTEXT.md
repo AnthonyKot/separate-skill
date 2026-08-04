@@ -129,6 +129,22 @@ Two rules that keep the hold honest:
 - **The reader's answer may be right and still lose, or wrong and still win.** Say so at the reveal.
   A hold that grades by outcome is the ex-post error again, and this book has now made that error
   twice in two different places.
+- **There must always be a way to pass using only the information presented.** A hold may conceal the
+  outcome, what the professionals actually did, the author's interpretation, or which variable turns
+  out to matter. It may **not** conceal a premise that makes the requested task impossible — unless
+  *"this cannot be determined"* is offered as a valid answer in the instruction itself.
+
+  This is the rule that separates a test from a trick, and ch. 01 needed it. Its hold instructed the
+  reader to classify three deaths and its reveal announced that classification was impossible. The
+  chapter had left a route to the right answer, but the instruction still told a cooperative reader to
+  do something that could not be done, and then corrected them for complying. *Unclassifiable* is now
+  one of the offered options, with a warning not to choose it merely because the judgement is hard,
+  and the reveal credits the reader who took it.
+
+  The general form, which every later hold should reach for: the skill being tested is **what can be
+  concluded, what remains uncertain, and what further information is required.** That is a recurring
+  epistemic discipline. A reveal that depends on the reader having been misled is a recurring
+  authorial trick, and it only works once.
 
 **How many holds — settled.** **One is the default.** A single decision gives the chapter a centre,
 keeps the prose continuous, and leaves room for the reconstruction and transfer work that follows it.

@@ -91,6 +91,19 @@ attempt to 23, sequencing the ending to 24.
 
 ---
 
+## 1e. Do not reuse chapter 01's reveal — standing note for pilots 12 and 32
+
+Ch. 01's hold works *once*. Now that the reader has been taught that insufficient evidence is a
+legitimate answer, later holds may use the principle but must not repeat the theatrical reveal — the
+second time it lands as a mannerism, and the third as a reason to stop trusting the holds.
+
+Later holds should conceal the outcome and the interpretation, never a premise. The recurring skill
+is deciding **what can be concluded, what stays uncertain, and what further information is needed**;
+ch. 12 and ch. 32 should each find a different shape for asking it. The rule is now in
+`CONTEXT.md §3`; this note is the reminder of *why*, which the rule does not carry.
+
+---
+
 ## 2. Cases wanted
 
 Leads to chase. Nothing here is sourced yet.
