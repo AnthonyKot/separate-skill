@@ -94,7 +94,27 @@ Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
    **The pass mark grades the decision, never the outcome.** It reads: *before the attempt you named
    an objective and a maximum acceptable cost; you pass if the attempt achieved the objective within
    that cost, or if you disengaged when your stated stopping condition occurred.* A pass mark of the
-   form *you survived* is forbidden. Ch. 21 shipped with one — "you were alive at the end of it" —
+   form *you survived* is forbidden.
+
+   **That mark is necessary and not sufficient, and every chapter must carry the second half.**
+   As written above it grades *compliance with a plan the reader wrote themselves*, which is
+   self-validating: a plan reading **objective: their tower; cost: three deaths; stop: after three
+   deaths** passes every time it is followed. So the review loop splits in two, and the halves must be
+   visibly separate on the page:
+
+   | | Question | Why it is not the other one |
+   |---|---|---|
+   | **Process mark** | Did you name an objective, a maximum cost and a stopping condition *before* acting, and did you honour them? | Catches acting without a plan, which is the common failure |
+   | **Calibration review** | Given what was knowable at the time, was that objective worth that cost, and was the stopping condition sensitive enough to fire before the cost was paid? | Catches a plan that was followed faithfully and was not worth following |
+
+   **The calibration review is not hindsight and must not be allowed to become it.** It asks whether
+   the plan was reasonable on the information available when it was made — never what happened
+   afterwards. That is the same ex-ante standard §6's free-death definition already applies, and the
+   omission was an inconsistency in this document rather than a decision: the definition asks whether
+   a meaningful exchange was *reasonably available*, which is precisely a calibration question, while
+   the pass mark asked only whether the reader followed their own instructions. **Found on external
+   review of ch. 30, and it applies retroactively — chapters 12, 21 and 32 carry process-only pass
+   marks and are owed the second half.** Ch. 21 shipped with one — "you were alive at the end of it" —
    which is the free-death error of §6 reappearing in the review loop one commit after it was
    corrected in the definition, because survival is easy to score and decision quality is not. A
    support who dies to force two buybacks may have played the sequence correctly, and a book that
@@ -595,7 +615,7 @@ reduces noise while learning, never as a theory of how MMR is won.
 |---|---|---|
 | 28 | Position One | ☐ |
 | 29 | Position Two | ☐ |
-| 30 | Position Three | ☑ 51 claims · match 8926599506 · **pilot** · see `NOTES.md` §8h–8i |
+| 30 | Position Three | ☑ 52 claims · match 8926599506 · **pilot** · see `NOTES.md` §8h–8i |
 | 31 | Position Four | ☐ |
 | 32 | Position Five | ☑ 17 claims · match 8928118730 · **pilot** · disproved Part VII's premise |
 
@@ -902,6 +922,33 @@ The fourth row is not a machinery failure at all. `coverage.py` worked, reported
 every run since it was written. **Advisory came to mean optional, and optional came to mean never** —
 which is worth stating in the foundations because §5 deliberately keeps one advisory check and this is
 the cost of having one.
+
+**Ch. 30 — the book prescribed an exercise the game cannot perform.** Its `Next game` list opened
+with *at minute ten, write down your gold and the enemy carry's gold*. No player can do that. The
+per-hero series this book registers is `gold_t`, which is **cumulative gold earned** — it tracks
+`total_gold` (18,305 against 18,287 for ch. 30's offlaner) and is not the 1,440 he was carrying
+unspent, nor the 17,620 of his net worth. It is a replay quantity. Nobody reads it live for an
+opponent and nobody reads it live for themselves.
+
+Three separate failures stacked to produce one instruction, and the stack is the lesson:
+
+1. **A quantity was renamed on the way into prose.** `gold_t` became "gold", which sounds spendable.
+   Every registered figure was correct and the word attached to them was not, so no checker could
+   see it — `matches.py` verifies values against the record and has no opinion about nouns.
+2. **Replay evidence was converted into a live instruction** without asking whether the reader has
+   the same view the record has. The whole book rests on the reader being able to open the replay;
+   that is exactly why the boundary between *what the replay shows* and *what the screen shows* has
+   to be policed, and this chapter walked across it.
+3. **A claim about the current client was needed and was not available.** Whether any in-client
+   feature exposes enemy economy is a §9 question — a reviewer asserted it does not, community
+   sources agree, and none of them is a primary source. The chapter does not resolve it, because the
+   fix does not depend on it: the quantity the chapter uses is not that quantity either.
+
+**The rule that comes out of it: an action in `Next game` must be performable with the information on
+the reader's screen, and any figure it names must be one they can see.** Everything else belongs in
+`After the game`, where the replay is open. Ch. 30's list is now built from level, items, tower state
+and lane safety — a judgement made live and *checked* against the record afterwards, which also makes
+it a calibration exercise rather than a data-entry one.
 
 ## 9. The pipeline
 

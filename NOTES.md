@@ -523,3 +523,74 @@ that dismissal no longer holds — a carry is the seat whose visibility *never* 
 the interesting contrast rather than the trivial one. That would be a third pilot, and it should be
 pre-registered the same way, with the premise checked against the record **before** the criteria are
 fixed. That is the process failure this round actually exposed.
+
+## 9. Revision backlog — from ch. 30's external review
+
+The review that produced these was the most useful the book has had, and it is worth recording what
+kind of finding it was: **none of it was catchable by any checker in this repository**, and three of
+the items are foundations-level rather than chapter-level.
+
+### 9a. Applied to ch. 30 already
+
+- **The impossible exercise.** `Next game` #1 told the reader to read the enemy carry's gold. Rebuilt
+  around what is visible live; the record is now the *check* on the reader's judgement rather than
+  its input. Recorded in `CONTEXT.md §8`, with the rule that came out of it.
+- **"The comparison expires" → "a statistic can stay accurate after it has stopped being
+  sufficient."** The case establishes that the gap crossed zero. It does **not** establish that the
+  comparison stopped mattering — the carry's recovery may matter enormously, and a shrinking gap is
+  equally consistent with wasted advantage, conversion elsewhere, farm deliberately redistributed, or
+  the economic shape the draft always expected. The new formulation is defensible and also resolves
+  an internal contradiction: the old text told the reader to stop reading their row and then told
+  them to read a different row.
+- **Three absolutes removed.** *Not gold* (gold is still scarce for a core seat; what is unusually
+  scarce is the conversion window). *A direct measurement of what you were sent to do* (it is a proxy
+  for one part of the job, blind to tower pressure, rotations forced, area denied). *The expected
+  shape for this seat* — **a prevalence claim, from one professional match, in a chapter that says
+  three paragraphs later that it has no bracket evidence.** That one is the worst of the three
+  because §5 bans it explicitly.
+- **"Read that table in either direction and it says nothing"** → the row is evidence; it is
+  *insufficient* evidence. It cannot grade decisions or identify the winner. It says plenty about
+  what each player accumulated.
+- **Death priming.** The hold's *your own death is a legitimate line item; write the number* nudged
+  toward treating dying as the sophisticated offlane answer, in a chapter that elsewhere warns
+  against exactly that reading. Now carries ch. 32's repaired formulation — **zero is valid and may
+  be right** — plus costs that are not deaths: farm, a cooldown, tower health, an item revealed, an
+  area surrendered.
+- **Minute 14 was overweighted.** It was described as "the last minute your lane advantage was still
+  large enough to be worth something", with *large enough* undefined and the gap at +393. Now stated
+  as a transition point in this match and explicitly not a threshold.
+
+### 9b. Foundations — applied to `CONTEXT.md §3`, and owed by three published chapters
+
+**The pass mark was self-validating.** It graded compliance with a plan the reader wrote themselves,
+so *objective: their tower; cost: three deaths; stop: after three deaths* passes every time it is
+followed. Split into a **process mark** and a **calibration review** — the second asking whether the
+objective was worth that cost *on what was knowable*, which is ex ante and not hindsight.
+
+This was an inconsistency inside the document rather than a decision. §6's free-death definition
+already asks whether a meaningful exchange was **reasonably available** — a calibration question —
+while the pass mark asked only whether instructions were followed. **Ch. 12, 21 and 32 carry
+process-only pass marks and are owed the second half.** That is the revision backlog for the next
+session, and it is small: one block per chapter.
+
+### 9c. Pushed back on, with reasons
+
+- **The `.owed` block's "an inversion would look like this" is not a retired remnant.** The reviewer
+  read it as architecture left over from Part VII's abandoned premise. It is not: what was retired is
+  the premise that *seat chapters find inversions*, while `.inversion` / `.owed` remain live
+  book-wide devices, and `§3` defines `.owed` as "a visible note that no inversion was found,
+  **saying what one would have to look like**". Ch. 32's `.owed` does the same thing. Naming the
+  test that was not run is the block's whole function; removing it would leave a limitation stated
+  without saying what would settle it.
+- **"Net worth" was the wrong correction.** The review said the figures are net worth rather than
+  spendable gold. Half right, and the precise answer matters: `gold_t` is **cumulative gold earned**,
+  which tracks `total_gold` and is a third quantity distinct from both net worth and unspent gold.
+  Adopting "net worth" would have replaced one wrong noun with another.
+
+### 9d. What this says about the review pipeline
+
+Every item in §9a and §9b was an **argument** defect, and the machinery is green on all of them —
+before and after. `matches.py` verified every figure in the impossible exercise, because the figures
+were right and the instruction built on them was not. This is the fourth consecutive pilot where the
+serious findings came from a reader, and the first where one of them invalidated a rule in the
+foundations rather than a sentence in a chapter.
