@@ -79,3 +79,4 @@
 12	8928916055	objective_time	building_kill:npc_dota_badguys_tower2_mid	1430
 12	8928916055	objective_time	building_kill:npc_dota_badguys_tower2_bot	1517
 12	8928916055	purchases_between	608:1987:black_king_bar,blink,radiance,desolator,manta,pipe,guardian_greaves,aeon_disk,octarine_core,refresher,sheepstick,abyssal_blade,bloodthorn,satanic,butterfly,assault,heart,shivas_guard,silver_edge,skadi,daedalus,mjollnir,nullifier,ultimate_scepter	16
+12	8928916055	objectives_between	608:1987:building_kill	7

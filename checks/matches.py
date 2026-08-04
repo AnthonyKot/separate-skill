@@ -23,6 +23,7 @@ Claim types, one per row:
     teamfight_end   <index>                  seconds, 1-based
     hero_purchase_time <Hero Name>:<item>    seconds, first completion
     purchases_between <start>:<end>:<items>  completions of any listed item in a window
+    objectives_between <start>:<end>:<type>  objectives of that type in a window
     hero_series_at  <Hero>:<gold|xp|lh>:<min>  that hero's per-minute series
     teamfight_deaths <index>:<radiant|dire>  hero deaths on that side in that fight
     hero_stat       <Hero Name>:<field>      any scoreboard field, addressed by hero
@@ -150,6 +151,16 @@ def resolve(d, check, arg):
             for p in d["players"]
             for b in (p.get("purchase_log") or [])
             if b["key"] in wanted and start <= b["time"] <= end
+        )
+
+    if check == "objectives_between":
+        # "<start_sec>:<end_sec>:<type>" — objectives of that type in the window.
+        start, end, kind = arg.split(":", 2)
+        start, end = int(start), int(end)
+        return sum(
+            1
+            for o in d.get("objectives") or []
+            if o.get("type") == kind and start <= o.get("time", -1) <= end
         )
 
     if check == "teamfight_end":

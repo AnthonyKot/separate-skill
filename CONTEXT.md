@@ -403,7 +403,7 @@ notices the repetition.
 | 09 | Determine which of that income is **safe and ownable** given who controls what |
 | 10 | **Deadline-adjusted** farming: the fastest route to a required capability may have lower GPM |
 | 11 | Unspent resources and **delayed delivery** |
-| 12 | Buying for **your own required function** |
+| 12 | A purchase is a **forecast**: which function, in what window, at what cost |
 | 13 | Buying **against enemy capabilities** |
 | 14 | Reading what **all ten heroes** can currently do |
 | 15 | Recognising the capability is **reached**, and that farming must now stop |
@@ -495,7 +495,7 @@ evidence and must not be invented.**
 | # | Title | Status |
 |---|---|---|
 | 11 | Gold in the Bank Is Not Gold | ☐ |
-| 12 | The Item You Want and the Item That Wins | ☑ 16 claims · match 8928916055 · **pilot** · one hold, and why |
+| 12 | Every Item Is a Forecast | ☑ 18 claims · match 8928916055 · **pilot** · one hold, and why |
 | 13 | Buying for Them | ☐ · neutral items and Madstone belong here, as dated examples |
 | 14 | Reading the Scoreboard | ☐ |
 | 15 | Enough Farm | ☐ closes Part III |
@@ -691,8 +691,8 @@ Written before ch. 12 was drafted.
   has no bracket evidence about items at all.
 - **Transfer.** The question *what moment is this item for* transfers completely. The answer these
   five arrived at does not, because it assumes a team that will produce the moment.
-- **Spent.** Ch. 12 takes the five-BKB cluster and the fight gap, for the inference that an item is
-  bought for a moment. Ch. 16 (*The Spike*) may return for a different inference about timing, and
+- **Spent.** Ch. 12 takes the five-BKB cluster, the fight gap and the seven buildings, for the
+  inference that a purchase and its first observable use can be separated by many minutes. Ch. 16 (*The Spike*) may return for a different inference about timing, and
   must draw its own.
 
 ## 8. What got caught
