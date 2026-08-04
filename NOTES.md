@@ -215,10 +215,12 @@ Two holds are permitted only if the second tests a genuinely different operation
 information, a changed resource state, or a recovery decision. Here it plausibly does: between the
 two, the state has materially changed — the item exists, and so does a window that expires.
 
-**But that is the hypothesis, not the finding.** Draft it with two, then apply the test honestly: does
-hold two teach anything hold one did not, or is it *do you still agree?* wearing a timestamp. If the
-latter, cut it and one hold becomes the rule for the book. Either outcome is a result; the failure
-mode is keeping both because the chapter feels richer.
+**Result, 2026-08-04: one hold.** The second was designed and cut, and not for the anticipated
+reason. *The item is finished and there is still no fight — act or keep farming?* is a good question
+owned by **ch. 15** (the capability is reached, stop farming) and **ch. 16** (acting on a spike). The
+second hold did not make the chapter a quiz; it made it two chapters. Now in `CONTEXT.md §3`, with
+the general test: **if the second decision belongs to another chapter's exclusive job, it is a
+boundary violation with a timestamp on it.**
 
 ### Case
 

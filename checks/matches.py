@@ -20,6 +20,10 @@ Claim types, one per row:
     purchase_time   <player>:<item>          seconds into the game
     buyback_time    <player>                 seconds into the game
     teamfight_start <index>                  seconds, 1-based
+    teamfight_end   <index>                  seconds, 1-based
+    hero_purchase_time <Hero Name>:<item>    seconds, first completion
+    purchases_between <start>:<end>:<items>  completions of any listed item in a window
+    hero_series_at  <Hero>:<gold|xp|lh>:<min>  that hero's per-minute series
     teamfight_deaths <index>:<radiant|dire>  hero deaths on that side in that fight
     hero_stat       <Hero Name>:<field>      any scoreboard field, addressed by hero
     kills_outside_teamfights <outside|total> hero deaths outside every fight window
@@ -132,6 +136,57 @@ def resolve(d, check, arg):
             raise LookupError(f"no {key} series in this match")
         top = max(series)
         return top if check == "series_max" else series.index(top)
+
+    if check == "purchases_between":
+        # "<start_sec>:<end_sec>:<item,item,...>" — completions of any listed item
+        # inside the window. The item list is part of the CLAIM rather than baked
+        # into this file on purpose: "expensive" is an editorial judgement, and a
+        # chapter that counts expensive items must show which ones it counted.
+        start, end, items = arg.split(":", 2)
+        wanted = {i.strip() for i in items.split(",")}
+        start, end = int(start), int(end)
+        return sum(
+            1
+            for p in d["players"]
+            for b in (p.get("purchase_log") or [])
+            if b["key"] in wanted and start <= b["time"] <= end
+        )
+
+    if check == "teamfight_end":
+        fights = d.get("teamfights") or []
+        i = int(arg)
+        if not 1 <= i <= len(fights):
+            raise LookupError(f"match has {len(fights)} teamfights, no #{i}")
+        return fights[i - 1]["end"]
+
+    if check == "hero_purchase_time":
+        # "<Hero Name>:<item>" — first completion. Hero-addressed for the same
+        # reason as hero_stat: ch. 12 argues about what an item was for, not about
+        # who bought it.
+        name, _, item = arg.partition(":")
+        heroes = hero_names()
+        for p in d["players"]:
+            if heroes.get(str(p.get("hero_id"))) == name:
+                for buy in p.get("purchase_log") or []:
+                    if buy["key"] == item:
+                        return buy["time"]
+                raise LookupError(f"{name} never completed {item!r}")
+        raise LookupError(f"no {name!r} in this match")
+
+    if check == "hero_series_at":
+        # "<Hero Name>:<gold|xp|lh>:<minute>" — that hero's per-minute series.
+        name, _, rest = arg.partition(":")
+        series_name, _, minute = rest.partition(":")
+        key = {"gold": "gold_t", "xp": "xp_t", "lh": "lh_t"}[series_name]
+        heroes = hero_names()
+        for p in d["players"]:
+            if heroes.get(str(p.get("hero_id"))) == name:
+                series = p.get(key) or []
+                m = int(minute)
+                if m >= len(series):
+                    raise LookupError(f"{name} has {len(series)} minutes, no {m}")
+                return series[m]
+        raise LookupError(f"no {name!r} in this match")
 
     if check == "teamfight_start":
         fights = d.get("teamfights") or []

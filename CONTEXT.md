@@ -163,10 +163,20 @@ being a book:
   the failure the "right answers can lose" rule exists to prevent, arriving through the back door;
 - the prose fragments, and every case begins to read as a branching simulation.
 
-**Ch. 12 is the natural test** and should be drafted second among the pilots. Item decisions come in
-chains — *what do I buy*, and then, once it is finished, *do I act on it or keep farming* — so if two
-holds ever earn their place, that is where. Whether they do is a question for the draft, not for this
-file; if ch. 12 works with one, one is the rule for the rest of the book.
+**Ch. 12 was the test, and it came back: one hold.** The second was designed, drafted in outline and
+cut, and the reason is more useful than the verdict. The natural second question — *the item is
+finished and there is still no fight; do you act on it or keep farming?* — is not a weak question. It
+is a **different chapter's question**: ch. 15 owns recognising that the required capability is reached
+and farming must stop, and ch. 16 owns acting on a spike. A second hold did not turn the chapter into
+a quiz; it turned it into two chapters.
+
+So the failure mode to watch for is not the one anticipated. **A second hold is usually the moment a
+chapter starts doing a neighbour's job**, which the contracts in §6 exist to prevent, and the contract
+list is therefore the test to apply: if the second decision belongs to another chapter's exclusive
+job, it is not a second hold, it is a boundary violation with a timestamp on it.
+
+One hold stands as the rule. The exception above remains available and has now been tried once
+without being needed.
 
 ### The honesty mechanism: the inversion
 
@@ -477,7 +487,7 @@ evidence and must not be invented.**
 | # | Title | Status |
 |---|---|---|
 | 11 | Gold in the Bank Is Not Gold | ☐ |
-| 12 | The Item You Want and the Item That Wins | ☐ |
+| 12 | The Item You Want and the Item That Wins | ☑ 16 claims · match 8928916055 · **pilot** · one hold, and why |
 | 13 | Buying for Them | ☐ · neutral items and Madstone belong here, as dated examples |
 | 14 | Reading the Scoreboard | ☐ |
 | 15 | Enough Farm | ☐ closes Part III |
@@ -644,6 +654,38 @@ Written **before** ch. 01 was drafted, which is the policy and which the previou
 - **Spent.** Ch. 01 takes the deaths-outside-fights count and the two scoreboard extremes, to show
   that the count is uninformative. A later chapter may return only for a different inference — ch. 02
   and ch. 03 need *reconstruction* evidence this match cannot supply without replay observation.
+
+### 8928916055 — BoomBoys vs OG, 1win Essence II
+
+Written before ch. 12 was drafted.
+
+- **Patch.** 7.41e. **Source mode.** Professional broadcast. **Identity.** Heroes only in the prose,
+  as in ch. 01. The argument is about what an item was for, never about who bought it.
+- **Facts.** 41:14, Radiant won. **Four teamfights in the whole match**, and a stretch of **22:59**
+  between the end of the second (10:08) and the start of the third (33:07) containing none. Inside
+  that stretch: sixteen expensive item completions, **five of them Black King Bars, spanning
+  4 minutes 22 seconds** across both teams — 21:05, 21:17, 22:59, 23:42, 25:27 — and seven towers.
+- **Permitted.** That an expensive item is bought for a moment, and that the moment can be a long way
+  from the purchase. That five players on two teams independently reached the same conclusion about
+  what the next fight would require, well before there was a next fight.
+- **Observation vs inference.** Purchase times, fight windows and tower times are observed. That the
+  five purchases were *for* the fight at 33:07 is **inference**, and a weak one: nothing connects a
+  purchase to an intention. The teamfight windows are again the parser's judgement.
+- **Confounders.** The gap contained seven towers, so this was not an idle game and the chapter must
+  not say it was. Draft and hero scaling determine when spell immunity becomes necessary. Two of the
+  five buyers were on the losing side.
+- **Prohibited.** **Never that these purchases were mistimed or wasteful.** Nothing in the record
+  supports it, professional players buying spell immunity before contesting objectives is ordinary,
+  and the chapter's argument does not need them to have been wrong — it needs them to have been
+  *deliberate*, which is the opposite claim. Never a counterfactual: no alternative purchase can be
+  evaluated from a replay. Never a prevalence claim about any bracket, and specifically **never that
+  Archon–Legend players buy differently**, because `publicMatches` carries no item data and this book
+  has no bracket evidence about items at all.
+- **Transfer.** The question *what moment is this item for* transfers completely. The answer these
+  five arrived at does not, because it assumes a team that will produce the moment.
+- **Spent.** Ch. 12 takes the five-BKB cluster and the fight gap, for the inference that an item is
+  bought for a moment. Ch. 16 (*The Spike*) may return for a different inference about timing, and
+  must draw its own.
 
 ## 8. What got caught
 
