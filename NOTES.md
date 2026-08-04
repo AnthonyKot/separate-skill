@@ -328,17 +328,12 @@ invisible-product problem while having a core's resource profile.
 
 Either outcome settles four chapters' worth of structure for the price of one.
 
-### 7b. Suggested order of work
+### 7b. Suggested order of work — SUPERSEDED, see §17
 
-1. **Ch. 30, Position Three** — settles Part VII's size before anything is written on the assumption
-   of five. **The brief is §8, and its criteria are pre-registered.**
-2. **Ch. 02, 03, 04, 05** — completes Part I. This tests something no pilot did: **whether a whole
-   part hangs together**, and whether four chapters with adjacent contracts stay distinct in practice
-   rather than only on paper. Part I is also the most-read part of any book, and ch. 01 already exists
-   to open it.
-3. **Ch. 27 as a contract only** — the last untested template question, whether a season-level
-   chapter can work under a template built for moments inside a match. A page, not prose.
-4. Everything else, in spine order.
+Written at the end of the pilot round. Items 1 and 2 are done: ch. 30 was drafted and its result is in
+§8h–8i; Part I is complete. **The current handover is §17.** Kept because the reasoning for the order
+was right and is worth reusing: settle a structural question with one chapter before writing four on
+its assumption, and prefer completing a whole part over sampling across the book.
 
 ### 7c. Standing risks, in the order they have actually bitten
 
@@ -1187,3 +1182,84 @@ considered.
 paragraph rather than admitted late: no professional case can show a death that should have been
 taken, because an action that did not happen has no entry. The death in the title has to come from the
 reader's own recorded decision, which is what the exercise is built for.
+
+---
+
+## 17. The handover — current
+
+Written 2026-08-04, replacing §7 as the live handover. §7 is kept for the reasoning; this is the
+state.
+
+**How to read this file.** It is chronological and long. `CONTEXT.md` holds everything settled and is
+the only document that has to be read in full. Here, read **§17 first**, then §8h–8i if you touch
+Part VII, then the section for whatever chapter you are revising. §§9–16 are per-chapter review logs
+and are reference, not reading.
+
+### 17a. State
+
+Nine chapters live. **Part I is complete** (01–05); the other four are pilots (12, 21, 30, 32) written
+to test the method before the rest was commissioned. Nine checkers, eight gating, all
+negative-controlled. `verify.sh` green; CI green; everything deployed.
+
+### 17b. What is open
+
+1. **Part VII's sizing.** The author's call, analysed in §8h and §8i. The pre-registered rule returned
+   *collapse*, but the rule's premise about the offlane was false, so the verdict is weaker than it
+   looks. **Blocks nothing until ch. 28.**
+2. **Ch. 27 as a contract only.** The last untested template question: whether a season-level chapter
+   works under a template built for moments inside a match. A page, not prose. Cheap, and worth doing
+   before Part VI is reached rather than during it.
+3. **Class 3 has never been used** (§15d, `CONTEXT.md §5`). The sourcing standard declares direct
+   replay observation and no chapter has ever used it, because there is no client here. Not fixable
+   from this environment; it is stated on the method page and should stay stated.
+
+### 17c. What to do next
+
+**Part II, chapters 06–10, in spine order.** Part I established that completing a part is worth more
+than sampling across the book — the five chapters only became one argument once all five existed, and
+ch. 05's closing table is unreadable without the other four.
+
+Before drafting each one, **check the evidence against the contract** (`CONTEXT.md §6`). Three of
+Part I's five chapters changed materially at that step: ch. 03 was retitled because its contract
+wanted per-second position the record lacks, ch. 05 was redesigned because its obvious case does not
+exist in professional play, and ch. 02 existed only because a ledger entry turned out to be wrong.
+**That step is the highest-leverage part of the runbook and it is step 2.**
+
+### 17d. Standing risks, updated by Part I
+
+The four in §7c still hold. Three more earned their place:
+
+1. **A compression that names a kind of thing the record cannot see is almost certainly wrong.** Ch.
+   04 said *three exits failed* — the record has no destinations. Ch. 03 said *two engagements* — the
+   record has no movement. Both contradicted their own reasoning sections four paragraphs later, and
+   no checker could see either, because every figure underneath was correct. **The fix is always to
+   name the trace instead:** deaths, positions, clusters, timestamps.
+2. **A forward reference written before its subject exists will be wrong when the subject arrives.**
+   Two for two — ch. 01 described both ch. 03 and ch. 04 in terms their chapters contradict. The audit
+   rule cannot catch this by construction, since at the time of writing there is nothing to be
+   inconsistent with. Runbook step 6 now says to re-read them; **write forward references vaguely or
+   not at all.**
+3. **A declared rule version is not compliance.** `checks/rules.py` proves migration was deliberate
+   and nothing more, and it says so in its own header. Ch. 03 declared `HOLD_PASSABLE=2` and shipped a
+   hold that asked the impossible anyway.
+
+And the oldest risk is now measured: **every serious defect in all nine chapters was found by a
+reader, never by the machinery.** Nine for nine. The checkers catch figures, counts, vocabulary and
+stale summaries — all of which they now catch well. They have never once caught an argument.
+
+### 17e. The kickoff prompt
+
+> Work in `~/book6` — *Winning Is a Separate Skill*.
+>
+> Read `CONTEXT.md` in full, then `NOTES.md §17`. Everything else in `NOTES.md` is a per-chapter log
+> and is reference rather than reading.
+>
+> **Task: draft chapter 06, Two Resources, and You Count One** — the first chapter of Part II.
+>
+> Follow `CONTEXT.md §10`, and treat **step 2 as the real work**: check what the record can actually
+> support *before* committing to the chapter's contract. Three of Part I's five chapters changed
+> title, design or premise at that step, and each change improved them. If the contract and the
+> evidence disagree, say so and rescope rather than writing to the contract.
+>
+> Then publish it as §10 says: verify, commit, push, confirm the page is live and CI is green — and
+> re-run `verify.sh` after the last edit, not before it.
