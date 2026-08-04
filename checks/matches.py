@@ -315,6 +315,24 @@ def resolve(d, check, arg):
                     standing += 1
         return standing
 
+    if check == "wards_standing_side_at":
+        # "<obs|sen>:<radiant|dire>:<seconds>" — how many of that ward type ONE
+        # SIDE had standing at that moment. Ch. 02's whole argument is the vision
+        # asymmetry at a single instant, and a total across both teams hides it.
+        kind, s, when = arg.split(":", 2)
+        when = int(when)
+        want_radiant = s == "radiant"
+        standing = 0
+        for pl in d["players"]:
+            if (pl["player_slot"] < 128) != want_radiant:
+                continue
+            gone = {o.get("ehandle"): o["time"] for o in (pl.get(f"{kind}_left_log") or [])}
+            for o in pl.get(f"{kind}_log") or []:
+                end = gone.get(o.get("ehandle"))
+                if o["time"] <= when and (end is None or when <= end):
+                    standing += 1
+        return standing
+
     if check == "team_gold_rank":
         # "<Hero>:<minute>" — that hero's rank by gold within their OWN five, 1 =
         # richest. Added for ch. 30, whose argument is that the offlane's advantage

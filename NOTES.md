@@ -647,13 +647,18 @@ evidence against. `checks/register.py` made the same mistake on its first run by
 foundations do not ban, and the cost is identical: a checker that enforces more than its case
 establishes trains the author to argue with it.
 
-### 9f. Still open — ch. 01's `Next game` is a review list
+### 9f. SETTLED — ch. 01's `Next game` is a review list, and that is allowed once
 
-Not a defect and not obviously right either. Every other chapter's `Next game` is live and its
-`After the game` is the replay; ch. 01 puts replay work in both. It may be correct — the chapter's
-whole argument is that a death cannot be classified live — but it is an undocumented deviation from
-§3's template, and it should be settled deliberately when Part I is drafted rather than inherited by
-chapters 02–05 because it was there.
+Settled 2026-08-04, while drafting ch. 02, and written into `CONTEXT.md §3` as a **principled
+exception**: a chapter whose own finding is that the decision cannot be judged in the moment may put
+review work in `Next game`, because a live list would contradict the chapter. Ch. 01 argues that a
+death cannot be classified while it happens; instructing the reader to classify deaths live would be
+the chapter arguing with itself.
+
+The exception is narrow by construction — it requires the chapter to have **argued** the
+impossibility, not merely to have found live actions hard to invent. **Ch. 02 is the evidence that it
+is rare rather than a loophole:** it covers adjacent ground, reaches an equally negative conclusion
+about what the record can settle, and its `Next game` is live in all five items.
 
 ## 10. Part I is drafta ble, and the feasibility check found a live error
 

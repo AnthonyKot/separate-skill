@@ -53,7 +53,21 @@ def main():
                 1 for line in f if line.strip() and not line.lstrip().startswith("#")
             )
 
-    print(f"  computed: {chapters} chapters, {checkers} checkers, {bracket_claims} bracket claims")
+    # Chapters tagged as pilots on the contents page. Added when ch. 02 — the
+    # first chapter that is NOT a pilot — made "all five are pilots" false in two
+    # files, and nothing noticed. Every count that describes the state of the work
+    # gets computed; that is the rule this file exists to apply, and it had been
+    # applied to three numbers.
+    pilots = 0
+    idx = os.path.join(HERE, "docs", "index.html")
+    if os.path.exists(idx):
+        with open(idx, encoding="utf-8") as f:
+            pilots = len(re.findall(r'<span class="tag">pilot</span>', f.read()))
+
+    print(
+        f"  computed: {chapters} chapters, {checkers} checkers, "
+        f"{bracket_claims} bracket claims, {pilots} pilots"
+    )
 
     failures = []
     for rel in ("README.md", "docs/index.html", "docs/about.html"):
@@ -74,6 +88,14 @@ def main():
             claimed = number(m.group(1))
             if claimed is not None and claimed != checkers:
                 failures.append(f"{rel}: says {m.group(1)!r} verifiers, {checkers} in checks/")
+
+        # "all <n> are pilots" / "<n> are pilots" / "all four are pilots"
+        for m in re.finditer(r"\b(?:all\s+)?([A-Za-z]+|\d+)\s+(?:of them\s+)?are pilots\b", text, re.I):
+            claimed = number(m.group(1))
+            if claimed is not None and claimed != pilots:
+                failures.append(
+                    f"{rel}: says {m.group(1)!r} are pilots, {pilots} tagged on the contents page"
+                )
 
         # "no bracket claim is registered"
         if re.search(r"no bracket claim is registered", text, re.I) and bracket_claims:

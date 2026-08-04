@@ -169,3 +169,25 @@
 1	8928953683	deaths_with_position		30
 1	8928953683	wards_standing_at	obs:864	3
 30	8926599506	deaths_with_position		25
+
+# ch 02 — What the Map Already Said. Same match as ch. 01, a DIFFERENT inference
+# (CONTEXT.md 7): ch. 01 took the scoreboard's uselessness, ch. 02 takes the
+# reconstructed vision state at one of the very deaths ch. 01 could not classify.
+2	8928953683	duration		2973
+2	8928953683	winner		dire
+2	8928953683	hero_death_time	Mirana:2	495
+2	8928953683	wards_standing_side_at	obs:radiant:495	3
+2	8928953683	wards_standing_side_at	obs:dire:495	1
+2	8928953683	wards_standing_side_at	sen:radiant:495	3
+2	8928953683	wards_standing_side_at	sen:dire:495	2
+2	8928953683	wards_standing_side_at	obs:dire:399	0
+2	8928953683	wards_standing_side_at	obs:dire:468	0
+2	8928953683	wards_standing_side_at	obs:radiant:468	3
+2	8928953683	ward_lifetime	Mirana:obs:469	81
+2	8928953683	ward_lifetime	Mirana:obs:-17	360
+2	8928953683	ward_lifetime	Storm Spirit:obs:374	24
+2	8928953683	ward_lifetime	Earth Spirit:obs:357	320
+2	8928953683	ward_lifetime	Hoodwink:obs:461	361
+2	8928953683	ward_lifetime	Bane:obs:467	361
+2	8928953683	ward_count	Mirana:obs	6
+2	8928953683	hero_stat	Mirana:deaths	9

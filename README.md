@@ -18,8 +18,10 @@ your bracket.
 
 ## Status
 
-**Five chapters of thirty-two are written, and all five are pilots.** They were drafted and reviewed
-before the remaining chapters are commissioned, each testing a different way this book could fail.
+**Six chapters of thirty-two are written; five of them are pilots.** The pilots were drafted and
+reviewed before the remaining chapters were commissioned, each testing a different way this book could
+fail. Chapter 02 is the first ordinary chapter — the first written to the settled template rather than
+to test it.
 `checks/status.py` verifies that sentence against the files on disk, because it went stale here once
 already.
 

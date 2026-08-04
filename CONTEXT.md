@@ -86,6 +86,18 @@ Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
    (why a human did something, which no source in this book can establish).
 4. **Next game** — three to five things to do in your next game. Concrete enough to fail at. No
    "consider", no "try to", no "be aware of". Solo-actionable only, per the standing constraint.
+   Every action must be performable with information the reader can actually obtain, and any figure
+   it names must be one they can read at the moment the action calls for it — `NEXT_GAME_LIVE` v1,
+   §8.
+
+   **One principled exception, and ch. 01 is currently the only chapter that earns it.** A chapter
+   whose own finding is that *the decision cannot be judged in the moment* may put review work here,
+   because a list of live actions would contradict the chapter that precedes it. Ch. 01 establishes
+   that a death cannot be classified while it is happening; telling the reader to classify deaths
+   live would be the chapter arguing with itself. The test is narrow and it is not a licence: the
+   exception applies only when the chapter has **argued** for the impossibility, not when live
+   actions were merely harder to think of. Ch. 02 covers adjacent ground and its list is live
+   throughout, which is the evidence that the exception is genuinely rare rather than a loophole.
 5. **After the game** — the review loop. A timestamp to open, one observable decision to look at,
    and a pass/fail criterion stated in advance. Three to six games a week is not enough repetition
    to install a habit by volume, so the reader has to get the repetitions from review instead. This
@@ -550,7 +562,7 @@ jobs are defined by the seat rather than by the topic.
 | # | Title | Status |
 |---|---|---|
 | 01 | The Death You Didn't Notice | ☑ 11 claims · match 8928953683 · **pilot** |
-| 02 | What the Map Already Said | ☐ |
+| 02 | What the Map Already Said | ☑ 18 claims · match 8928953683 · reuses ch. 01's case for a different inference |
 | 03 | The Thirty Seconds Before | ☐ |
 | 04 | Leaving Is a Skill | ☐ |
 | 05 | The Death You Should Have Taken | ☐ closes Part I · **the anti-passivity chapter** |
@@ -785,8 +797,28 @@ Written **before** ch. 01 was drafted, which is the policy and which the previou
 - **Transfer.** The classification framework and the demonstration that the scoreboard cannot apply
   it. Not any judgement about these players.
 - **Spent.** Ch. 01 takes the deaths-outside-fights count and the two scoreboard extremes, to show
-  that the count is uninformative. A later chapter may return only for a different inference — ch. 02
-  and ch. 03 need *reconstruction* evidence this match cannot supply without replay observation.
+  that the count is uninformative. **Ch. 02 returns to the same match for a different inference**, as
+  the policy above permits: the reconstructed vision state at 8:15 — which is ch. 01's own death A,
+  the death it could not classify. Ch. 03 still needs per-second position this record does not hold.
+
+  **This entry originally said the match "cannot supply reconstruction evidence without replay
+  observation", and that was wrong** — written when the ledger also believed the record held no
+  vision state. It holds a complete one: every observer and sentry, placed and ended, per side, at
+  any instant. The correction is why ch. 02 exists at all, and it is recorded here rather than
+  silently replaced because a ledger that quietly revises what a source can supply is a ledger that
+  cannot be audited.
+
+- **Ch. 02's additional facts.** At 8:15 Radiant had **3 observers and 3 sentries** standing; Dire had
+  **1 and 2**. Dire's single observer had been placed by the victim **26 seconds earlier**, at 7:49,
+  and was destroyed at 9:10 after **81 seconds** against the 360 that Radiant's three each ran. Dire
+  had **no observer standing at all** between 6:39 and 7:48 — Storm Spirit's, placed at 6:14, lasted
+  **24 seconds** — while Radiant placed two more at 7:41 and 7:47.
+- **Ch. 02's prohibitions, additional to those above.** **Never that the vision asymmetry caused the
+  death** — the record holds no position for this death, it falls outside every fight window, and
+  ch. 01's prohibition against classifying it stands unchanged and is the point ch. 02 ends on.
+  Never that Dire warded badly: ward *counts* are not ward *value*, the record cannot say what any
+  ward saw, and two of Dire's short-lived observers were destroyed rather than wasted, which is
+  evidence of contest and not of carelessness. Never that the reader's bracket wards like either team.
 
 ### 8928916055 — BoomBoys vs OG, 1win Essence II
 
