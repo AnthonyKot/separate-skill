@@ -12,6 +12,7 @@
 #   * checks/register.py    banned vocabulary in chapter prose             (GATING)
 #   * checks/retired.py     terminology a decision retired, reappearing     (GATING)
 #   * checks/status.py      stated counts vs what is on disk               (GATING)
+#   * checks/rules.py       chapters migrated to the current version of a rule (GATING)
 #   * internal links        entirely inside this repository              (GATING)
 #
 # One check is advisory — coverage — because prose legitimately contains numbers
@@ -55,6 +56,9 @@ if [ "$only_links" = "0" ]; then
 
   echo "== retired terminology (gating) =="
   python3 checks/retired.py || fail=1
+
+  echo "== chapters vs current rule versions (gating) =="
+  python3 checks/rules.py || fail=1
 
   echo "== stated status vs reality (gating) =="
   python3 checks/status.py || fail=1

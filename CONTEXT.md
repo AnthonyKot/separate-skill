@@ -123,7 +123,23 @@ Filename: `chapters/NN-slug.html`. Five moves, fixed order, fixed headings.
      derived from §6's free-death definition rather than from the template. What it does not ask is
      whether the exchange was worth the risk accepted. It needs a clause, not a second block — and
      the fact that the one chapter built directly on the definition is the one closest to correct is
-     the argument for the definition over the template. Ch. 21 shipped with one — "you were alive at the end of it" —
+     the argument for the definition over the template.
+   - **Ch. 30 already carries both marks**, being the chapter the split was found in.
+
+   **The result of a review is one of four things, and it is not pass/fail.** A two-valued mark
+   collapses the interesting cases back together, which is how the single mark survived four chapters:
+
+   | Outcome | What it means |
+   |---|---|
+   | **Sound process, sound calibration** | You planned, and the plan was worth following on what you knew |
+   | **Sound process, poor calibration** | You did exactly what you said you would, and it was not worth doing. **The most valuable cell in the table**, and the one a single mark cannot see at all |
+   | **Poor process** | There was no stated objective, cost or stopping condition, so there is nothing to grade |
+   | **Insufficient evidence** | You cannot now reconstruct what was knowable at the time. A real answer, and the same move ch. 01 offers its reader |
+
+   **The outcome is recorded on a separate line and never moves the grade.** Whether it worked belongs
+   in the review — a reader who cannot see that a bad decision was rescued will not learn calibration
+   — but it is written beside the grade, never inside it. The third row is where this matters most:
+   *poor process, and it worked anyway* is the cell most likely to be quietly self-awarded as a pass. Ch. 21 shipped with one — "you were alive at the end of it" —
    which is the free-death error of §6 reappearing in the review loop one commit after it was
    corrected in the definition, because survival is easy to score and decision quality is not. A
    support who dies to force two buybacks may have played the sequence correctly, and a book that
@@ -282,6 +298,28 @@ Three rules follow.
   rules for a reader.
 - **No hero players.** The point of a case is the decision. Nobody in this book is a genius.
 - **Name the failure mode inside the principle**, not in a footnote.
+
+### Which document wins
+
+Established after ch. 30, from evidence rather than taste. When two parts of this repository imply
+different things, the **earlier normative source wins**:
+
+> **foundation definition → chapter contract → reusable template → chapter prose**
+
+**Templates are conveniences, not authorities.** The evidence is §3's pass mark: chapters 12, 21 and
+32 inherited it from the template and all three ended up grading compliance with a self-written plan,
+while **ch. 01, which was built directly from §6's free-death definition, is the one that stayed
+closest to correct** — it asks whether an exchange was *reasonably available*, which is the question
+the template had dropped. The definition survived four chapters of drift; the template introduced it.
+
+That is not an accident of this one rule. A definition states *what is true*, so a chapter derived
+from it has to re-derive the reasoning. A template states *what to write*, so a chapter derived from
+it copies a shape and inherits whatever the shape has quietly lost. **A template is a compressed
+summary of a definition, and §4's audit rule already says summaries are where decisions go stale.**
+
+Practical consequence: when drafting, read the definition the block comes from, not only the block.
+When a rule changes, change the definition first and regenerate the template from it — never the
+reverse.
 
 ### The audit rule
 
@@ -953,11 +991,20 @@ Three separate failures stacked to produce one instruction, and the stack is the
    sources agree, and none of them is a primary source. The chapter does not resolve it, because the
    fix does not depend on it: the quantity the chapter uses is not that quantity either.
 
-**The rule that comes out of it: an action in `Next game` must be performable with the information on
-the reader's screen, and any figure it names must be one they can see.** Everything else belongs in
-`After the game`, where the replay is open. Ch. 30's list is now built from level, items, tower state
-and lane safety — a judgement made live and *checked* against the record afterwards, which also makes
-it a calibration exercise rather than a data-entry one.
+**The rule that comes out of it, registered as `NEXT_GAME_LIVE` v1: every action must be performable
+with information the reader can actually obtain, and any figure it names must be one they can read at
+the moment the action calls for it.** Ch. 30's list is now built from level, items, tower state and
+lane safety — a judgement made live and *checked* against the record afterwards, which also makes it
+a calibration exercise rather than a data-entry one.
+
+The first draft of that rule said something stronger — *replay work belongs in `After the game`* —
+and it was narrowed before being registered, because it would have failed ch. 01, whose `Next game`
+is deliberately a review list. Every item there is obtainable; none of it is live. That is a design
+choice this document has no evidence against, and a rule written to catch one chapter's defect had
+begun condemning another chapter's decision. **`checks/register.py` did exactly this on its first run
+by banning words the foundations do not ban.** A rule that enforces more than its case establishes
+trains the author to argue with the checker, and an author who argues with the checker stops reading
+it.
 
 ## 9. The pipeline
 

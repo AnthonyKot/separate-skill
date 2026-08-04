@@ -27,7 +27,7 @@ already.
 |---|---|
 | `CONTEXT.md` | The foundations: reader, spine, template, sourcing standard, chapter register |
 | `NOTES.md` | The working notebook: unsettled things, plans, and what was rejected |
-| `checks/` | Seven verifiers, six gating, all negative-controlled |
+| `checks/` | Eight verifiers, seven gating, all negative-controlled |
 | `docs/` | The static site — contents, method, and the chapters |
 | `data/` | Committed match snapshots and bracket samples |
 

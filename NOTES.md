@@ -600,3 +600,57 @@ before and after. `matches.py` verified every figure in the impossible exercise,
 were right and the instruction built on them was not. This is the fourth consecutive pilot where the
 serious findings came from a reader, and the first where one of them invalidated a rule in the
 foundations rather than a sentence in a chapter.
+
+### 9e. The sweep, done — and the checker that makes the next one cheaper
+
+Applied 2026-08-04, after review pushed back on the sequencing.
+
+**One correction to the review, checked rather than argued.** It said five live chapters carry the
+defect. It is four. **Ch. 30 already carries both marks** — it is the chapter the split was found in.
+The confusion came from a grep for the string *"pass mark"*, which returns nothing for ch. 30
+precisely *because* it had been migrated and the block renamed. A search for the old name cannot find
+the chapters that have moved past it, which is a small lesson about auditing by string.
+
+What ch. 30 *did* owe was the four-outcome taxonomy, which it did not have.
+
+**Migrated, all five:**
+
+| Ch. | What changed |
+|---|---|
+| 01 | A clause, not a block. Its mark already asked whether an exchange was *available*; it now also asks whether the exchange was worth the risk accepted, and reports four outcomes |
+| 12 | Process mark / calibration review split; four outcomes |
+| 21 | Same; its worked example makes the self-validating failure concrete |
+| 30 | Four outcomes added; both marks were already present |
+| 32 | Same split, with the seat-specific point that naming a purpose does not make it worth dying for |
+
+**`checks/rules.py` is new, gating, negative-controlled, and is the third checker aimed at the same
+failure.** `retired.py` freezes vocabulary, `status.py` freezes counts, and neither can see a chapter
+implementing an *old version of a rule in current words* — which is exactly what four chapters were
+doing. Each chapter now declares, near the top:
+
+    <!-- rules: CALIBRATION_MARK=2 HOLD_PASSABLE=2 NEXT_GAME_LIVE=1 -->
+
+Bumping a version in `checks/rules.tsv` turns **every** chapter red at once, and the only route back
+to green is opening each one. Negative-controlled both ways: a bumped rule failed all five, a
+stripped declaration failed one.
+
+**What it cannot do, stated in its own header so it is never oversold.** It cannot read prose and
+decide whether a chapter obeys a rule. No checker can — the rules are semantic. It makes migration
+**deliberate** rather than remembered. A version bumped without reading the chapter is a false claim,
+but it is a false claim in a diff with someone's name on it, and every instance of this failure so
+far has been an omission rather than a lie.
+
+**One rule was narrowed before being registered.** `NEXT_GAME_LIVE` was first written as *replay work
+belongs in `After the game`*, which would have failed ch. 01 — whose `Next game` is a review list by
+design, every item obtainable, none of it live. That is a design choice this repository has no
+evidence against. `checks/register.py` made the same mistake on its first run by banning words the
+foundations do not ban, and the cost is identical: a checker that enforces more than its case
+establishes trains the author to argue with it.
+
+### 9f. Still open — ch. 01's `Next game` is a review list
+
+Not a defect and not obviously right either. Every other chapter's `Next game` is live and its
+`After the game` is the replay; ch. 01 puts replay work in both. It may be correct — the chapter's
+whole argument is that a death cannot be classified live — but it is an undocumented deviation from
+§3's template, and it should be settled deliberately when Part I is drafted rather than inherited by
+chapters 02–05 because it was there.

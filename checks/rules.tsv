@@ -1,0 +1,19 @@
+# rule_id	version	changed	what it is, and what the previous version got wrong
+#
+# Cross-chapter rules that have CHANGED since a chapter was written. Every live
+# chapter declares which version it was migrated to, in an HTML comment near the
+# top, and checks/rules.py fails the build when a declaration is missing or stale.
+#
+# WHAT THIS CAN AND CANNOT DO. It cannot read prose and decide whether a chapter
+# obeys a rule — no checker can. What it can do is make MIGRATION DELIBERATE: when
+# a rule changes, every chapter's declaration goes stale at once, the build goes
+# red, and the only way to green is to open each chapter and bump it by hand. The
+# bump is a lie if nobody read the chapter, but it is a lie that appears in a diff
+# with someone's name on it, which is strictly more than the previous arrangement
+# offered.
+#
+# Only rules that have actually changed belong here. A rule that has never moved
+# needs no version, and padding this file would turn a real check into a ritual.
+CALIBRATION_MARK	2	2026-08-04	v1 graded only compliance with a self-written plan, so "objective: their tower; cost: three deaths; stop: after three deaths" passed whenever it was followed. v2 splits the process mark from a calibration review and reports four outcomes rather than pass/fail. See CONTEXT.md 3.
+HOLD_PASSABLE	2	2026-08-04	v1 let a hold conceal a premise that made the requested task impossible. v2 requires that there is always a way to pass using only what the hold shows, or that "this cannot be determined" is offered in the instruction. Ch. 01 is why. See CONTEXT.md 3.
+NEXT_GAME_LIVE	1	2026-08-04	New after ch. 30 told the reader to write down the enemy carry's gold, which no player can see. Every action must be performable with information the reader can actually obtain, and any figure it names must be one they can read at the moment the action calls for it. Deliberately NOT "no replay work in Next game" — ch. 01's list is review work by design, and a rule that condemned it would be overreaching the way register.py did on its first run. See CONTEXT.md 8.
